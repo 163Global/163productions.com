@@ -3,264 +3,275 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>163 Productions | Live race production</title>
-<meta name="description" content="Live broadcast production for off-road and desert racing. Multi-camera shows, onboard cameras, live tracking and sponsor reporting, run by people who race.">
+<title>163 Productions | Live broadcasts of desert and off-road races</title>
+<meta name="description" content="163 Productions broadcasts desert and off-road races live, with cameras, commentary, GPS tracking and onboard cameras. Based in Las Vegas.">
+<link rel="canonical" href="https://163productions.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://163productions.com/">
+<meta property="og:site_name" content="163 Productions">
+<meta property="og:title" content="163 Productions | Live broadcasts of desert races">
+<meta property="og:description" content="We put every mile of your race on screen, live. Cameras, commentary, tracking and onboard cameras, run by people who race.">
+<meta property="og:image" content="https://163productions.com/assets/photos/hero-dust.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/163-mark.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="/assets/photos/hero-dust.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wdth,wght@50..125,300..900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap">
 <style>
 :root{
-  --night:#0B0D10; --night-2:#14171C; --alkali:#ECEDE9; --caliche:#B5A182;
-  --steel:#59626B; --muted:#9AA1A8; --amber:#FFB000; --line:#262B32;
-  --display:"Saira",system-ui,sans-serif; --text:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --alkali:#ECEDE9; --ink:#0B0D10; --ink-2:#3A4047; --steel:#59626B; --rule:#C9CBC5;
+  --night:#0B0D10; --night-2:#14171C; --on-night:#C9CCC8; --dim:#8F969C; --amber:#FFB000;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--night);color:var(--alkali);font:17px/1.6 var(--text);-webkit-font-smoothing:antialiased}
-a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+body{margin:0;background:var(--alkali);color:var(--ink);font:17px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-.mono{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-h1,h2,h3{font-family:var(--display);font-stretch:112%;line-height:1.02;margin:0;letter-spacing:-.01em}
-h1{font-size:clamp(44px,8vw,96px);font-weight:800;text-transform:uppercase}
-h2{font-size:clamp(32px,5vw,56px);font-weight:800;text-transform:uppercase}
-h3{font-size:22px;font-weight:700;font-stretch:100%;line-height:1.2;letter-spacing:0}
-p{margin:0}
-.amber{color:var(--amber)}
+h1,h2,h3{font-family:"Saira",system-ui,sans-serif;line-height:1.15;margin:0}
+h1{font-size:46px;font-weight:700;max-width:16ch}
+h2{font-size:32px;font-weight:700;max-width:22ch}
+h3{font-size:19px;font-weight:600}
+p{margin:0 0 1em;max-width:62ch}
+figure{margin:0}
+figcaption{font-size:14px;color:var(--steel);margin-top:10px;max-width:72ch}
+.night figcaption{color:var(--dim)}
+.button{display:inline-block;background:var(--alkali);color:var(--ink);text-decoration:none;font-weight:600;padding:14px 22px}
+.button:hover{background:#fff}
+.button.dark{background:var(--ink);color:var(--alkali)}
 
-/* nav */
-nav{position:sticky;top:0;z-index:10;background:rgba(11,13,16,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo svg{height:24px;width:auto;color:var(--alkali)}
-.logo span{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--muted)}
-nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:15px}
-nav ul a{text-decoration:none;color:var(--muted)}
-nav ul a:hover{color:var(--alkali)}
-.btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:14px 22px;border:1px solid var(--alkali);color:var(--alkali)}
-.btn.primary{background:var(--amber);border-color:var(--amber);color:var(--night)}
-.btn:hover{filter:brightness(1.08)}
-nav .btn{padding:9px 14px;font-size:14px}
+/* header sits on the hero photo */
+.top{position:absolute;top:0;left:0;right:0;z-index:2;color:var(--alkali)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:15px}
+.brand svg{height:24px;width:auto}
+.top nav{display:flex;gap:26px;font-size:15px}
+.top nav a{text-decoration:none;opacity:.85}
+.top nav a:hover{opacity:1;text-decoration:underline}
 
 /* hero */
-.hero{padding:96px 0 88px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
-.hero .mono{margin-bottom:28px}
-.hero h1 .amber{display:block}
-.hero p.lede{max-width:640px;font-size:20px;color:#C9CCC8;margin-top:28px}
-.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
-.hero .grid-bg{position:absolute;right:-40px;top:40px;width:420px;opacity:.07;pointer-events:none;color:var(--alkali)}
+.hero{position:relative;min-height:min(92vh,860px);display:flex;align-items:flex-end;color:var(--alkali);background:var(--night)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,13,16,.55) 0,rgba(11,13,16,0) 22%,rgba(11,13,16,.15) 40%,rgba(11,13,16,.92) 100%)}
+.hero .wrap{position:relative;z-index:1;padding-bottom:56px;width:100%}
+.hero p{font-size:19px;color:#DADBD6;margin:18px 0 28px;max-width:46ch}
+.hero .credit{position:absolute;right:24px;bottom:20px;font-size:13px;color:#B9BDB9;z-index:1}
 
-section{scroll-margin-top:64px;padding:96px 0;border-bottom:1px solid var(--line)}
-.head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:56px}
-.head .mono{margin-bottom:16px}
-.head p{color:#C9CCC8;font-size:18px}
+/* the story line */
+.story{padding:96px 0 88px}
+.story p.big{font-family:"Saira",system-ui,sans-serif;font-weight:500;font-size:30px;line-height:1.3;max-width:30ch;margin:0}
+.story p.after{font-size:19px;color:var(--ink-2);margin-top:28px;max-width:52ch}
 
-/* the show */
-.show{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.show > div{background:var(--night);padding:28px}
-.show .n{font-family:var(--mono);font-size:12px;color:var(--amber);letter-spacing:.12em;margin-bottom:18px;display:block}
-.show p{color:#B9BDB9;font-size:16px;margin-top:10px}
+section{padding:88px 0}
+.night{background:var(--night);color:var(--alkali)}
+.night p{color:var(--on-night)}
+.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:start}
+.intro p{margin-top:18px}
 
-/* woven in */
-.woven{background:var(--night-2)}
-.layers{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.layer{border:1px solid var(--line);background:var(--night);padding:28px;display:grid;grid-template-columns:44px 1fr;gap:18px}
-.layer .px{width:44px;height:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
-.layer .px i{background:var(--steel)}
-.layer .px i.on{background:var(--amber)}
-.layer p{color:#B9BDB9;font-size:16px;margin-top:8px}
-.layer .on-air{font-family:var(--mono);font-size:12px;color:var(--caliche);margin-top:14px;letter-spacing:.06em}
+/* the room */
+.room .wide{margin-top:48px}
 
-/* why us */
-.why-grid{display:grid;grid-template-columns:5fr 7fr;gap:64px}
-.why-grid .big{font-family:var(--display);font-weight:700;font-size:clamp(26px,3.2vw,38px);line-height:1.15}
-.details{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.details li{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
-.details .k{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--amber);text-transform:uppercase;padding-top:3px}
-.details p{color:#C9CCC8;font-size:16px}
+/* race day */
+.day{list-style:none;margin:0;padding:0}
+.day > li{display:grid;grid-template-columns:170px minmax(0,1fr);gap:28px;padding:32px 0;border-top:1px solid var(--rule)}
+.day > li:first-child{border-top:0;padding-top:0}
+.day h3{padding-top:3px}
+.day p:last-child{margin-bottom:0}
+.day figure{margin:18px 0 6px}
+.after-dark{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:56px;align-items:center}
 
-/* process */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s}
-.steps div{border-top:2px solid var(--steel);padding-top:20px}
-.steps div:last-child{border-top-color:var(--amber)}
-.steps .mono{display:block;margin-bottom:12px}
-.steps p{color:#B9BDB9;font-size:16px;margin-top:8px}
+/* people */
+.people{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:28px}
+.people p{font-size:16px}
+.people .role{color:var(--steel);font-size:15px;margin:2px 0 8px}
 
-/* who */
-.who{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.who div{padding:28px;border:1px solid var(--line)}
-.who p{color:#B9BDB9;font-size:16px;margin-top:10px}
+.close{padding:104px 0}
+.close h2{max-width:18ch}
+.close p{font-size:19px;margin:20px 0 32px}
 
-/* cta */
-.cta{text-align:left;border-bottom:none}
-.cta h2{max-width:900px}
-.cta p{max-width:620px;color:#C9CCC8;font-size:19px;margin:24px 0 36px}
+footer{background:var(--night);color:var(--dim);font-size:14px;padding:28px 0 40px;border-top:1px solid #262B32}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+footer nav{display:flex;flex-wrap:wrap;gap:20px}
 
-footer{border-top:1px solid var(--line);padding:40px 0 56px;font-size:14px;color:var(--muted)}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center}
-footer nav{all:unset;display:flex;flex-wrap:wrap;gap:20px}
-footer a{text-decoration:none;color:var(--muted)}
-footer a:hover{color:var(--alkali)}
-
-@media (max-width:900px){
-  nav ul{display:none}
-  .head,.why-grid{grid-template-columns:1fr;gap:24px}
-  .show,.who{grid-template-columns:1fr}
-  .layers{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr 1fr}
+@media (max-width:860px){
+  .top nav{display:none}
+  .split,.after-dark{grid-template-columns:1fr;gap:32px}
+  .people{grid-template-columns:1fr}
 }
 @media (max-width:560px){
   .wrap{padding:0 16px}
-  .hero{padding:64px 0}
-  section{padding:72px 0}
-  .steps{grid-template-columns:1fr}
-  .details li{grid-template-columns:1fr;gap:6px}
-  .logo span{display:none}
-  .hero .grid-bg{display:none}
+  h1{font-size:34px}
+  h2{font-size:26px}
+  .hero{min-height:88vh}
+  .hero .credit{display:none}
+  .story{padding:64px 0}
+  .story p.big{font-size:24px}
+  section,.close{padding:64px 0}
+  .day > li{grid-template-columns:1fr;gap:8px}
 }
 </style>
 </head>
 <body>
 
-<nav aria-label="Main">
+<header class="top">
   <div class="wrap">
-    <a class="logo" href="/" aria-label="163 Productions home">
+    <a class="brand" href="/" aria-label="163 Productions home">
       <svg viewBox="0 0 270 100" fill="currentColor" aria-hidden="true"><g> <rect x="4" y="0" width="8" height="8"/><rect x="28" y="0" width="8" height="8"/> <rect x="16" y="12" width="8" height="8"/> <rect x="4" y="24" width="8" height="8"/><rect x="28" y="24" width="8" height="8"/> <rect x="16" y="36" width="8" height="8"/> <rect x="28" y="48" width="8" height="8"/> </g> <path d="M40 0H66V100H40Z"/> <path fill-rule="evenodd" d="M84 0H148V24H98V38H138L148 48V90L138 100H84L74 90V10Z M110 58H124V78H98V70Z"/> <path d="M156 0H220L230 10V40L224 50L230 60V90L220 100H156V76H206V62H170V38H206V24H156Z"/> <g> <rect x="234" y="92" width="8" height="8"/><rect x="258" y="92" width="8" height="8"/> <rect x="246" y="80" width="8" height="8"/> <rect x="234" y="68" width="8" height="8"/><rect x="258" y="68" width="8" height="8"/> <rect x="246" y="56" width="8" height="8"/> <rect x="234" y="44" width="8" height="8"/> </g></svg>
-      <span>PRODUCTIONS</span>
+      Productions
     </a>
-    <ul>
-      <li><a href="#show">The show</a></li>
-      <li><a href="#woven">Built in</a></li>
-      <li><a href="#why">Why us</a></li>
-      <li><a href="#how">How it works</a></li>
-    </ul>
-    <a class="btn" href="#contact">Book a show</a>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="wrap">
-    <p class="mono">Live race production · Las Vegas, NV</p>
-    <h1>We broadcast the race.<span class="amber">Every mile. Live.</span></h1>
-    <p class="lede">163 Productions produces live shows for off-road and desert racing. Multiple cameras, a commentary booth, live tracking and on-air timing, from the start line to the far end of the course.</p>
-    <div class="ctas">
-      <a class="btn primary" href="#contact">Book your race</a>
-      <a class="btn" href="#woven">What comes with it</a>
-    </div>
+    <nav aria-label="Main">
+      <a href="#room">The show</a>
+      <a href="#race-day">Race day</a>
+      <a href="#we-race">Why us</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
 </header>
 
-<section id="show">
+<main>
+<div class="hero">
+  <img src="/assets/photos/hero-dust.jpg" width="2000" height="1125" alt="A desert race truck at speed with its amber lights on, throwing a wall of dust in low evening sun.">
   <div class="wrap">
-    <div class="head">
-      <div><p class="mono">01 · The show</p><h2>A full broadcast, not a webcam.</h2></div>
-      <p>You run the race. We run the show: the crew, the cameras, the connection, the graphics, and the stream to wherever your fans watch.</p>
+    <h1>We put every mile of your race on screen, live.</h1>
+    <p>Live broadcasts for desert and off-road racing. Cameras, commentary, tracking and onboard cameras, run by people who race.</p>
+    <a class="button" href="#contact">Tell us about your race</a>
+  </div>
+  <span class="credit">Late light in the desert. Most of a race happens where nobody is standing.</span>
+</div>
+
+<div class="story">
+  <div class="wrap">
+    <p class="big">Somewhere past race mile 300, a mother is watching a GPS dot that hasn't moved in eleven minutes.</p>
+    <p class="after">Then a camera finds the truck, and it's moving again. That is the job. We broadcast the whole race for the people who can't be standing on the course, from the start line to the last car in.</p>
+  </div>
+</div>
+
+<section id="room" class="night room">
+  <div class="wrap">
+    <div class="split">
+      <div class="intro">
+        <h2>Behind the dust, there's a room like this.</h2>
+      </div>
+      <div class="intro">
+        <p>Course cameras, onboard cameras and spectators' phones all feed one switcher. A producer picks the shot. The booth calls the race. The leaderboard and map update on air from live GPS.</p>
+        <p>It all goes out as one show, to YouTube, Facebook or your own site.</p>
+      </div>
     </div>
-    <div class="show">
-      <div><span class="n">CAMERAS</span><h3>Multi-camera coverage</h3><p>Start line, pits, key sections of course, and cameras inside the cars.</p></div>
-      <div><span class="n">BOOTH</span><h3>Commentary</h3><p>Announcers who know the classes, the drivers and the course call it live.</p></div>
-      <div><span class="n">GRAPHICS</span><h3>On-air package</h3><p>Leaderboard, course map, driver cards and sponsor placements, built for your series.</p></div>
-      <div><span class="n">SIGNAL</span><h3>Connectivity in the desert</h3><p>We plan the signal before race day so the show stays up where the course goes remote.</p></div>
-      <div><span class="n">DISTRIBUTION</span><h3>Stream everywhere</h3><p>YouTube, Facebook, your own website, or all of them at once.</p></div>
-      <div><span class="n">ARCHIVE</span><h3>Replays after the flag</h3><p>The full show and the best moments, ready to post the same week.</p></div>
+    <figure class="wide">
+      <img src="/assets/photos/switcher.jpg" width="1600" height="900" alt="Two crew members at the switcher desk, a wall of live camera feeds behind them and the announcer at the far end of the room." loading="lazy">
+      <figcaption>Our crew at the switchers during a Baja race, October 2026. Every square on the wall is a live feed from the course or a car.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="race-day">
+  <div class="wrap split">
+    <div class="intro">
+      <h2>What race day looks like when we run it</h2>
+      <p>Most crews show up with cameras. Everything here comes with our show, wired into the same broadcast.</p>
+    </div>
+    <ol class="day">
+      <li>
+        <h3>The day before</h3>
+        <div>
+          <p>We install onboard cameras during tech inspection. Teams rent them from us, so nobody buys gear for one race.</p>
+          <p>Car numbers, classes and driver names come straight from registration. The graphics are right before the first car rolls.</p>
+          <figure>
+            <img src="/assets/photos/onboard-camera.jpg" width="1200" height="675" alt="A GoPro in a sealed mount bolted inside a race car's cage, cable running to its power supply." loading="lazy">
+            <figcaption>An onboard camera in the cage. It streams the driver's view to the switcher for the whole race.</figcaption>
+          </figure>
+        </div>
+      </li>
+      <li>
+        <h3>The start</h3>
+        <div><p>Commentary goes live from the booth. The leaderboard is on screen from the first timing point.</p></div>
+      </li>
+      <li>
+        <h3>Out on course</h3>
+        <div>
+          <p>Every car carries GPS, and the course map updates on air. When a car stops moving, we usually know why, and we say so.</p>
+          <p>Spectators can join the show with our <a href="/streameasy/">StreamEasy</a> app. Their phones become extra cameras at the pits and crossings, and our producer picks which ones go live.</p>
+          <figure>
+            <img src="/assets/photos/beach-crossing.jpg" width="1400" height="933" alt="A UTV climbing off the beach through soft sand while spectators on the dune film and wave it on." loading="lazy">
+            <figcaption>A beach crossing in Baja. Every phone in this picture could be a camera on the show.</figcaption>
+          </figure>
+        </div>
+      </li>
+      <li>
+        <h3>The Monday after</h3>
+        <div><p>Every sponsor gets a report showing how long they were on screen, and when. Teams get their own clips for social media. The full replay goes up for everyone else.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="night">
+  <div class="wrap after-dark">
+    <div>
+      <h2>We stay on after dark.</h2>
+      <p style="margin-top:18px">A lot of broadcasts wind down once the leaders finish. Ours stays on until the last car is in.</p>
+      <p>Those are the hardest miles in the race. They're also the ones families are watching.</p>
+    </div>
+    <figure>
+      <img src="/assets/photos/night-light.jpg" width="1000" height="1250" alt="A race truck parked in the dark with its hatch open, one crew member working under a single bright light." loading="lazy">
+      <figcaption>Still working, long after the leaders have finished.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="we-race">
+  <div class="wrap split">
+    <div class="intro">
+      <h2>We race these courses too.</h2>
+      <p>We also build the registration systems and websites some of these races run on. So we see the details other crews never see.</p>
+    </div>
+    <div>
+      <p>We know why a class starts where it does, and we don't put the wrong number on screen. We know a stopped dot can mean a flat, a pit stop or a dead zone. We know what a team needs from a broadcast: footage for their sponsors, and proof their car was seen.</p>
+      <figure style="margin-top:28px">
+        <img src="/assets/photos/pit-crew.jpg" width="1400" height="934" alt="A pit crew in orange shirts lined up at their pit flag in the desert, with their race truck coming through in an inset." loading="lazy">
+        <figcaption>A pit crew in the desert, waiting on their truck.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<section id="woven" class="woven">
-  <div class="wrap">
-    <div class="head">
-      <div><p class="mono">02 · Built into every show</p><h2>The parts nobody else brings.</h2></div>
-      <p>Other companies sell you one of these. We wire them into the broadcast, so they show up on screen instead of in another app your fans have to find.</p>
-    </div>
-    <div class="layers">
-      <div class="layer">
-        <div class="px" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        <div><h3>Onboard cameras</h3><p>We rent cameras to the teams and install them. Their feeds go straight into the show, so the producer can cut to the cockpit at the moment that matters.</p><p class="on-air">ON AIR → IN-CAR CUTS</p></div>
-      </div>
-      <div class="layer">
-        <div class="px" aria-hidden="true"><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        <div><h3>Live tracking and timing</h3><p>GPS on every car, read by the show. Positions, gaps and the course map update on air as the race runs.</p><p class="on-air">ON AIR → LEADERBOARD, MAP, GAPS</p></div>
-      </div>
-      <div class="layer">
-        <div class="px" aria-hidden="true"><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        <div><h3>StreamEasy fan cameras</h3><p>Spectators turn their phones into cameras with our <a href="/streameasy/">StreamEasy</a> app. Our producers choose which ones go live. More angles, from more of the course.</p><p class="on-air">ON AIR → SPECTATOR ANGLES</p></div>
-      </div>
-      <div class="layer">
-        <div class="px" aria-hidden="true"><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
-        <div><h3>Sponsor proof</h3><p>After the race, every sponsor gets a report: how long their logo and their car were on screen, and in which moments.</p><p class="on-air">AFTER THE FLAG → SEEN REPORT</p></div>
-      </div>
-      <div class="layer">
-        <div class="px" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i></div>
-        <div><h3>Clips for teams</h3><p>Teams get their own moments cut from the show, ready for their social media and their sponsors.</p><p class="on-air">AFTER THE FLAG → TEAM CLIPS</p></div>
-      </div>
-      <div class="layer">
-        <div class="px" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i></div>
-        <div><h3>Your entry list, on screen</h3><p>Names, numbers and classes come straight from registration, so the graphics are right from the first car off the line.</p><p class="on-air">ON AIR → DRIVER CARDS, CLASSES</p></div>
+<section class="night">
+  <div class="wrap split">
+    <div class="intro">
+      <h2>Who you'll be working with</h2>
+      <p>Two people own 163, and both are at your race.</p>
+      <div class="people">
+        <div>
+          <h3>Andrew Priest</h3>
+          <p class="role">Co-owner</p>
+          <p>Races with his family's team. Builds and runs registration systems and websites for off-road events.</p>
+        </div>
+        <div>
+          <h3>Sean Connell</h3>
+          <p class="role">Co-owner</p>
+          <p>Built the tracking and streaming system our shows run on, and produces the broadcasts.</p>
+        </div>
       </div>
     </div>
+    <figure>
+      <img src="/assets/photos/crew.jpg" width="1200" height="900" alt="Three of the crew grinning at the camera beside the monitor wall during a broadcast." loading="lazy">
+      <figcaption>The crew mid-broadcast, October 2026.</figcaption>
+    </figure>
   </div>
 </section>
 
-<section id="why">
+<section id="contact" class="close">
   <div class="wrap">
-    <div class="why-grid">
-      <div>
-        <p class="mono" style="margin-bottom:16px">03 · Why us</p>
-        <h2 style="margin-bottom:28px">We race.</h2>
-        <p class="big">We race these courses, and we run race registration and race websites. We see the details other crews never see.</p>
-      </div>
-      <ul class="details">
-        <li><span class="k">Classes</span><p>We know why a class starts where it does, and we don't put the wrong number on screen.</p></li>
-        <li><span class="k">The dot</span><p>When a GPS dot stops moving, we know whether that means a flat, a pit stop, or a dead zone, and we say so on air.</p></li>
-        <li><span class="k">Race day</span><p>We know where the course goes quiet, when the field spreads out, and where the story is at 2 AM.</p></li>
-        <li><span class="k">Teams</span><p>We know what a team needs from a broadcast: footage for their sponsors and proof their car was seen.</p></li>
-        <li><span class="k">Promoters</span><p>We know registration, tech and results from the inside, so the show fits how your event actually runs.</p></li>
-      </ul>
-    </div>
+    <h2>Tell us about your race.</h2>
+    <p>Send the race name, the dates and a rough course map. We'll come back with a show plan and a price.</p>
+    <a class="button dark" href="mailto:support@163productions.com?subject=Broadcast%20for%20our%20race">Email 163 Productions</a>
   </div>
 </section>
-
-<section id="how">
-  <div class="wrap">
-    <div class="head">
-      <div><p class="mono">04 · How it works</p><h2>From first call to final report.</h2></div>
-      <p>One crew from planning through the post-race report.</p>
-    </div>
-    <div class="steps">
-      <div><span class="mono">Step 1</span><h3>Scope</h3><p>We walk through your event, course and sponsors, and build a show to fit.</p></div>
-      <div><span class="mono">Step 2</span><h3>Plan the signal</h3><p>Camera positions, connectivity and the onboard installs, mapped before race week.</p></div>
-      <div><span class="mono">Step 3</span><h3>Go live</h3><p>Crew on site, booth on air, every layer running from the first car to the last.</p></div>
-      <div><span class="mono">Step 4</span><h3>Prove it</h3><p>Replays, team clips and sponsor reports delivered after the flag.</p></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="head">
-      <div><p class="mono">05 · Who we work with</p><h2>Built for the whole paddock.</h2></div>
-    </div>
-    <div class="who">
-      <div><h3>Series and promoters</h3><p>A broadcast that makes your event bigger than the people at the start line.</p></div>
-      <div><h3>Teams</h3><p>Onboard cameras without buying the gear, plus clips your sponsors will actually use.</p></div>
-      <div><h3>Sponsors</h3><p>Measured time on screen, not a logo on a banner nobody saw.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="cta">
-  <div class="wrap">
-    <p class="mono" style="margin-bottom:16px">06 · Book a show</p>
-    <h2>Put your race <span class="amber">on air.</span></h2>
-    <p>Tell us the event, the dates and the course. We'll come back with a show plan and a price.</p>
-    <a class="btn primary" href="mailto:support@163productions.com?subject=Race%20production%20inquiry">Email us</a>
-  </div>
-</section>
+</main>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 163 Productions LLC · Las Vegas, NV</span>
+    <span>163 Productions LLC, Las Vegas, Nevada</span>
     <nav aria-label="Footer"><a href="/streameasy/">StreamEasy</a><a href="/privacy">Privacy</a><a href="/streameasy/terms">Terms</a><a href="/support">Support</a></nav>
   </div>
 </footer>
