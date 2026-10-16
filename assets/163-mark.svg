@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 100" fill="currentColor">
+  <!-- 163 Byte Grid core mark. Module: pixel 8, pitch 12. Signal enters at the 1, exits at the 3. -->
+  <g>
+    <rect x="4" y="0" width="8" height="8"/><rect x="28" y="0" width="8" height="8"/>
+    <rect x="16" y="12" width="8" height="8"/>
+    <rect x="4" y="24" width="8" height="8"/><rect x="28" y="24" width="8" height="8"/>
+    <rect x="16" y="36" width="8" height="8"/>
+    <rect x="28" y="48" width="8" height="8"/>
+  </g>
+  <path d="M40 0H66V100H40Z"/>
+  <path fill-rule="evenodd" d="M84 0H148V24H98V38H138L148 48V90L138 100H84L74 90V10Z M110 58H124V78H98V70Z"/>
+  <path d="M156 0H220L230 10V40L224 50L230 60V90L220 100H156V76H206V62H170V38H206V24H156Z"/>
+  <g>
+    <rect x="234" y="92" width="8" height="8"/><rect x="258" y="92" width="8" height="8"/>
+    <rect x="246" y="80" width="8" height="8"/>
+    <rect x="234" y="68" width="8" height="8"/><rect x="258" y="68" width="8" height="8"/>
+    <rect x="246" y="56" width="8" height="8"/>
+    <rect x="234" y="44" width="8" height="8"/>
+  </g>
+</svg>
