@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>163 Productions</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="163 Productions broadcasts desert and off-road races live. Every mile, from the start line to the last car in. Based in Las Vegas.">
+<meta name="description" content="163 Productions runs live off-road race broadcasts built on data: onboard cameras, GPS tracking, engine telemetry, automatic battle detection and race-control dashboards. Based in Las Vegas.">
 <link rel="canonical" href="https://163productions.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://163productions.com/">
 <meta property="og:site_name" content="163 Productions">
-<meta property="og:title" content="163 Productions | Every mile. Live.">
-<meta property="og:description" content="Live broadcasts of desert races, from the start line to the last car in.">
+<meta property="og:title" content="163 Productions | Live race production, built on data">
+<meta property="og:description" content="Cameras, tracking, telemetry and battle detection on one race-control screen, and on air.">
 <meta property="og:image" content="https://163productions.com/assets/photos/v4-hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/163-mark.svg" type="image/svg+xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"163 Productions","url":"https://163productions.com/","logo":"https://163productions.com/assets/163-productions-1600.png","email":"support@163productions.com","slogan":"Every mile. Live."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"163 Productions","url":"https://163productions.com/","logo":"https://163productions.com/assets/163-productions-1600.png","email":"support@163productions.com"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wdth,wght@50..125,300..900&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -73,6 +73,7 @@ figcaption{font:13px/1.5 var(--data);color:var(--muted);margin-top:12px}
 .bug .mono{font-weight:400;letter-spacing:0;color:var(--alkali)}
 .rm{right:3.2cqw;top:3.2cqw;background:rgba(11,13,16,.82);padding:.9cqw 1.6cqw;text-align:right}
 .rm b{display:block;font-size:max(9px,1.05cqw);font-stretch:125%;letter-spacing:.2em;color:var(--caliche);font-weight:600}
+.rm span{display:block;font:max(9px,1cqw)/1.3 var(--data);color:var(--muted);margin-top:.4cqw}
 .rm strong{display:block;font-size:max(22px,4.4cqw);line-height:1;font-stretch:62.5%;font-weight:700;font-variant-numeric:tabular-nums}
 .lower{left:3.2cqw;bottom:4cqw;display:flex;align-items:stretch;background:rgba(11,13,16,.88);max-width:80cqw}
 .lower .num{font-size:max(24px,4.6cqw);font-stretch:62.5%;font-weight:800;padding:.4cqw 1.6cqw;background:var(--alkali);color:var(--night);display:flex;align-items:center}
@@ -111,6 +112,27 @@ figcaption{font:13px/1.5 var(--data);color:var(--muted);margin-top:12px}
 .day h3{font-size:22px}
 .day p{margin:0;color:var(--muted)}
 
+/* race-control console (sample) */
+.console{margin-top:56px;border:1px solid var(--line);background:var(--night);font-family:var(--data)}
+.c-bar{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);font-size:12px;letter-spacing:.08em;color:var(--muted)}
+.c-bar span:first-child{color:var(--alkali)}
+.c-body{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.feeds{display:grid;grid-template-columns:1fr 1fr;gap:2px;padding:2px;align-content:start}
+.feeds figure{position:relative;margin:0;min-width:0}
+.feeds img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:saturate(.8)}
+.feeds figcaption{position:absolute;left:0;right:0;bottom:0;margin:0;padding:6px 8px;background:rgba(11,13,16,.8);font-size:11px;color:var(--alkali);letter-spacing:.04em}
+.feeds .on-air{outline:2px solid var(--amber);outline-offset:-2px}
+.feeds .on-air b{color:var(--amber);font-weight:500;margin-right:6px}
+.c-side{border-left:1px solid var(--line);min-width:0}
+.c-list{padding:14px 16px;border-bottom:1px solid var(--line)}
+.c-list:last-child{border-bottom:0}
+.c-h{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--caliche);margin:0 0 8px}
+.c-list > div{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:10px;padding:6px 0;font-size:14px;color:var(--muted)}
+.c-list > div.hot{color:var(--alkali)}
+.c-list > div.hot span:last-child{color:var(--amber)}
+.c-list .tele{grid-template-columns:repeat(4,minmax(0,1fr))}
+.tele span{font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.tele b{display:block;font:500 20px/1.2 var(--data);color:var(--alkali);letter-spacing:0;text-transform:none}
 /* course map */
 .map{margin-top:72px;position:relative;border:1px solid var(--line);background:var(--night)}
 .map canvas{display:block;width:100%;height:auto}
@@ -151,8 +173,6 @@ figcaption{font:13px/1.5 var(--data);color:var(--muted);margin-top:12px}
 /* close */
 .close{border-top:1px solid var(--line)}
 .lockup{display:block;width:clamp(200px,32vw,300px);height:auto;color:var(--alkali);margin:0 0 48px}
-.close .tag{font:800 clamp(52px,9vw,112px)/.9 var(--display);color:var(--alkali);font-stretch:62.5%;margin:0 0 40px;letter-spacing:-.01em}
-.close .tag span{color:var(--amber)}
 .close-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:end}
 .close p{color:var(--muted);font-size:18px}
 .addr{font:500 18px/1.4 var(--data);color:var(--alkali);word-break:break-all}
@@ -168,6 +188,8 @@ footer a{text-decoration:none;color:var(--muted)}
   .race{grid-template-columns:1fr 1fr}
   .race > div:first-child{grid-column:1 / -1}
   .day > div{grid-template-columns:110px minmax(0,1fr)}
+  .c-body{grid-template-columns:1fr}
+  .c-side{border-left:0;border-top:1px solid var(--line)}
   .day p{grid-column:2}
   .dark-miles img{aspect-ratio:4/3}
   .alone img{aspect-ratio:4/5}
@@ -176,13 +198,13 @@ footer a{text-decoration:none;color:var(--muted)}
   .wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
   section{padding-block:72px}
   .frame img{aspect-ratio:4/5}
-  .rm{display:none}
   .lower{max-width:92cqw}
   .radio div{grid-template-columns:76px minmax(0,1fr);gap:4px 12px;font-size:14px}
   .radio .on,.radio .gap{grid-column:1}
   .radio div span:last-child{grid-column:1 / -1}
   .day > div{grid-template-columns:1fr;gap:6px}
   .day p{grid-column:auto}
+  .c-list .tele{grid-template-columns:1fr 1fr;gap:10px}
   .stats{grid-template-columns:1fr 1fr}
   .stats > div:last-child{grid-column:1 / -1}
   .blocks{grid-template-columns:repeat(15,minmax(0,1fr))}
@@ -200,7 +222,7 @@ footer a{text-decoration:none;color:var(--muted)}
       <span>PRODUCTIONS</span>
     </a>
     <nav aria-label="Main">
-      <a href="#show">The show</a>
+      <a href="#show">The system</a>
       <a href="#seen">Sponsors</a>
       <a href="#we-race">Why us</a>
       <a href="#contact">Book a race</a>
@@ -212,19 +234,19 @@ footer a{text-decoration:none;color:var(--muted)}
 <div class="hero">
   <div class="wrap">
     <div class="frame">
-      <img src="assets/photos/v4-hero.jpg" width="2000" height="1125" alt="A trophy truck charging out of a cloud of dust, lights on, with our on-air graphics over the picture.">
+      <img src="assets/photos/v4-hero.jpg" width="2000" height="1125" alt="A trophy truck charging out of a cloud of dust, with our on-air graphics over it: a live clock, a battle-for-first flag and the truck's engine data.">
       <div class="gfx bug" aria-hidden="true"><i></i>LIVE <span class="mono" id="clock">02:14:07</span></div>
-      <div class="gfx rm" aria-hidden="true"><b>RACE MILE</b><strong>212</strong></div>
-      <div class="gfx lower" aria-hidden="true"><div class="num">7</div><div class="who"><strong>R. Alvarez</strong><span>TROPHY TRUCK · P2 · +4:12 · 61 MPH</span></div></div>
-      <span class="sample">Sample graphics. Racer is made up.</span>
+      <div class="gfx rm" aria-hidden="true"><b>BATTLE FOR P1</b><strong>0:08</strong><span>#7 closing on #22</span></div>
+      <div class="gfx lower" aria-hidden="true"><div class="num">7</div><div class="who"><strong>R. Alvarez</strong><span>TROPHY TRUCK · P2 · 61 MPH · 6,850 RPM · THR 92%</span></div></div>
+      <span class="sample">Sample graphics. Racers and numbers are made up.</span>
     </div>
     <div class="hero-copy">
       <div>
         <p class="label" style="margin:0 0 18px">Live race production</p>
-        <h1>Mile 212 has never been on TV. We broadcast every mile of your race, live.</h1>
+        <h1>We find the battles in your race and put them on screen, live.</h1>
       </div>
       <div>
-        <p>Cameras on course and in the cars, a booth calling it, and every truck on the map. From the start line to the last car in.</p>
+        <p>Live race production built on data. Onboard cameras, GPS tracking and engine telemetry all feed one race-control screen. When two cars start closing in, the system flags it and we cut to it.</p>
         <a class="button" href="#contact">Book a broadcast</a>
       </div>
     </div>
@@ -236,13 +258,13 @@ footer a{text-decoration:none;color:var(--muted)}
   <div class="wrap over">
     <p class="label" id="why" style="margin-bottom:20px">The dark miles</p>
     <p class="big">Most of a desert race happens where nobody can see it. Somewhere past mile 300, a mom is watching a GPS dot that hasn't moved in eleven minutes.</p>
-    <p class="after">We put a camera on those miles. When the dot stops, she sees why. When the truck moves again, she sees that too.</p>
-    <div class="radio" aria-label="Sample race radio from the booth">
-      <div><span class="t">02:14:07</span><span class="on">LIVE</span><span>Car 7 through RM 212. Gap to leader +4:12.</span></div>
-      <div><span class="t">02:19:40</span><span class="gap"></span><span>No signal from car 31 since RM 180. Last seen 01:52. Chase crew en route.</span></div>
-      <div><span class="t">02:26:03</span><span class="gap"></span><span>Car 31 back on course. Replay of the stop is up next.</span></div>
+    <p class="after">Our trackers and cameras go out on course with the cars. When the dot stops, race control sees it in seconds, with the engine data to say why.</p>
+    <div class="radio" aria-label="Sample calls from race control">
+      <div><span class="t">02:14:07</span><span class="on">LIVE</span><span>Battle flagged. Car 7 is eight seconds behind car 22 for the lead and closing. Cutting to 7's onboard.</span></div>
+      <div><span class="t">02:19:40</span><span class="gap"></span><span>Car 31 stopped at RM 180. Coolant read 248°F before it shut down. Team is told.</span></div>
+      <div><span class="t">02:26:03</span><span class="gap"></span><span>Car 31 moving again. Replay of the pass for the lead is up next.</span></div>
     </div>
-    <p class="radio-note">How our booth sounds at 2 a.m. Sample lines.</p>
+    <p class="radio-note">How race control sounds at 2 a.m. Sample lines, made-up cars.</p>
   </div>
 </section>
 
@@ -265,22 +287,45 @@ footer a{text-decoration:none;color:var(--muted)}
   <div class="wrap">
     <div class="show-head">
       <div>
-        <p class="label" style="margin-bottom:20px">The show</p>
-        <h2 id="show-h">We run the whole broadcast, so you can run the race.</h2>
+        <p class="label" style="margin-bottom:20px">The system</p>
+        <h2 id="show-h">One screen runs the whole race.</h2>
       </div>
-      <div>
-        <figure>
-          <img src="assets/photos/v4-room.jpg" width="1400" height="1050" alt="A broadcast control room: operators at a switcher desk in front of a wall of monitors." loading="lazy">
-        </figure>
-        <p style="margin-top:24px">Course cameras, onboard cameras and spectators' phones all feed one switcher. A producer picks the shot. The booth calls the race. It goes out as one show, wherever your fans watch.</p>
+      <p>Every camera, every tracker and every engine we're wired into feeds one race-control screen. The producer sees who's closing, who's stopped and who's pushing, and the show cuts to it.</p>
+    </div>
+    <div class="console" aria-label="Sample race-control dashboard">
+      <div class="c-bar"><span>RACE CONTROL</span><span>SAMPLE · MADE-UP CARS</span><span class="c-clock">02:14:07</span></div>
+      <div class="c-body">
+        <div class="feeds">
+          <figure class="on-air"><img src="assets/photos/v4-hero.jpg" alt="" loading="lazy"><figcaption><b>ON AIR</b> CAR 7 · COURSE CAM RM 212</figcaption></figure>
+          <figure><img src="assets/photos/v4-dust.jpg" alt="" loading="lazy"><figcaption>CAR 22 · COURSE CAM RM 209</figcaption></figure>
+          <figure><img src="assets/photos/v4-amber.jpg" alt="" loading="lazy"><figcaption>CAR 31 · REAR CAM</figcaption></figure>
+          <figure><img src="assets/photos/v4-crowd.jpg" alt="" loading="lazy"><figcaption>FAN · STREAMEASY · RM 150</figcaption></figure>
+        </div>
+        <div class="c-side">
+          <div class="c-list">
+            <p class="c-h">Battles</p>
+            <div class="hot"><span>P1</span><span>#7 → #22</span><span>0:08 ▼</span></div>
+            <div><span>P5</span><span>#88 → #31</span><span>0:41</span></div>
+            <div><span>P9</span><span>#14 → #60</span><span>1:12</span></div>
+          </div>
+          <div class="c-list">
+            <p class="c-h">Alerts</p>
+            <div><span>#31</span><span>Stopped · RM 180</span><span>6 min</span></div>
+          </div>
+          <div class="c-list">
+            <p class="c-h">Car 7 · telemetry</p>
+            <div class="tele"><span><b>6,850</b>RPM</span><span><b>92%</b>Throttle</span><span><b>61</b>MPH</span><span><b>208°F</b>Coolant</span></div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="day" aria-label="Race day, as we run it">
-      <div><span class="stamp">DAY BEFORE</span><h3>Cameras go in at tech.</h3><p>We install onboard cameras during inspection. Teams rent them from us, so nobody buys gear for one race. Names, numbers and classes load straight from registration.</p></div>
-      <div><span class="stamp">07:00</span><h3>First car off the line, on air.</h3><p>The booth goes live. The leaderboard is on screen from the first timing point.</p></div>
-      <div><span class="stamp">RM 0 TO 480</span><h3>Every car on the map.</h3><p>GPS on every truck, updating on air. When one stops, we usually know why, and we say so. Spectators can join the show with our <a href="/streameasy/">StreamEasy</a> app.</p></div>
-      <div><span class="stamp">02:14</span><h3>Still live.</h3><p>The leaders finished hours ago. We stay on until the last car is in.</p></div>
-      <div><span class="stamp">MONDAY</span><h3>Proof in the inbox.</h3><p>Sponsors get their Seen Report. Teams get their clips. The full replay goes up for everyone else.</p></div>
+    <div class="day" aria-label="What the system does">
+      <div><span class="stamp">CAMERAS</span><h3>Onboard, on course and in the crowd.</h3><p>Teams rent onboard cameras from us, and we install them at tech. Course cameras cover the spots that matter. Spectators can send in a feed with our <a href="/streameasy/">StreamEasy</a> app.</p></div>
+      <div><span class="stamp">TRACKING</span><h3>Every tracked car on the map.</h3><p>GPS positions update the course map and the leaderboard live. Names, numbers and classes come straight from registration.</p></div>
+      <div><span class="stamp">TELEMETRY</span><h3>The engine, on screen.</h3><p>Our telemetry box reads the car's engine computer and sends RPM, throttle, speed and temperatures live. We can put it over any feed.</p></div>
+      <div><span class="stamp">BATTLES</span><h3>The system finds the fight.</h3><p>It watches the gap between every pair of cars. When one starts closing on another, it flags the battle, so the producer can cut there before the pass, not after.</p></div>
+      <div><span class="stamp">DASHBOARDS</span><h3>Race control sees it all.</h3><p>Every feed, every car, every alert on one screen. When a dot stops, we know in seconds. Teams and sponsors get their own view.</p></div>
+      <div><span class="stamp">AFTER</span><h3>Proof in the inbox.</h3><p>Sponsors get their Seen Report. Teams get their clips and their data.</p></div>
     </div>
     <div class="map">
       <canvas id="course" width="1200" height="520" aria-label="A sample course drawn in pixels, with an amber pixel running it like a truck on our tracking map"></canvas>
@@ -299,7 +344,7 @@ footer a{text-decoration:none;color:var(--muted)}
     <div>
       <div class="stats">
         <div><strong>41:08</strong><span>Logo on screen, minutes:seconds</span></div>
-        <div><strong>212</strong><span>Race miles covered live from the car</span></div>
+        <div><strong>6</strong><span>Battles your car was in, on air</span></div>
         <div><strong>18,400</strong><span>Peak live viewers on the stream</span></div>
       </div>
       <div class="blocks" id="blocks" aria-hidden="true"></div>
@@ -356,8 +401,7 @@ footer a{text-decoration:none;color:var(--muted)}
 <section id="contact" class="close" aria-labelledby="contact-h">
   <div class="wrap">
     <svg class="lockup" viewBox="0 0 815.66 416.12" role="img" aria-label="163 Productions"><rect x="49.34" width="29.61" height="29.61" fill="currentColor"/><rect width="29.61" height="29.61" fill="currentColor"/><rect y="93.16" width="29.61" height="29.61" fill="currentColor"/><rect x="49.34" y="93.16" width="29.61" height="29.61" fill="currentColor"/><rect x="49.34" y="46.58" width="29.61" height="29.61" fill="currentColor"/><rect x="49.34" y="139.74" width="29.61" height="29.61" fill="currentColor"/><rect x="699.98" y="304.36" width="29.61" height="29.61" style="fill:var(--amber)"/><rect x="743.75" y="304.36" width="29.61" height="29.61" fill="currentColor"/><rect x="743.75" y="263.15" width="29.61" height="29.61" fill="currentColor"/><path d="M93.12,333.94h86.06V1.95h-50.06l-36,36v295.99Z" fill="currentColor"/><path d="M731.08,291.72v-46.95h42.28v-53.07l-35.86-35.18,35.86-35.18v-47.37c-28.12-28.12-43.89-43.89-72.01-72.01h-198.32v76.19h180.39v55.27h-113.48v69.88h113.48v55.27h-153.39l-27,27v48.4h182.71v-42.25h45.34Z" fill="currentColor"/><rect x="786.06" y="304.36" width="29.61" height="29.61" fill="currentColor"/><path d="M426.19,127.34h-76.6l-45.16,45.4v30.66h98.93v54.48h-105.94c-3.37-3.39-6.44-6.48-9.35-9.4v-79.78L454.82,1.95h-125.05l-116.39,116.39v152.6c24.47,24.6,38.19,38.4,62.67,63h150.15c24.47-24.6,38.19-38.4,62.67-63v-80.6c-24.47-24.6-38.19-38.4-62.67-63Z" fill="currentColor"/><path d="M93.12,367.59h31.35c5.17,0,7.34.22,9.21.94,4.99,1.8,6.74,5.83,6.74,15.48,0,7.34-.96,11.38-3.43,13.9-2.11,2.23-5.17,3.02-11.43,3.02h-23.23v14.69h-9.21v-48.03ZM122.97,392c6.44,0,8.12-1.51,8.12-7.42,0-6.48-1.5-8.06-7.7-8.06h-21.06v15.48h20.64Z" fill="currentColor"/><path d="M161.05,367.59h34c7.04,0,10.23,1.01,12.4,3.82,1.75,2.3,2.59,6.05,2.59,11.52s-.54,8.21-1.74,10.01c-1.2,1.8-2.65,2.67-5.05,3.17,5.05.5,6.2,2.38,6.14,10.01v9.5h-9.33v-7.2c-.12-6.55-1.38-7.85-7.46-7.78h-22.32v14.98h-9.21v-48.03ZM192.28,391.78c6.74,0,8.42-1.44,8.42-7.2,0-6.62-1.38-7.99-8.24-7.99h-22.2v15.19h22.02Z" fill="currentColor"/><path d="M281.39,371.83c1.68,2.23,2.59,5.33,2.95,10.15.18,2.23.24,4.82.24,10.15,0,12.03-.96,16.63-4.03,19.87-2.23,2.3-5.24,3.46-10.29,3.82-1.93.14-9.21.29-14.8.29-12.28,0-15.58-.43-19.01-2.66-2.65-1.73-4.39-5.04-4.93-9.79-.36-3.17-.48-5.76-.48-13.61,0-11.23.9-15.7,3.79-18.72,2.17-2.3,4.99-3.38,10.17-3.89,2.05-.22,8.06-.36,15.4-.36,14.2,0,17.99.86,21,4.75ZM240.47,391.64c0,9.36.6,12.39,2.83,13.75,2.23,1.44,4.15,1.66,15.64,1.66,10.35,0,12.94-.5,14.56-2.66,1.38-1.8,1.81-4.9,1.81-13.03,0-15.05-.12-15.19-17.45-15.19s-17.39.22-17.39,15.48Z" fill="currentColor"/><path d="M306.35,367.59h33.34c7.64,0,12.58,1.73,15.28,5.26,2.47,3.31,3.43,8.71,3.43,19.3s-1.14,15.99-4.21,19.37c-2.53,2.81-6.8,4.1-13.54,4.1h-34.3v-48.03ZM338.6,406.83c3.25,0,5.48-.5,7.1-1.58,2.35-1.51,3.31-5.18,3.31-12.6,0-13.32-1.75-15.99-10.41-15.99h-22.99v30.17h22.99Z" fill="currentColor"/><path d="M429.82,367.59v30.24c0,9.15-1.2,12.89-5.05,15.48-3.43,2.38-6.86,2.81-21.06,2.81s-18.11-1.01-21.06-4.97c-2.05-2.81-2.65-6.12-2.65-14.98v-28.59h9.27v25.13q0,6.41.3,8.42c.66,5.11,3.01,6.05,15.04,6.05,5.42,0,10.41-.29,11.79-.72,2.35-.72,3.61-2.45,3.97-5.47q.12-.86.18-7.56v-25.85h9.27Z" fill="currentColor"/><path d="M501.11,398.33v.79c0,6.84-.6,10.22-2.29,12.38-2.77,3.67-6.56,4.54-19.62,4.54-16.01,0-18.95-.36-22.5-2.66-2.29-1.51-3.79-4.1-4.57-7.78-.54-2.45-.84-8.07-.84-14.83,0-13.39,1.14-17.93,5.36-20.74,3.43-2.3,7.58-2.88,20.28-2.88,13.9,0,18.53.94,21.06,4.32,1.75,2.23,2.65,6.41,2.65,12.24h-8.85c0-6.98-1.2-7.63-14.44-7.63-9.39,0-12.09.29-14.02,1.51-2.29,1.44-2.77,4.1-2.77,14.47,0,13.97.96,15.05,13.48,15.05l12.28-.29c4.33-.5,5.84-2.45,5.84-7.42v-1.08h8.97Z" fill="currentColor"/><path d="M538.41,376.59h-18.89v-9h46.99v9h-18.83v39.03h-9.27v-39.03Z" fill="currentColor"/><path d="M586,367.59h9.27v48.03h-9.27v-48.03Z" fill="currentColor"/><path d="M667.47,371.83c1.69,2.23,2.59,5.33,2.95,10.15.18,2.23.24,4.82.24,10.15,0,12.03-.96,16.63-4.03,19.87-2.23,2.3-5.24,3.46-10.29,3.82-1.93.14-9.21.29-14.8.29-12.28,0-15.58-.43-19.01-2.66-2.65-1.73-4.39-5.04-4.93-9.79-.36-3.17-.48-5.76-.48-13.61,0-11.23.9-15.7,3.79-18.72,2.17-2.3,4.99-3.38,10.17-3.89,2.05-.22,8.06-.36,15.4-.36,14.2,0,17.99.86,21,4.75ZM626.56,391.64c0,9.36.6,12.39,2.83,13.75,2.23,1.44,4.15,1.66,15.64,1.66,10.35,0,12.94-.5,14.56-2.66,1.38-1.8,1.81-4.9,1.81-13.03,0-15.05-.12-15.19-17.45-15.19s-17.39.22-17.39,15.48Z" fill="currentColor"/><path d="M692.44,367.59h14.38l30.15,39.96-.18-39.96h8.85v48.03h-14.44l-29.97-39.75.18,39.75h-8.97v-48.03Z" fill="currentColor"/><path d="M776.49,400.42v.5c0,3.1.48,4.75,1.62,5.54,1.44,1.01,4.57,1.44,10.47,1.44,4.99,0,8.12-.22,12.46-.86,2.29-.36,3.43-.86,4.15-1.87.78-1.15,1.2-2.59,1.2-4.1,0-2.81-1.02-4.18-3.79-4.9-1.68-.43-1.74-.43-12.7-.5h-5.78c-8.48-.07-11.79-.86-14.02-3.31-1.93-2.02-2.83-5.04-2.83-9.29,0-5.33,1.08-9.72,3.01-11.74,2.71-3.02,8.85-4.18,22.08-4.18,8.06,0,12.4.36,15.16,1.37,4.99,1.73,6.74,4.97,6.74,12.39v.94h-9.03c-.06-2.81-.66-4.25-1.93-4.97-1.69-.94-5.54-1.51-9.99-1.51-7.58,0-12.88.58-14.68,1.66-1.44.79-2.17,2.45-2.17,4.68,0,2.09.54,3.46,1.69,4.25,1.38.94,3.67,1.22,9.99,1.22h6.8c12.03,0,15.71.79,18.23,4.03,1.69,2.09,2.47,5.26,2.47,10.01,0,5.04-.9,8.5-2.89,10.8-2.65,3.02-7.82,4.03-21.36,4.03-14.44,0-18.95-.79-21.48-3.67-1.81-2.09-2.59-4.97-2.59-9.5,0-.43,0-1.51.06-2.45h9.09Z" fill="currentColor"/></svg>
-    <p class="tag" aria-hidden="true">Every mile. <span>Live.</span></p>
-    <div class="close-grid">
+        <div class="close-grid">
       <div>
         <h2 id="contact-h">Tell us about your race.</h2>
         <p style="margin-top:20px">Send the race name, the dates and a rough course map. We'll come back with a show plan and a price.</p>
