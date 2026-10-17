@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>163 Productions</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="163 Productions runs live off-road race broadcasts built on data: onboard cameras, GPS tracking, engine telemetry, automatic battle detection and race-control dashboards. Based in Las Vegas.">
+<meta name="description" content="163 Productions produces live broadcasts of off-road races. Onboard and course cameras, GPS tracking, engine data on screen, and gaps watched all race so the camera is on the battle. Las Vegas.">
 <link rel="canonical" href="https://163productions.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://163productions.com/">
 <meta property="og:site_name" content="163 Productions">
-<meta property="og:title" content="163 Productions | Live race production, built on data">
-<meta property="og:description" content="Cameras, tracking, telemetry and battle detection on one race-control screen, and on air.">
+<meta property="og:title" content="163 Productions | Live off-road race production">
+<meta property="og:description" content="Car 7 is 0:08 back and closing. Our camera is already in the car.">
 <meta property="og:image" content="https://163productions.com/assets/photos/v4-hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/163-mark.svg" type="image/svg+xml">
@@ -26,6 +26,7 @@
   --night:#0B0D10; --night-2:#12151A; --line:#232830;
   --alkali:#ECEDE9; --muted:#A7ACA8; --caliche:#B5A182; --steel:#59626B;
   --amber:#FFB000;
+  --red:#E5484D;
   --display:"Saira",system-ui,sans-serif;
   --text:"IBM Plex Sans",system-ui,sans-serif;
   --data:"IBM Plex Mono",ui-monospace,Menlo,monospace;
@@ -129,7 +130,7 @@ figcaption{font:13px/1.5 var(--data);color:var(--muted);margin-top:12px}
 .c-h{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--caliche);margin:0 0 8px}
 .c-list > div{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:10px;padding:6px 0;font-size:14px;color:var(--muted)}
 .c-list > div.hot{color:var(--alkali)}
-.c-list > div.hot span:last-child{color:var(--amber)}
+.c-list > div.alert{color:var(--red)}
 .c-list .tele{grid-template-columns:repeat(4,minmax(0,1fr))}
 .tele span{font-size:11px;letter-spacing:.06em;text-transform:uppercase}
 .tele b{display:block;font:500 20px/1.2 var(--data);color:var(--alkali);letter-spacing:0;text-transform:none}
@@ -222,7 +223,7 @@ footer a{text-decoration:none;color:var(--muted)}
       <span>PRODUCTIONS</span>
     </a>
     <nav aria-label="Main">
-      <a href="#show">The system</a>
+      <a href="#show">Race control</a>
       <a href="#seen">Sponsors</a>
       <a href="#we-race">Why us</a>
       <a href="#contact">Book a race</a>
@@ -243,10 +244,10 @@ footer a{text-decoration:none;color:var(--muted)}
     <div class="hero-copy">
       <div>
         <p class="label" style="margin:0 0 18px">Live race production</p>
-        <h1>We find the battles in your race and put them on screen, live.</h1>
+        <h1>Car 7 is 0:08 back and closing. Our camera is already in the car.</h1>
       </div>
       <div>
-        <p>Live race production built on data. Onboard cameras, GPS tracking and engine telemetry all feed one race-control screen. When two cars start closing in, the system flags it and we cut to it.</p>
+        <p>We produce live broadcasts of off-road races. GPS on the cars, cameras on course and in the cockpit, engine data on screen. We watch every gap all race, so when one starts closing, we cut to it.</p><p>The racers do the driving. We point the camera.</p>
         <a class="button" href="#contact">Book a broadcast</a>
       </div>
     </div>
@@ -258,13 +259,14 @@ footer a{text-decoration:none;color:var(--muted)}
   <div class="wrap over">
     <p class="label" id="why" style="margin-bottom:20px">The dark miles</p>
     <p class="big">Most of a desert race happens where nobody can see it. Somewhere past mile 300, a mom is watching a GPS dot that hasn't moved in eleven minutes.</p>
-    <p class="after">Our trackers and cameras go out on course with the cars. When the dot stops, race control sees it in seconds, with the engine data to say why.</p>
+    <p class="after">When that dot stops, we see it too, with the mile, the minute and the last engine reading. If we know why, we say so. If we don't, we say that.</p>
     <div class="radio" aria-label="Sample calls from race control">
-      <div><span class="t">02:14:07</span><span class="on">LIVE</span><span>Battle flagged. Car 7 is eight seconds behind car 22 for the lead and closing. Cutting to 7's onboard.</span></div>
-      <div><span class="t">02:19:40</span><span class="gap"></span><span>Car 31 stopped at RM 180. Coolant read 248°F before it shut down. Team is told.</span></div>
-      <div><span class="t">02:26:03</span><span class="gap"></span><span>Car 31 moving again. Replay of the pass for the lead is up next.</span></div>
+      <div><span class="t">02:14:07</span><span class="on">LIVE</span><span>Battle for P1. Car 7 is 0:08 behind car 22 at RM 212, closing. On 7's onboard.</span></div>
+      <div><span class="t">02:19:40</span><span class="gap"></span><span>Car 31 stopped at RM 180. Last coolant reading 248°F. Team notified.</span></div>
+      <div><span class="t">02:23:15</span><span class="gap"></span><span>No video from car 31 since 02:19. Tracker still reporting. We'll show it when it's back.</span></div>
+      <div><span class="t">02:26:03</span><span class="gap"></span><span>Car 7 passes car 22 at RM 219. Replay is up next.</span></div>
     </div>
-    <p class="radio-note">How race control sounds at 2 a.m. Sample lines, made-up cars.</p>
+    <p class="radio-note">How race control sounds at 2 a.m. Sample lines. Made-up cars.</p>
   </div>
 </section>
 
@@ -287,10 +289,10 @@ footer a{text-decoration:none;color:var(--muted)}
   <div class="wrap">
     <div class="show-head">
       <div>
-        <p class="label" style="margin-bottom:20px">The system</p>
-        <h2 id="show-h">One screen runs the whole race.</h2>
+        <p class="label" style="margin-bottom:20px">Race control</p>
+        <h2 id="show-h">At 02:14 we're watching 4 feeds, 3 battles and 1 stopped car.</h2>
       </div>
-      <p>Every camera, every tracker and every engine we're wired into feeds one race-control screen. The producer sees who's closing, who's stopped and who's pushing, and the show cuts to it.</p>
+      <p>This is our race-control screen, with made-up cars. Camera feeds on the left. On the right, the gaps tracking is watching, the alerts, and the engine data from the car on air. The producer cuts from here.</p>
     </div>
     <div class="console" aria-label="Sample race-control dashboard">
       <div class="c-bar"><span>RACE CONTROL</span><span>SAMPLE · MADE-UP CARS</span><span class="c-clock">02:14:07</span></div>
@@ -310,7 +312,7 @@ footer a{text-decoration:none;color:var(--muted)}
           </div>
           <div class="c-list">
             <p class="c-h">Alerts</p>
-            <div><span>#31</span><span>Stopped · RM 180</span><span>6 min</span></div>
+            <div class="alert"><span>#31</span><span>Stopped · RM 180</span><span>6 min</span></div>
           </div>
           <div class="c-list">
             <p class="c-h">Car 7 · telemetry</p>
@@ -319,13 +321,14 @@ footer a{text-decoration:none;color:var(--muted)}
         </div>
       </div>
     </div>
-    <div class="day" aria-label="What the system does">
-      <div><span class="stamp">CAMERAS</span><h3>Onboard, on course and in the crowd.</h3><p>Teams rent onboard cameras from us, and we install them at tech. Course cameras cover the spots that matter. Spectators can send in a feed with our <a href="/streameasy/">StreamEasy</a> app.</p></div>
-      <div><span class="stamp">TRACKING</span><h3>Every tracked car on the map.</h3><p>GPS positions update the course map and the leaderboard live. Names, numbers and classes come straight from registration.</p></div>
-      <div><span class="stamp">TELEMETRY</span><h3>The engine, on screen.</h3><p>Our telemetry box reads the car's engine computer and sends RPM, throttle, speed and temperatures live. We can put it over any feed.</p></div>
-      <div><span class="stamp">BATTLES</span><h3>The system finds the fight.</h3><p>It watches the gap between every pair of cars. When one starts closing on another, it flags the battle, so the producer can cut there before the pass, not after.</p></div>
-      <div><span class="stamp">DASHBOARDS</span><h3>Race control sees it all.</h3><p>Every feed, every car, every alert on one screen. When a dot stops, we know in seconds. Teams and sponsors get their own view.</p></div>
-      <div><span class="stamp">AFTER</span><h3>Proof in the inbox.</h3><p>Sponsors get their Seen Report. Teams get their clips and their data.</p></div>
+    <div class="day" aria-label="How we cover a race">
+      <div><span class="stamp">DAY BEFORE</span><h3>Cameras go in at tech.</h3><p>We install onboard cameras during inspection. Teams rent them per race, so nobody buys a camera for one weekend. Spectators can add a feed from their phone with <a href="/streameasy/">StreamEasy</a>.</p></div>
+      <div><span class="stamp">GPS</span><h3>Every tracked car is on the map.</h3><p>Positions update the course map and the leaderboard live. Names, numbers and classes come from registration, so the graphics match the entry list.</p></div>
+      <div><span class="stamp">RPM · THR · °F</span><h3>The engine reads out on screen.</h3><p>Our telemetry box reads the engine computer: RPM, throttle, speed, temperatures. When a truck slows at <span class="mono">RM 180</span>, you can see whether it was the driver or the motor.</p></div>
+      <div><span class="stamp">GAP 0:41 → 0:08</span><h3>The gaps pick the shot.</h3><p>Tracking measures the gap between cars all race. When one drops from <span class="mono">0:41</span> to <span class="mono">0:08</span>, it gets flagged, and the producer cuts there before the pass.</p></div>
+      <div><span class="stamp">SIGNAL LOST</span><h3>We report it with the time.</h3><p>When a dot stops or a feed drops, race control logs the mile and the minute. If we don't know why, we say we don't know.</p></div>
+      <div><span class="stamp">SHOW HOURS</span><h3>The promoter sets them.</h3><p>Before race day you get the plan in writing: the hours we're on air, which miles have cameras, and which are tracking only.</p></div>
+      <div><span class="stamp">MONDAY</span><h3>The numbers go out.</h3><p>Sponsors get their Seen Report: minutes on screen, every frame. Teams get their clips and their engine data.</p></div>
     </div>
     <div class="map">
       <canvas id="course" width="1200" height="520" aria-label="A sample course drawn in pixels, with an amber pixel running it like a truck on our tracking map"></canvas>
@@ -358,8 +361,8 @@ footer a{text-decoration:none;color:var(--muted)}
     <div>
       <p class="label" style="margin-bottom:20px">Why us</p>
       <h2 id="race-h">We race these courses too.</h2>
-      <p>We also build the registration systems some of these races run on. So we know why a class starts where it does, and we never put the wrong number on screen.</p>
-      <p>A stopped dot can mean a flat, a pit stop or a dead zone. We know which, and we know what a team needs from a broadcast: footage for their sponsors, and proof their car was seen.</p>
+      <p>We also build the registration systems some of these races run on. We know why a class starts where it does, and every number on screen is checked against the entry list.</p>
+      <p>A stopped dot can mean a flat, a pit stop or a dead zone. We've sat through all three. A team needs two things from a broadcast: footage for its sponsors, and proof the car was seen.</p>
     </div>
     <figure>
       <img src="assets/photos/v4-dust.jpg" width="1000" height="1250" alt="A trophy truck sliding through a turn, dust rolling off the rear tires." loading="lazy">
@@ -387,7 +390,7 @@ footer a{text-decoration:none;color:var(--muted)}
       <div>
         <p class="label">Co-owner</p>
         <h3>Andrew Priest</h3>
-        <p>Races with his family's team. Builds the registration systems and websites off-road events run on.</p>
+        <p>Races with the Priest family team. Builds the registration systems and websites off-road events run on.</p>
       </div>
       <div>
         <p class="label">Co-owner</p>
@@ -404,7 +407,7 @@ footer a{text-decoration:none;color:var(--muted)}
         <div class="close-grid">
       <div>
         <h2 id="contact-h">Tell us about your race.</h2>
-        <p style="margin-top:20px">Send the race name, the dates and a rough course map. We'll come back with a show plan and a price.</p>
+        <p style="margin-top:20px">Send the race name, the dates and a rough course map. We'll come back with a show plan, the miles we can put on air, and a price.</p>
       </div>
       <div>
         <p class="label" style="margin-bottom:10px">Email</p>
