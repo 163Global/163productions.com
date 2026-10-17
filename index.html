@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>163 Productions</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="163 Productions produces live broadcasts of off-road races. Onboard and course cameras, GPS tracking, engine data on screen, and gaps watched all race so the camera is on the battle. Las Vegas.">
+<meta name="description" content="163 Productions broadcasts off-road races live for the promoters who run them. In-car, aerial and trackside cameras, our own leaderboard and track map from live tracking, and announcers who know every racer's story. Las Vegas.">
 <link rel="canonical" href="https://163productions.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://163productions.com/">
 <meta property="og:site_name" content="163 Productions">
-<meta property="og:title" content="163 Productions | Live off-road race production">
-<meta property="og:description" content="Car 7 is 0:08 back and closing. Our camera is already in the car.">
+<meta property="og:title" content="163 Productions | Live off-road race broadcasts">
+<meta property="og:description" content="We broadcast your race live, in your brand, with every tracked car on the board and your sponsors on screen.">
 <meta property="og:image" content="https://163productions.com/assets/photos/v4-hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/163-mark.svg" type="image/svg+xml">
@@ -20,13 +20,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wdth,wght@50..125,300..900&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: the page is a broadcast. Night Run ground, photos graded warm-dark,
-   one Alkali band (the Seen Report), and one amber signal per screen. */
+/* Layout: the page sells a promoter's broadcast. 163's own look (Night Run, Saira,
+   Plex) frames the page; the sample broadcast graphics wear a made-up race's brand,
+   because on race day the graphics are the race's, not ours. */
 :root{
   --night:#0B0D10; --night-2:#12151A; --line:#232830;
   --alkali:#ECEDE9; --muted:#A7ACA8; --caliche:#B5A182; --steel:#59626B;
   --amber:#FFB000;
   --red:#E5484D;
+  /* sample race brands (not 163's): Cinder Basin 400, High Lonesome 250 */
+  --cb:#B3261E; --cb-ink:#F3ECDF; --cb-deep:#1A0F0D;
+  --hl:#2F7D78; --hl-ink:#EFE6D2; --hl-deep:#0E1A19;
   --display:"Saira",system-ui,sans-serif;
   --text:"IBM Plex Sans",system-ui,sans-serif;
   --data:"IBM Plex Mono",ui-monospace,Menlo,monospace;
@@ -40,8 +44,8 @@ a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
 a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
 .wrap{max-width:1180px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
 h1,h2,h3{font-family:var(--display);font-stretch:75%;font-weight:700;line-height:1.02;margin:0;text-wrap:balance;letter-spacing:-.005em}
-h1{font-size:clamp(38px,5.4vw,48px)}
-h2{font-size:clamp(32px,4.4vw,48px);max-width:18ch}
+h1{font-size:clamp(36px,5.2vw,48px)}
+h2{font-size:clamp(30px,4.2vw,46px);max-width:20ch}
 h3{font-size:22px;font-stretch:87.5%;font-weight:600;line-height:1.2}
 p{margin:0 0 1em;max-width:60ch}
 .label{font:600 12px/1.2 var(--display);font-stretch:125%;letter-spacing:.18em;text-transform:uppercase;color:var(--caliche)}
@@ -51,125 +55,137 @@ p{margin:0 0 1em;max-width:60ch}
 .button:hover{background:#fff}
 section{padding-block:104px}
 figure{margin:0}
-figcaption{font:13px/1.5 var(--data);color:var(--muted);margin-top:12px}
+figcaption,.note{font:13px/1.5 var(--data);color:var(--muted);margin-top:12px}
+.head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:64px;align-items:end;margin-bottom:56px}
+.head p{color:var(--muted);font-size:18px;margin:0}
+.head .label{margin-bottom:20px;display:block}
 
 /* header */
 .top{position:absolute;inset:0 0 auto;z-index:5;padding-top:env(safe-area-inset-top,0px)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand{display:flex;align-items:center;text-decoration:none}
 .brand svg{height:48px;width:auto;color:var(--alkali)}
-.brand span{font:600 11px/1 var(--display);font-stretch:125%;letter-spacing:.24em;color:var(--alkali)}
 .top nav{display:flex;gap:28px;font:500 13px/1 var(--display);font-stretch:112.5%;letter-spacing:.12em;text-transform:uppercase}
 .top nav a{text-decoration:none;color:var(--muted)}
 .top nav a:hover{color:var(--alkali)}
 
-/* hero: a frame from the show */
+/* sample broadcast frame, in the race's brand */
 .hero{position:relative;padding-top:calc(76px + env(safe-area-inset-top,0px))}
-.frame{position:relative;container-type:inline-size;background:var(--night);overflow:hidden}
+.frame{position:relative;container-type:inline-size;background:var(--cb-deep);overflow:hidden}
 .frame img{width:100%;aspect-ratio:16/9;object-fit:cover}
-.frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,13,16,.35),rgba(11,13,16,0) 30%,rgba(11,13,16,0) 62%,rgba(11,13,16,.6))}
-.gfx{position:absolute;z-index:1;font-family:var(--display);color:var(--alkali)}
-.bug{left:3.2cqw;top:3.2cqw;display:flex;align-items:center;gap:1.1cqw;background:rgba(11,13,16,.82);padding:.9cqw 1.4cqw;font-size:max(10px,1.45cqw);font-weight:700;font-stretch:112.5%;letter-spacing:.14em}
-.bug i{width:max(7px,.9cqw);height:max(7px,.9cqw);background:var(--amber);display:block}
-.bug .mono{font-weight:400;letter-spacing:0;color:var(--alkali)}
-.rm{right:3.2cqw;top:3.2cqw;background:rgba(11,13,16,.82);padding:.9cqw 1.6cqw;text-align:right}
-.rm b{display:block;font-size:max(9px,1.05cqw);font-stretch:125%;letter-spacing:.2em;color:var(--caliche);font-weight:600}
-.rm span{display:block;font:max(9px,1cqw)/1.3 var(--data);color:var(--muted);margin-top:.4cqw}
-.rm strong{display:block;font-size:max(22px,4.4cqw);line-height:1;font-stretch:62.5%;font-weight:700;font-variant-numeric:tabular-nums}
-.lower{left:3.2cqw;bottom:4cqw;display:flex;align-items:stretch;background:rgba(11,13,16,.88);max-width:80cqw}
-.lower .num{font-size:max(24px,4.6cqw);font-stretch:62.5%;font-weight:800;padding:.4cqw 1.6cqw;background:var(--alkali);color:var(--night);display:flex;align-items:center}
-.lower .who{padding:.9cqw 1.8cqw;display:flex;flex-direction:column;justify-content:center}
-.lower .who strong{font-size:max(14px,2.2cqw);font-stretch:87.5%;line-height:1.1}
-.lower .who span{font:max(10px,1.25cqw)/1.3 var(--data);color:var(--muted)}
-.sample{position:absolute;right:3.2cqw;bottom:2cqw;z-index:1;font:max(9px,1cqw)/1 var(--data);color:rgba(236,237,233,.55)}
+.frame::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(26,15,13,0) 50%,rgba(26,15,13,.55))}
+.g{position:absolute;z-index:1;font-family:var(--display);color:var(--cb-ink)}
+.partner{left:2.4cqw;top:2.4cqw;width:19cqw;background:var(--cb-ink);color:var(--cb-deep);text-align:center}
+.partner b{display:block;background:var(--cb);color:var(--cb-ink);font-size:max(8px,1.05cqw);letter-spacing:.2em;font-stretch:112.5%;padding:.6cqw 0}
+.partner span{display:block;padding:1.8cqw 0;font-size:max(10px,1.6cqw);font-weight:800;font-stretch:75%;letter-spacing:.04em}
+.board{right:0;top:0;width:34cqw;background:rgba(26,15,13,.9);display:flex;flex-direction:column}
+.board .bh{background:var(--cb);padding:1.4cqw 1.8cqw}
+.board .bh strong{display:block;font-size:max(13px,2.4cqw);font-stretch:62.5%;font-weight:800;line-height:1}
+.board .bh span{display:block;font-size:max(7px,.95cqw);letter-spacing:.18em;font-stretch:112.5%;margin-top:.5cqw}
+.board .cls{padding:1cqw 1.8cqw;font-size:max(10px,1.7cqw);font-stretch:62.5%;font-weight:700;color:#E9B6A8;border-bottom:1px solid rgba(243,236,223,.12)}
+.board ol{list-style:none;margin:0;padding:0}
+.board li{display:grid;grid-template-columns:2.6cqw 5.4cqw minmax(0,1fr) auto;gap:1cqw;align-items:center;padding:.9cqw 1.8cqw;border-bottom:1px solid rgba(243,236,223,.08);font-size:max(9px,1.5cqw);font-stretch:75%;font-weight:700}
+.board li .n{color:#E9B6A8}
+.board li .t{font:max(8px,1.2cqw)/1 var(--data);color:var(--cb-ink);text-align:right}
+.board li.up{background:rgba(179,38,30,.35)}
+.ticker{left:0;right:0;bottom:0;height:6.2cqw;background:var(--cb-deep);border-top:.3cqw solid var(--cb);display:flex;align-items:center;gap:2cqw;padding-right:2cqw;font-size:max(9px,1.6cqw);font-stretch:75%;font-weight:700;white-space:nowrap;overflow:hidden}
+.ticker b{background:var(--cb);height:100%;display:flex;align-items:center;padding:0 2cqw;letter-spacing:.14em;font-stretch:100%}
+.ticker span{color:#E9B6A8}
+.sample{position:absolute;left:2.4cqw;bottom:8cqw;z-index:1;font:max(9px,1cqw)/1 var(--data);color:rgba(243,236,223,.7)}
 .hero-copy{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:end;padding-block:48px 24px}
 .hero-copy p{font-size:19px;color:var(--muted);margin:0 0 24px}
+.watch{font:14px/1.5 var(--data);color:var(--muted);margin-top:18px}
+.watch a{color:var(--alkali)}
 
-/* why: the dark miles */
-.dark-miles{position:relative;padding:0}
-.dark-miles img{width:100%;aspect-ratio:16/7;object-fit:cover}
-.dark-miles .over{padding-block:72px 0}
-.dark-miles .big{font:500 clamp(26px,3.2vw,36px)/1.25 var(--display);font-stretch:87.5%;max-width:28ch;margin:0}
-.dark-miles .after{font-size:19px;color:var(--muted);margin-top:24px;max-width:54ch}
-
-/* race radio */
-.radio{margin-top:56px;border-top:1px solid var(--line)}
-.radio div{display:grid;grid-template-columns:110px 56px minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--line);font:15px/1.5 var(--data)}
-.radio .t{color:var(--muted)}
-.radio .on{color:var(--amber);font-weight:500}
-.radio-note{font:12px/1.4 var(--data);color:var(--steel);margin-top:12px}
-
-/* light in the dust */
-.light{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px;align-items:center}
-.light p{color:var(--muted);font-size:18px}
-.light h2{margin-bottom:24px}
-
-/* the show */
-.show-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start}
-.show-head p{color:var(--muted);font-size:18px}
-.day{margin-top:64px;border-top:1px solid var(--line)}
-.day > div{display:grid;grid-template-columns:150px minmax(0,4fr) minmax(0,7fr);gap:24px;padding:26px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.day .stamp{font:500 15px/1.3 var(--data);color:var(--caliche)}
-.day h3{font-size:22px}
-.day p{margin:0;color:var(--muted)}
-
-/* race-control console (sample) */
-.console{margin-top:56px;border:1px solid var(--line);background:var(--night);font-family:var(--data)}
-.c-bar{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);font-size:12px;letter-spacing:.08em;color:var(--muted)}
-.c-bar span:first-child{color:var(--alkali)}
-.c-body{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
-.feeds{display:grid;grid-template-columns:1fr 1fr;gap:2px;padding:2px;align-content:start}
-.feeds figure{position:relative;margin:0;min-width:0}
-.feeds img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:saturate(.8)}
-.feeds figcaption{position:absolute;left:0;right:0;bottom:0;margin:0;padding:6px 8px;background:rgba(11,13,16,.8);font-size:11px;color:var(--alkali);letter-spacing:.04em}
-.feeds .on-air{outline:2px solid var(--amber);outline-offset:-2px}
-.feeds .on-air b{color:var(--amber);font-weight:500;margin-right:6px}
-.c-side{border-left:1px solid var(--line);min-width:0}
-.c-list{padding:14px 16px;border-bottom:1px solid var(--line)}
-.c-list:last-child{border-bottom:0}
-.c-h{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--caliche);margin:0 0 8px}
-.c-list > div{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:10px;padding:6px 0;font-size:14px;color:var(--muted)}
-.c-list > div.hot{color:var(--alkali)}
-.c-list > div.alert{color:var(--red)}
-.c-list .tele{grid-template-columns:repeat(4,minmax(0,1fr))}
-.tele span{font-size:11px;letter-spacing:.06em;text-transform:uppercase}
-.tele b{display:block;font:500 20px/1.2 var(--data);color:var(--alkali);letter-spacing:0;text-transform:none}
-/* course map */
-.map{margin-top:72px;position:relative;border:1px solid var(--line);background:var(--night)}
-.map canvas{display:block;width:100%;height:auto}
-.hud{position:absolute;left:16px;top:14px;right:16px;display:flex;justify-content:space-between;gap:12px;font:13px/1 var(--data);color:var(--muted)}
-.hud b{color:var(--amber);font-weight:500}
-
-/* seen report: the one Alkali band */
+/* sponsors: the one Alkali band */
 .seen{background:var(--alkali);color:var(--night)}
 .seen .label{color:var(--steel)}
-.seen p{color:#3A4047}
-.seen-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start}
-.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:8px}
-.stats strong{display:block;font:700 clamp(40px,5vw,64px)/1 var(--display);font-stretch:62.5%;font-variant-numeric:tabular-nums}
+.seen p,.seen .head p{color:#3A4047}
+.placements{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;background:#C9CCC5;border:1px solid #C9CCC5;margin-bottom:56px}
+.placements div{background:var(--alkali);padding:18px 16px}
+.placements b{display:block;font:600 11px/1.3 var(--display);font-stretch:125%;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);margin-bottom:8px}
+.placements span{font-size:15px;line-height:1.45;color:#2A2F35}
+.report{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start}
+.report h3{margin-bottom:14px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.stats strong{display:block;font:700 clamp(40px,5vw,60px)/1 var(--display);font-stretch:62.5%;font-variant-numeric:tabular-nums}
 .stats span{font:13px/1.4 var(--data);color:#3A4047;display:block;margin-top:8px}
-.blocks{display:grid;grid-template-columns:repeat(30,minmax(0,1fr));gap:3px;margin-top:40px}
+.blocks{display:grid;grid-template-columns:repeat(30,minmax(0,1fr));gap:3px;margin-top:32px}
 .blocks i{aspect-ratio:1;background:#D3D5CF;display:block}
 .blocks i.on{background:var(--night)}
 .blocks i.peak{background:var(--night);outline:3px solid var(--amber);outline-offset:-3px}
 .key{font:12px/1.5 var(--data);color:#59626B;margin-top:14px}
 
-/* we race */
-.race{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr) minmax(0,3fr);gap:32px;align-items:end}
-.race p{color:var(--muted);font-size:18px}
-.race h2{margin-bottom:24px}
+/* list rows (cameras, data) */
+.day{border-top:1px solid var(--line)}
+.day > div{display:grid;grid-template-columns:150px minmax(0,4fr) minmax(0,7fr);gap:24px;padding:26px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.day .stamp{font:500 15px/1.3 var(--data);color:var(--caliche)}
+.day h3{font-size:22px}
+.day p{margin:0;color:var(--muted)}
 
-/* after dark */
-.alone{position:relative;padding:0}
-.alone img{width:100%;aspect-ratio:21/9;object-fit:cover}
-.alone .wrap{position:absolute;inset:auto 0 0 0;padding-bottom:56px}
-.alone h2{font-size:clamp(30px,4.6vw,48px);max-width:16ch}
+/* course map */
+.map{margin-top:56px;position:relative;border:1px solid var(--line);background:var(--night)}
+.map canvas{display:block;width:100%;height:auto}
+.hud{position:absolute;left:16px;top:14px;right:16px;display:flex;justify-content:space-between;gap:12px;font:13px/1 var(--data);color:var(--muted)}
+.hud b{color:var(--amber);font-weight:500}
 
-/* people */
-.people{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px}
-.crew{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.crew h3{margin:10px 0 8px}
-.crew p{color:var(--muted);font-size:16px}
+/* the booth: announcer dashboard (sample) */
+.booth{background:var(--night-2)}
+.desk{border:1px solid var(--line);background:var(--night);font-family:var(--data)}
+.d-bar{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);font-size:12px;letter-spacing:.06em;color:var(--muted)}
+.d-bar .q{flex:1 1 260px;max-width:420px;border:1px solid var(--line);background:var(--night-2);padding:8px 12px;color:var(--alkali);font-size:14px;letter-spacing:0}
+.d-bar .q span{color:var(--steel)}
+.d-body{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.card{padding:22px;display:grid;gap:18px;align-content:start;min-width:0}
+.who{display:flex;gap:18px;align-items:center}
+.who .no{font:800 64px/.9 var(--display);font-stretch:62.5%;color:var(--alkali)}
+.who strong{display:block;font:700 26px/1.1 var(--display);font-stretch:75%;font-family:var(--display)}
+.who span{font-size:13px;color:var(--muted)}
+.now{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;border-block:1px solid var(--line);padding-block:14px}
+.now span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--steel)}
+.now b{display:block;font:500 20px/1.2 var(--data);color:var(--alkali);text-transform:none;letter-spacing:0}
+.story{display:grid;grid-template-columns:120px minmax(0,1fr);gap:8px 16px;font:14px/1.5 var(--text);color:var(--muted);margin:0}
+.story dt{font:11px/1.8 var(--data);letter-spacing:.08em;text-transform:uppercase;color:var(--caliche)}
+.story dd{margin:0}
+.story dd.hook{color:var(--alkali)}
+.d-side{border-left:1px solid var(--line);min-width:0;display:grid;align-content:start}
+.d-side .sec{padding:16px 18px;border-bottom:1px solid var(--line)}
+.d-side .sec:last-child{border-bottom:0}
+.d-h{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--caliche);margin:0 0 8px}
+.near div{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:10px;padding:5px 0;font-size:14px;color:var(--muted)}
+.near div.me{color:var(--alkali)}
+.splits div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;padding:5px 0;font-size:14px;color:var(--muted)}
+.splits div b{color:var(--alkali);font-weight:500}
+.d-note{max-width:none;margin:0;padding:10px 16px;border-top:1px solid var(--line);font-size:12px;color:var(--steel)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:56px}
+.facts strong{display:block;font:700 clamp(40px,5vw,56px)/1 var(--display);font-stretch:62.5%;font-variant-numeric:tabular-nums}
+.facts p{color:var(--muted);font-size:15px;margin-top:10px}
+
+/* your brand: two races, one system */
+.brands{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.mini{container-type:inline-size;font-family:var(--display)}
+.mini .bh{padding:3.4cqw 4cqw}
+.mini .bh strong{display:block;font-size:7cqw;font-stretch:62.5%;font-weight:800;line-height:1}
+.mini .bh span{display:block;font-size:2.4cqw;letter-spacing:.18em;font-stretch:112.5%;margin-top:1.2cqw}
+.mini ol{list-style:none;margin:0;padding:0}
+.mini li{display:grid;grid-template-columns:6cqw 12cqw minmax(0,1fr) auto;gap:2cqw;align-items:center;padding:2.4cqw 4cqw;font-size:4cqw;font-stretch:75%;font-weight:700}
+.mini li .t{font:3.2cqw/1 var(--data);text-align:right}
+.mini.cb{background:var(--cb-deep);color:var(--cb-ink)}.mini.cb .bh{background:var(--cb)}.mini.cb li{border-bottom:1px solid rgba(243,236,223,.08)}.mini.cb .n{color:#E9B6A8}
+.mini.hl{background:var(--hl-deep);color:var(--hl-ink)}.mini.hl .bh{background:var(--hl-ink);color:var(--hl-deep)}.mini.hl li{border-bottom:1px solid rgba(239,230,210,.1)}.mini.hl .n{color:#8FC7C1}
+.mini.hl .bh strong{font-stretch:100%;font-weight:600;letter-spacing:.06em;font-size:6cqw}
+
+/* built by racers */
+.racers{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px;align-items:center}
+.racers p{color:var(--muted);font-size:18px}
+.racers h2{margin-bottom:24px}
+
+/* founders */
+.founders .intro{font:500 clamp(22px,2.6vw,30px)/1.3 var(--display);font-stretch:87.5%;max-width:34ch;margin:0 0 56px;color:var(--alkali)}
+.crew{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.crew h3{font-size:30px;font-stretch:75%;margin:10px 0 14px}
+.crew p{color:var(--muted);font-size:17px}
+.crew .day-of{border-top:1px solid var(--line);padding-top:14px;font:14px/1.5 var(--data);color:var(--alkali)}
+.crew .day-of span{color:var(--caliche)}
 
 /* close */
 .close{border-top:1px solid var(--line)}
@@ -185,31 +201,32 @@ footer a{text-decoration:none;color:var(--muted)}
 
 @media (max-width:900px){
   .top nav{display:none}
-  .hero-copy,.light,.show-head,.seen-grid,.people,.close-grid{grid-template-columns:1fr;gap:28px}
-  .race{grid-template-columns:1fr 1fr}
-  .race > div:first-child{grid-column:1 / -1}
+  .hero-copy,.head,.report,.racers,.close-grid{grid-template-columns:1fr;gap:28px}
   .day > div{grid-template-columns:110px minmax(0,1fr)}
-  .c-body{grid-template-columns:1fr}
-  .c-side{border-left:0;border-top:1px solid var(--line)}
   .day p{grid-column:2}
-  .dark-miles img{aspect-ratio:4/3}
-  .alone img{aspect-ratio:4/5}
+  .d-body{grid-template-columns:1fr}
+  .d-side{border-left:0;border-top:1px solid var(--line)}
+  .placements{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .placements div:last-child{grid-column:1 / -1}
 }
 @media (max-width:560px){
   .wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
   section{padding-block:72px}
   .frame img{aspect-ratio:4/5}
-  .lower{max-width:92cqw}
-  .radio div{grid-template-columns:76px minmax(0,1fr);gap:4px 12px;font-size:14px}
-  .radio .on,.radio .gap{grid-column:1}
-  .radio div span:last-child{grid-column:1 / -1}
+  .board{width:52cqw}
+  .board li:nth-child(n+5){display:none}
+  .partner{width:28cqw}
+  .ticker{height:9cqw}
+  .sample{bottom:11cqw}
   .day > div{grid-template-columns:1fr;gap:6px}
   .day p{grid-column:auto}
-  .c-list .tele{grid-template-columns:1fr 1fr;gap:10px}
+  .now{grid-template-columns:1fr 1fr}
+  .story{grid-template-columns:1fr;gap:2px}
+  .story dd{margin-bottom:8px}
+  .facts,.brands,.crew{grid-template-columns:1fr}
   .stats{grid-template-columns:1fr 1fr}
   .stats > div:last-child{grid-column:1 / -1}
   .blocks{grid-template-columns:repeat(15,minmax(0,1fr))}
-  .crew{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
@@ -218,195 +235,250 @@ footer a{text-decoration:none;color:var(--muted)}
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#" aria-label="163 Productions">
-      <svg viewBox="0 0 815.66 416.12" aria-hidden="true"><rect x="49.34" width="29.61" height="29.61" fill="currentColor"/><rect width="29.61" height="29.61" fill="currentColor"/><rect y="93.16" width="29.61" height="29.61" fill="currentColor"/><rect x="49.34" y="93.16" width="29.61" height="29.61" fill="currentColor"/><rect x="49.34" y="46.58" width="29.61" height="29.61" fill="currentColor"/><rect x="49.34" y="139.74" width="29.61" height="29.61" fill="currentColor"/><rect x="699.98" y="304.36" width="29.61" height="29.61" style="fill:var(--amber)"/><rect x="743.75" y="304.36" width="29.61" height="29.61" fill="currentColor"/><rect x="743.75" y="263.15" width="29.61" height="29.61" fill="currentColor"/><path d="M93.12,333.94h86.06V1.95h-50.06l-36,36v295.99Z" fill="currentColor"/><path d="M731.08,291.72v-46.95h42.28v-53.07l-35.86-35.18,35.86-35.18v-47.37c-28.12-28.12-43.89-43.89-72.01-72.01h-198.32v76.19h180.39v55.27h-113.48v69.88h113.48v55.27h-153.39l-27,27v48.4h182.71v-42.25h45.34Z" fill="currentColor"/><rect x="786.06" y="304.36" width="29.61" height="29.61" fill="currentColor"/><path d="M426.19,127.34h-76.6l-45.16,45.4v30.66h98.93v54.48h-105.94c-3.37-3.39-6.44-6.48-9.35-9.4v-79.78L454.82,1.95h-125.05l-116.39,116.39v152.6c24.47,24.6,38.19,38.4,62.67,63h150.15c24.47-24.6,38.19-38.4,62.67-63v-80.6c-24.47-24.6-38.19-38.4-62.67-63Z" fill="currentColor"/><path d="M93.12,367.59h31.35c5.17,0,7.34.22,9.21.94,4.99,1.8,6.74,5.83,6.74,15.48,0,7.34-.96,11.38-3.43,13.9-2.11,2.23-5.17,3.02-11.43,3.02h-23.23v14.69h-9.21v-48.03ZM122.97,392c6.44,0,8.12-1.51,8.12-7.42,0-6.48-1.5-8.06-7.7-8.06h-21.06v15.48h20.64Z" fill="currentColor"/><path d="M161.05,367.59h34c7.04,0,10.23,1.01,12.4,3.82,1.75,2.3,2.59,6.05,2.59,11.52s-.54,8.21-1.74,10.01c-1.2,1.8-2.65,2.67-5.05,3.17,5.05.5,6.2,2.38,6.14,10.01v9.5h-9.33v-7.2c-.12-6.55-1.38-7.85-7.46-7.78h-22.32v14.98h-9.21v-48.03ZM192.28,391.78c6.74,0,8.42-1.44,8.42-7.2,0-6.62-1.38-7.99-8.24-7.99h-22.2v15.19h22.02Z" fill="currentColor"/><path d="M281.39,371.83c1.68,2.23,2.59,5.33,2.95,10.15.18,2.23.24,4.82.24,10.15,0,12.03-.96,16.63-4.03,19.87-2.23,2.3-5.24,3.46-10.29,3.82-1.93.14-9.21.29-14.8.29-12.28,0-15.58-.43-19.01-2.66-2.65-1.73-4.39-5.04-4.93-9.79-.36-3.17-.48-5.76-.48-13.61,0-11.23.9-15.7,3.79-18.72,2.17-2.3,4.99-3.38,10.17-3.89,2.05-.22,8.06-.36,15.4-.36,14.2,0,17.99.86,21,4.75ZM240.47,391.64c0,9.36.6,12.39,2.83,13.75,2.23,1.44,4.15,1.66,15.64,1.66,10.35,0,12.94-.5,14.56-2.66,1.38-1.8,1.81-4.9,1.81-13.03,0-15.05-.12-15.19-17.45-15.19s-17.39.22-17.39,15.48Z" fill="currentColor"/><path d="M306.35,367.59h33.34c7.64,0,12.58,1.73,15.28,5.26,2.47,3.31,3.43,8.71,3.43,19.3s-1.14,15.99-4.21,19.37c-2.53,2.81-6.8,4.1-13.54,4.1h-34.3v-48.03ZM338.6,406.83c3.25,0,5.48-.5,7.1-1.58,2.35-1.51,3.31-5.18,3.31-12.6,0-13.32-1.75-15.99-10.41-15.99h-22.99v30.17h22.99Z" fill="currentColor"/><path d="M429.82,367.59v30.24c0,9.15-1.2,12.89-5.05,15.48-3.43,2.38-6.86,2.81-21.06,2.81s-18.11-1.01-21.06-4.97c-2.05-2.81-2.65-6.12-2.65-14.98v-28.59h9.27v25.13q0,6.41.3,8.42c.66,5.11,3.01,6.05,15.04,6.05,5.42,0,10.41-.29,11.79-.72,2.35-.72,3.61-2.45,3.97-5.47q.12-.86.18-7.56v-25.85h9.27Z" fill="currentColor"/><path d="M501.11,398.33v.79c0,6.84-.6,10.22-2.29,12.38-2.77,3.67-6.56,4.54-19.62,4.54-16.01,0-18.95-.36-22.5-2.66-2.29-1.51-3.79-4.1-4.57-7.78-.54-2.45-.84-8.07-.84-14.83,0-13.39,1.14-17.93,5.36-20.74,3.43-2.3,7.58-2.88,20.28-2.88,13.9,0,18.53.94,21.06,4.32,1.75,2.23,2.65,6.41,2.65,12.24h-8.85c0-6.98-1.2-7.63-14.44-7.63-9.39,0-12.09.29-14.02,1.51-2.29,1.44-2.77,4.1-2.77,14.47,0,13.97.96,15.05,13.48,15.05l12.28-.29c4.33-.5,5.84-2.45,5.84-7.42v-1.08h8.97Z" fill="currentColor"/><path d="M538.41,376.59h-18.89v-9h46.99v9h-18.83v39.03h-9.27v-39.03Z" fill="currentColor"/><path d="M586,367.59h9.27v48.03h-9.27v-48.03Z" fill="currentColor"/><path d="M667.47,371.83c1.69,2.23,2.59,5.33,2.95,10.15.18,2.23.24,4.82.24,10.15,0,12.03-.96,16.63-4.03,19.87-2.23,2.3-5.24,3.46-10.29,3.82-1.93.14-9.21.29-14.8.29-12.28,0-15.58-.43-19.01-2.66-2.65-1.73-4.39-5.04-4.93-9.79-.36-3.17-.48-5.76-.48-13.61,0-11.23.9-15.7,3.79-18.72,2.17-2.3,4.99-3.38,10.17-3.89,2.05-.22,8.06-.36,15.4-.36,14.2,0,17.99.86,21,4.75ZM626.56,391.64c0,9.36.6,12.39,2.83,13.75,2.23,1.44,4.15,1.66,15.64,1.66,10.35,0,12.94-.5,14.56-2.66,1.38-1.8,1.81-4.9,1.81-13.03,0-15.05-.12-15.19-17.45-15.19s-17.39.22-17.39,15.48Z" fill="currentColor"/><path d="M692.44,367.59h14.38l30.15,39.96-.18-39.96h8.85v48.03h-14.44l-29.97-39.75.18,39.75h-8.97v-48.03Z" fill="currentColor"/><path d="M776.49,400.42v.5c0,3.1.48,4.75,1.62,5.54,1.44,1.01,4.57,1.44,10.47,1.44,4.99,0,8.12-.22,12.46-.86,2.29-.36,3.43-.86,4.15-1.87.78-1.15,1.2-2.59,1.2-4.1,0-2.81-1.02-4.18-3.79-4.9-1.68-.43-1.74-.43-12.7-.5h-5.78c-8.48-.07-11.79-.86-14.02-3.31-1.93-2.02-2.83-5.04-2.83-9.29,0-5.33,1.08-9.72,3.01-11.74,2.71-3.02,8.85-4.18,22.08-4.18,8.06,0,12.4.36,15.16,1.37,4.99,1.73,6.74,4.97,6.74,12.39v.94h-9.03c-.06-2.81-.66-4.25-1.93-4.97-1.69-.94-5.54-1.51-9.99-1.51-7.58,0-12.88.58-14.68,1.66-1.44.79-2.17,2.45-2.17,4.68,0,2.09.54,3.46,1.69,4.25,1.38.94,3.67,1.22,9.99,1.22h6.8c12.03,0,15.71.79,18.23,4.03,1.69,2.09,2.47,5.26,2.47,10.01,0,5.04-.9,8.5-2.89,10.8-2.65,3.02-7.82,4.03-21.36,4.03-14.44,0-18.95-.79-21.48-3.67-1.81-2.09-2.59-4.97-2.59-9.5,0-.43,0-1.51.06-2.45h9.09Z" fill="currentColor"/></svg>
-    </a>
+    <a class="brand" href="#" aria-label="163 Productions"><svg viewBox="0 0 815.66 416.12" aria-hidden="true"><rect x="49.34" width="29.61" height="29.61" fill="currentColor"/><rect width="29.61" height="29.61" fill="currentColor"/><rect y="93.16" width="29.61" height="29.61" fill="currentColor"/><rect x="49.34" y="93.16" width="29.61" height="29.61" fill="currentColor"/><rect x="49.34" y="46.58" width="29.61" height="29.61" fill="currentColor"/><rect x="49.34" y="139.74" width="29.61" height="29.61" fill="currentColor"/><rect x="699.98" y="304.36" width="29.61" height="29.61" style="fill:var(--amber)"/><rect x="743.75" y="304.36" width="29.61" height="29.61" fill="currentColor"/><rect x="743.75" y="263.15" width="29.61" height="29.61" fill="currentColor"/><path d="M93.12,333.94h86.06V1.95h-50.06l-36,36v295.99Z" fill="currentColor"/><path d="M731.08,291.72v-46.95h42.28v-53.07l-35.86-35.18,35.86-35.18v-47.37c-28.12-28.12-43.89-43.89-72.01-72.01h-198.32v76.19h180.39v55.27h-113.48v69.88h113.48v55.27h-153.39l-27,27v48.4h182.71v-42.25h45.34Z" fill="currentColor"/><rect x="786.06" y="304.36" width="29.61" height="29.61" fill="currentColor"/><path d="M426.19,127.34h-76.6l-45.16,45.4v30.66h98.93v54.48h-105.94c-3.37-3.39-6.44-6.48-9.35-9.4v-79.78L454.82,1.95h-125.05l-116.39,116.39v152.6c24.47,24.6,38.19,38.4,62.67,63h150.15c24.47-24.6,38.19-38.4,62.67-63v-80.6c-24.47-24.6-38.19-38.4-62.67-63Z" fill="currentColor"/><path d="M93.12,367.59h31.35c5.17,0,7.34.22,9.21.94,4.99,1.8,6.74,5.83,6.74,15.48,0,7.34-.96,11.38-3.43,13.9-2.11,2.23-5.17,3.02-11.43,3.02h-23.23v14.69h-9.21v-48.03ZM122.97,392c6.44,0,8.12-1.51,8.12-7.42,0-6.48-1.5-8.06-7.7-8.06h-21.06v15.48h20.64Z" fill="currentColor"/><path d="M161.05,367.59h34c7.04,0,10.23,1.01,12.4,3.82,1.75,2.3,2.59,6.05,2.59,11.52s-.54,8.21-1.74,10.01c-1.2,1.8-2.65,2.67-5.05,3.17,5.05.5,6.2,2.38,6.14,10.01v9.5h-9.33v-7.2c-.12-6.55-1.38-7.85-7.46-7.78h-22.32v14.98h-9.21v-48.03ZM192.28,391.78c6.74,0,8.42-1.44,8.42-7.2,0-6.62-1.38-7.99-8.24-7.99h-22.2v15.19h22.02Z" fill="currentColor"/><path d="M281.39,371.83c1.68,2.23,2.59,5.33,2.95,10.15.18,2.23.24,4.82.24,10.15,0,12.03-.96,16.63-4.03,19.87-2.23,2.3-5.24,3.46-10.29,3.82-1.93.14-9.21.29-14.8.29-12.28,0-15.58-.43-19.01-2.66-2.65-1.73-4.39-5.04-4.93-9.79-.36-3.17-.48-5.76-.48-13.61,0-11.23.9-15.7,3.79-18.72,2.17-2.3,4.99-3.38,10.17-3.89,2.05-.22,8.06-.36,15.4-.36,14.2,0,17.99.86,21,4.75ZM240.47,391.64c0,9.36.6,12.39,2.83,13.75,2.23,1.44,4.15,1.66,15.64,1.66,10.35,0,12.94-.5,14.56-2.66,1.38-1.8,1.81-4.9,1.81-13.03,0-15.05-.12-15.19-17.45-15.19s-17.39.22-17.39,15.48Z" fill="currentColor"/><path d="M306.35,367.59h33.34c7.64,0,12.58,1.73,15.28,5.26,2.47,3.31,3.43,8.71,3.43,19.3s-1.14,15.99-4.21,19.37c-2.53,2.81-6.8,4.1-13.54,4.1h-34.3v-48.03ZM338.6,406.83c3.25,0,5.48-.5,7.1-1.58,2.35-1.51,3.31-5.18,3.31-12.6,0-13.32-1.75-15.99-10.41-15.99h-22.99v30.17h22.99Z" fill="currentColor"/><path d="M429.82,367.59v30.24c0,9.15-1.2,12.89-5.05,15.48-3.43,2.38-6.86,2.81-21.06,2.81s-18.11-1.01-21.06-4.97c-2.05-2.81-2.65-6.12-2.65-14.98v-28.59h9.27v25.13q0,6.41.3,8.42c.66,5.11,3.01,6.05,15.04,6.05,5.42,0,10.41-.29,11.79-.72,2.35-.72,3.61-2.45,3.97-5.47q.12-.86.18-7.56v-25.85h9.27Z" fill="currentColor"/><path d="M501.11,398.33v.79c0,6.84-.6,10.22-2.29,12.38-2.77,3.67-6.56,4.54-19.62,4.54-16.01,0-18.95-.36-22.5-2.66-2.29-1.51-3.79-4.1-4.57-7.78-.54-2.45-.84-8.07-.84-14.83,0-13.39,1.14-17.93,5.36-20.74,3.43-2.3,7.58-2.88,20.28-2.88,13.9,0,18.53.94,21.06,4.32,1.75,2.23,2.65,6.41,2.65,12.24h-8.85c0-6.98-1.2-7.63-14.44-7.63-9.39,0-12.09.29-14.02,1.51-2.29,1.44-2.77,4.1-2.77,14.47,0,13.97.96,15.05,13.48,15.05l12.28-.29c4.33-.5,5.84-2.45,5.84-7.42v-1.08h8.97Z" fill="currentColor"/><path d="M538.41,376.59h-18.89v-9h46.99v9h-18.83v39.03h-9.27v-39.03Z" fill="currentColor"/><path d="M586,367.59h9.27v48.03h-9.27v-48.03Z" fill="currentColor"/><path d="M667.47,371.83c1.69,2.23,2.59,5.33,2.95,10.15.18,2.23.24,4.82.24,10.15,0,12.03-.96,16.63-4.03,19.87-2.23,2.3-5.24,3.46-10.29,3.82-1.93.14-9.21.29-14.8.29-12.28,0-15.58-.43-19.01-2.66-2.65-1.73-4.39-5.04-4.93-9.79-.36-3.17-.48-5.76-.48-13.61,0-11.23.9-15.7,3.79-18.72,2.17-2.3,4.99-3.38,10.17-3.89,2.05-.22,8.06-.36,15.4-.36,14.2,0,17.99.86,21,4.75ZM626.56,391.64c0,9.36.6,12.39,2.83,13.75,2.23,1.44,4.15,1.66,15.64,1.66,10.35,0,12.94-.5,14.56-2.66,1.38-1.8,1.81-4.9,1.81-13.03,0-15.05-.12-15.19-17.45-15.19s-17.39.22-17.39,15.48Z" fill="currentColor"/><path d="M692.44,367.59h14.38l30.15,39.96-.18-39.96h8.85v48.03h-14.44l-29.97-39.75.18,39.75h-8.97v-48.03Z" fill="currentColor"/><path d="M776.49,400.42v.5c0,3.1.48,4.75,1.62,5.54,1.44,1.01,4.57,1.44,10.47,1.44,4.99,0,8.12-.22,12.46-.86,2.29-.36,3.43-.86,4.15-1.87.78-1.15,1.2-2.59,1.2-4.1,0-2.81-1.02-4.18-3.79-4.9-1.68-.43-1.74-.43-12.7-.5h-5.78c-8.48-.07-11.79-.86-14.02-3.31-1.93-2.02-2.83-5.04-2.83-9.29,0-5.33,1.08-9.72,3.01-11.74,2.71-3.02,8.85-4.18,22.08-4.18,8.06,0,12.4.36,15.16,1.37,4.99,1.73,6.74,4.97,6.74,12.39v.94h-9.03c-.06-2.81-.66-4.25-1.93-4.97-1.69-.94-5.54-1.51-9.99-1.51-7.58,0-12.88.58-14.68,1.66-1.44.79-2.17,2.45-2.17,4.68,0,2.09.54,3.46,1.69,4.25,1.38.94,3.67,1.22,9.99,1.22h6.8c12.03,0,15.71.79,18.23,4.03,1.69,2.09,2.47,5.26,2.47,10.01,0,5.04-.9,8.5-2.89,10.8-2.65,3.02-7.82,4.03-21.36,4.03-14.44,0-18.95-.79-21.48-3.67-1.81-2.09-2.59-4.97-2.59-9.5,0-.43,0-1.51.06-2.45h9.09Z" fill="currentColor"/></svg></a>
     <nav aria-label="Main">
-      <a href="#show">Race control</a>
-      <a href="#seen">Sponsors</a>
-      <a href="#we-race">Why us</a>
+      <a href="#sponsors">Sponsors</a>
+      <a href="#cameras">The show</a>
+      <a href="#booth">The booth</a>
+      <a href="#founders">Who we are</a>
       <a href="#contact">Book a race</a>
     </nav>
   </div>
 </header>
 
 <main>
+<!-- 1 · Your race, live, in your colors -->
 <div class="hero">
   <div class="wrap">
-    <div class="frame">
-      <img src="assets/photos/v4-hero.jpg" width="2000" height="1125" alt="A trophy truck charging out of a cloud of dust, with our on-air graphics over it: a live clock, a battle-for-first flag and the truck's engine data.">
-      <div class="gfx bug" aria-hidden="true"><i></i>LIVE <span class="mono" id="clock">02:14:07</span></div>
-      <div class="gfx rm" aria-hidden="true"><b>BATTLE FOR P1</b><strong>0:08</strong><span>#7 closing on #22</span></div>
-      <div class="gfx lower" aria-hidden="true"><div class="num">7</div><div class="who"><strong>R. Alvarez</strong><span>TROPHY TRUCK · P2 · 61 MPH · 6,850 RPM · THR 92%</span></div></div>
-      <span class="sample">Sample graphics. Racers and numbers are made up.</span>
+    <div class="frame" role="img" aria-label="A sample broadcast frame in a made-up race's brand: a trophy truck out of the dust, a sponsor panel, a live leaderboard for the class and a ticker.">
+      <img src="assets/photos/v4-hero.jpg" width="2000" height="1125" alt="">
+      <div class="g partner" aria-hidden="true"><b>PROUD PARTNER</b><span>YOUR SPONSOR</span></div>
+      <div class="g board" aria-hidden="true">
+        <div class="bh"><strong>CINDER BASIN 400</strong><span>LIVE · UNOFFICIAL · RM 212</span></div>
+        <div class="cls">TROPHY TRUCK</div>
+        <ol>
+          <li><span>1</span><span class="n">#22</span><span>K. DOYLE</span><span class="t">LEADER</span></li>
+          <li class="up"><span>2</span><span class="n">#7</span><span>R. ALVAREZ</span><span class="t">+0:08</span></li>
+          <li><span>3</span><span class="n">#31</span><span>M. HART</span><span class="t">+1:47</span></li>
+          <li><span>4</span><span class="n">#88</span><span>J. OKAFOR</span><span class="t">+3:05</span></li>
+          <li><span>5</span><span class="n">#14</span><span>D. REYES</span><span class="t">+6:21</span></li>
+          <li><span>6</span><span class="n">#60</span><span>S. LINDQVIST</span><span class="t">+9:40</span></li>
+        </ol>
+      </div>
+      <div class="g ticker" aria-hidden="true"><b>LIVE</b>#7 ALVAREZ <span>GAINED 0:33 SINCE RM 180</span> · CLASS 10 #1028 <span>PITTING AT RM 205</span></div>
+      <span class="sample">Sample graphics. The race, racers and sponsor are made up.</span>
     </div>
     <div class="hero-copy">
       <div>
-        <p class="label" style="margin:0 0 18px">Live race production</p>
-        <h1>Car 7 is 0:08 back and closing. Our camera is already in the car.</h1>
+        <p class="label" style="margin:0 0 18px">Live off-road race broadcasts</p>
+        <h1>We broadcast your race live, in your brand, with every tracked car on the board and your sponsors on screen.</h1>
       </div>
       <div>
-        <p>We produce live broadcasts of off-road races. GPS on the cars, cameras on course and in the cockpit, engine data on screen. We watch every gap all race, so when one starts closing, we cut to it.</p><p>The racers do the driving. We point the camera.</p>
+        <p>Viewers stay when they can follow the race. In-car, aerial and trackside cameras. Our own leaderboard and track map from live tracking. Announcers who know every racer's story before the start.</p>
         <a class="button" href="#contact">Book a broadcast</a>
+        <p class="watch">Watch a past show: <a href="https://youtu.be/U9elrZU-dXg?t=7925" rel="noopener">Baja Nevada 2026, day 2</a>, for Legacy Racing (YouTube).</p>
       </div>
     </div>
   </div>
 </div>
 
-<section class="dark-miles" aria-labelledby="why">
-  <img src="assets/photos/v4-night.jpg" width="1800" height="1013" alt="A lone truck parked under a tree in the open desert at night, tail lights glowing red under a sky full of stars." loading="lazy">
-  <div class="wrap over">
-    <p class="label" id="why" style="margin-bottom:20px">The dark miles</p>
-    <p class="big">Most of a desert race happens where nobody can see it. Somewhere past mile 300, a mom is watching a GPS dot that hasn't moved in eleven minutes.</p>
-    <p class="after">When that dot stops, we see it too, with the mile, the minute and the last engine reading. If we know why, we say so. If we don't, we say that.</p>
-    <div class="radio" aria-label="Sample calls from race control">
-      <div><span class="t">02:14:07</span><span class="on">LIVE</span><span>Battle for P1. Car 7 is 0:08 behind car 22 at RM 212, closing. On 7's onboard.</span></div>
-      <div><span class="t">02:19:40</span><span class="gap"></span><span>Car 31 stopped at RM 180. Last coolant reading 248°F. Team notified.</span></div>
-      <div><span class="t">02:23:15</span><span class="gap"></span><span>No video from car 31 since 02:19. Tracker still reporting. We'll show it when it's back.</span></div>
-      <div><span class="t">02:26:03</span><span class="gap"></span><span>Car 7 passes car 22 at RM 219. Replay is up next.</span></div>
-    </div>
-    <p class="radio-note">How race control sounds at 2 a.m. Sample lines. Made-up cars.</p>
-  </div>
-</section>
-
-<section aria-labelledby="light">
-  <div class="wrap light">
-    <figure>
-      <img src="assets/photos/v4-amber.jpg" width="1400" height="1050" alt="The rear of a trophy truck at night, its amber light glowing over two strapped spare tires." loading="lazy">
-      <figcaption>The amber light on the back of a trophy truck.</figcaption>
-    </figure>
-    <div>
-      <p class="label" style="margin-bottom:20px">The light in the dust</p>
-      <h2 id="light">In the dust, you follow the amber light.</h2>
-      <p>Desert trucks run an amber light at the rear. When the dust is too thick to see the hood in front of you, that light is how you find the truck ahead.</p>
-      <p>That's our job on race day. One clear picture through the noise, for the people who can't be out there.</p>
-    </div>
-  </div>
-</section>
-
-<section id="show" style="background:var(--night-2)" aria-labelledby="show-h">
+<!-- 2 · Viewers are what you sell to sponsors -->
+<section id="sponsors" class="seen" aria-labelledby="sp-h">
   <div class="wrap">
-    <div class="show-head">
+    <div class="head">
       <div>
-        <p class="label" style="margin-bottom:20px">Race control</p>
-        <h2 id="show-h">At 02:14 we're watching 4 feeds, 3 battles and 1 stopped car.</h2>
+        <span class="label">For your sponsors</span>
+        <h2 id="sp-h">Every minute a viewer stays is a minute your sponsors are on screen.</h2>
       </div>
-      <p>This is our race-control screen, with made-up cars. Camera feeds on the left. On the right, the gaps tracking is watching, the alerts, and the engine data from the car on air. The producer cuts from here.</p>
+      <p>Sponsors pay for eyes. A race people can follow keeps them watching for hours, and every one of those hours has your partners in it.</p>
     </div>
-    <div class="console" aria-label="Sample race-control dashboard">
-      <div class="c-bar"><span>RACE CONTROL</span><span>SAMPLE · MADE-UP CARS</span><span class="c-clock">02:14:07</span></div>
-      <div class="c-body">
-        <div class="feeds">
-          <figure class="on-air"><img src="assets/photos/v4-hero.jpg" alt="" loading="lazy"><figcaption><b>ON AIR</b> CAR 7 · COURSE CAM RM 212</figcaption></figure>
-          <figure><img src="assets/photos/v4-dust.jpg" alt="" loading="lazy"><figcaption>CAR 22 · COURSE CAM RM 209</figcaption></figure>
-          <figure><img src="assets/photos/v4-amber.jpg" alt="" loading="lazy"><figcaption>CAR 31 · REAR CAM</figcaption></figure>
-          <figure><img src="assets/photos/v4-crowd.jpg" alt="" loading="lazy"><figcaption>FAN · STREAMEASY · RM 150</figcaption></figure>
+    <div class="placements" aria-label="Where sponsors appear in the broadcast">
+      <div><b>Partner panel</b><span>On screen through the show, rotating by the minute.</span></div>
+      <div><b>Leaderboard</b><span>"Presented by" on every class board.</span></div>
+      <div><b>Ticker</b><span>Sponsor lines between race updates.</span></div>
+      <div><b>Booth reads</b><span>The announcers name them, live.</span></div>
+      <div><b>Replays</b><span>Every replay and clip carries them.</span></div>
+    </div>
+    <div class="report">
+      <div>
+        <span class="label">After the race</span>
+        <h3>Each sponsor gets a Seen Report: minutes on screen, minute by minute.</h3>
+        <p>It's what you hand them when it's time to sign for next year.</p>
+      </div>
+      <div>
+        <div class="stats">
+          <div><strong>41:08</strong><span>Logo on screen, minutes:seconds</span></div>
+          <div><strong>27</strong><span>Replays and clips carrying the logo</span></div>
+          <div><strong>18,400</strong><span>Peak live viewers</span></div>
         </div>
-        <div class="c-side">
-          <div class="c-list">
-            <p class="c-h">Battles</p>
-            <div class="hot"><span>P1</span><span>#7 → #22</span><span>0:08 ▼</span></div>
-            <div><span>P5</span><span>#88 → #31</span><span>0:41</span></div>
-            <div><span>P9</span><span>#14 → #60</span><span>1:12</span></div>
-          </div>
-          <div class="c-list">
-            <p class="c-h">Alerts</p>
-            <div class="alert"><span>#31</span><span>Stopped · RM 180</span><span>6 min</span></div>
-          </div>
-          <div class="c-list">
-            <p class="c-h">Car 7 · telemetry</p>
-            <div class="tele"><span><b>6,850</b>RPM</span><span><b>92%</b>Throttle</span><span><b>61</b>MPH</span><span><b>208°F</b>Coolant</span></div>
-          </div>
-        </div>
+        <div class="blocks" id="blocks" aria-hidden="true"></div>
+        <p class="key">Each block is one minute of broadcast. Dark: logo on screen. Outlined: the minute with the most viewers. Sample numbers.</p>
       </div>
     </div>
-    <div class="day" aria-label="How we cover a race">
-      <div><span class="stamp">DAY BEFORE</span><h3>Cameras go in at tech.</h3><p>We install onboard cameras during inspection. Teams rent them per race, so nobody buys a camera for one weekend. Spectators can add a feed from their phone with <a href="/streameasy/">StreamEasy</a>.</p></div>
-      <div><span class="stamp">GPS</span><h3>Every tracked car is on the map.</h3><p>Positions update the course map and the leaderboard live. Names, numbers and classes come from registration, so the graphics match the entry list.</p></div>
-      <div><span class="stamp">RPM · THR · °F</span><h3>The engine reads out on screen.</h3><p>Our telemetry box reads the engine computer: RPM, throttle, speed, temperatures. When a truck slows at <span class="mono">RM 180</span>, you can see whether it was the driver or the motor.</p></div>
-      <div><span class="stamp">GAP 0:41 → 0:08</span><h3>The gaps pick the shot.</h3><p>Tracking measures the gap between cars all race. When one drops from <span class="mono">0:41</span> to <span class="mono">0:08</span>, it gets flagged, and the producer cuts there before the pass.</p></div>
-      <div><span class="stamp">SIGNAL LOST</span><h3>We report it with the time.</h3><p>When a dot stops or a feed drops, race control logs the mile and the minute. If we don't know why, we say we don't know.</p></div>
-      <div><span class="stamp">SHOW HOURS</span><h3>The promoter sets them.</h3><p>Before race day you get the plan in writing: the hours we're on air, which miles have cameras, and which are tracking only.</p></div>
-      <div><span class="stamp">MONDAY</span><h3>The numbers go out.</h3><p>Sponsors get their Seen Report: minutes on screen, every frame. Teams get their clips and their engine data.</p></div>
+  </div>
+</section>
+
+<!-- 3 · The cameras -->
+<section id="cameras" aria-labelledby="cam-h">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="label">The show</span>
+        <h2 id="cam-h">Cameras in the cars, in the air and along the course.</h2>
+      </div>
+      <p>A desert course is hundreds of miles long. We put cameras where the racing is, then one producer cuts it into one show.</p>
+    </div>
+    <div class="day" aria-label="Camera sources">
+      <div><span class="stamp">IN-CAR</span><h3>Streaming cameras, installed at tech.</h3><p>Teams rent them from us per race. Each one sends live video and the car's GPS position.</p></div>
+      <div><span class="stamp">TEAM FEEDS</span><h3>Teams with their own cameras plug in.</h3><p>We take their feeds into the show and put them on air like ours.</p></div>
+      <div><span class="stamp">AERIAL</span><h3>Drones over the sections that matter.</h3><p>Starts, finishes and the sections where the leaders are close.</p></div>
+      <div><span class="stamp">TRACKSIDE</span><h3>Course cameras and interviews.</h3><p>The start, the pits, the finish line, and the racers when they get out of the car.</p></div>
+      <div><span class="stamp">SPECTATORS</span><h3>Fans along the course can send a feed.</h3><p>With our <a href="/streameasy/">StreamEasy</a> app, a phone at the side of the course becomes a camera the producer can pick.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · The data in the broadcast -->
+<section id="data" style="background:var(--night-2)" aria-labelledby="data-h">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="label">The data</span>
+        <h2 id="data-h">Live tracking comes into the show, so viewers can follow the whole field.</h2>
+      </div>
+      <p>We take every tracked car's position into the broadcast as it moves. From it we build our own running order, map and times. They're unofficial. Official results stay with the race.</p>
+    </div>
+    <div class="day" aria-label="What we build from tracking">
+      <div><span class="stamp">LEADERBOARD</span><h3>Our own running order, by class.</h3><p>Updated from tracking during the race, so viewers aren't waiting on official timing to know who's leading.</p></div>
+      <div><span class="stamp">TRACK MAP</span><h3>Every tracked car on your course.</h3><p>A map overlay of your course, with each car where it is now.</p></div>
+      <div><span class="stamp">SPLITS</span><h3>Times between our own checkpoints.</h3><p>The booth can say who gained <span class="mono">0:33</span> since <span class="mono">RM 180</span>, and who's fading.</p></div>
+      <div><span class="stamp">TELEMETRY</span><h3>The engine, on screen.</h3><p>RPM, throttle, speed and temperatures from cars running our telemetry.</p></div>
     </div>
     <div class="map">
-      <canvas id="course" width="1200" height="520" aria-label="A sample course drawn in pixels, with an amber pixel running it like a truck on our tracking map"></canvas>
-      <div class="hud"><span>Sample course · tracking as it looks on air</span><b id="rmread">RM 212.0</b></div>
+      <canvas id="course" width="1200" height="520" aria-label="A sample course drawn in pixels, with an amber pixel running it like a tracked car on our map overlay"></canvas>
+      <div class="hud"><span>Sample course · track map overlay</span><b id="rmread">RM 212.0</b></div>
     </div>
   </div>
 </section>
 
-<section id="seen" class="seen" aria-labelledby="seen-h">
-  <div class="wrap seen-grid">
-    <div>
-      <p class="label" style="margin-bottom:20px">For sponsors · The Seen Report</p>
-      <h2 id="seen-h">Your logo was on screen for 41 minutes. Here's every frame.</h2>
-      <p style="margin-top:24px">After every race, each sponsor gets a report of their time on screen, minute by minute. No guessing what the banner did.</p>
-    </div>
-    <div>
-      <div class="stats">
-        <div><strong>41:08</strong><span>Logo on screen, minutes:seconds</span></div>
-        <div><strong>6</strong><span>Battles your car was in, on air</span></div>
-        <div><strong>18,400</strong><span>Peak live viewers on the stream</span></div>
+<!-- 5 · The booth -->
+<section id="booth" aria-labelledby="booth-h">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="label">The booth</span>
+        <h2 id="booth-h">Your announcers see what viewers can't.</h2>
       </div>
-      <div class="blocks" id="blocks" aria-hidden="true"></div>
-      <p class="key">Each block is one minute of broadcast. Dark: your logo on screen. Outlined: the moment with the most replays. Sample numbers.</p>
+      <p>The booth has its own dashboard. Type a driver's name or number and get where the car is, who's near it, its times, and the racer's story, all on one screen.</p>
     </div>
+    <div class="desk" aria-label="Sample announcer dashboard. The racer is made up.">
+      <div class="d-bar"><span>ANNOUNCER DASHBOARD</span><div class="q"><span>Find racer › </span>alvarez</div><span>SAMPLE · MADE-UP RACER</span></div>
+      <div class="d-body">
+        <div class="card">
+          <div class="who"><span class="no">7</span><div><strong>R. Alvarez</strong><span>Trophy Truck · co-driver T. Alvarez · Ely, NV</span></div></div>
+          <div class="now">
+            <span><b>P2</b>Class</span><span><b>+0:08</b>To leader</span><span><b>RM 214.6</b>On course</span><span><b>61</b>MPH</span>
+          </div>
+          <dl class="story">
+            <dt>Last year</dt><dd class="hook">Broke an axle at RM 212. Didn't finish.</dd>
+            <dt>Background</dt><dd>Third start here. Raced Class 10 for six seasons first.</dd>
+            <dt>Goal</dt><dd>Finish this one.</dd>
+            <dt>Sponsors</dt><dd>High Desert Fab, Ely Tire</dd>
+          </dl>
+        </div>
+        <div class="d-side">
+          <div class="sec near"><p class="d-h">Nearby on course</p>
+            <div><span>#22</span><span>K. Doyle</span><span>0:08 ahead</span></div>
+            <div class="me"><span>#7</span><span>R. Alvarez</span><span>RM 214.6</span></div>
+            <div><span>#31</span><span>M. Hart</span><span>1:39 behind</span></div>
+          </div>
+          <div class="sec splits"><p class="d-h">Splits</p>
+            <div><span>RM 150 → 180</span><b>27:12</b></div>
+            <div><span>RM 180 → 212</span><b>29:51 · fastest</b></div>
+          </div>
+        </div>
+      </div>
+      <p class="d-note">The racer's story comes from registration. The position, gaps and splits come from tracking.</p>
+    </div>
+    <div class="facts">
+      <div><strong>65</strong><p>Racers sent us their story through registration before Baja Nevada 2026.</p></div>
+      <div><strong>2 min</strong><p>How often racer data syncs from a race's registration to the booth.</p></div>
+      <div><strong>1 search</strong><p>To find any racer by name and see where they are on the map.</p></div>
+    </div>
+    <p class="note">We help the race org collect each racer's hometown, background, goals and sponsors when they register. The booth knows why a racer matters before they reach the screen.</p>
   </div>
 </section>
 
-<section id="we-race" aria-labelledby="race-h">
-  <div class="wrap race">
+<!-- 6 · In your brand -->
+<section id="brand" style="background:var(--night-2)" aria-labelledby="brand-h">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="label">Your brand</span>
+        <h2 id="brand-h">It's your race, so the broadcast wears your brand.</h2>
+      </div>
+      <p>Leaderboards, maps, lower thirds and racer cards are built in your colors and type. No brand guide? We build the look for your broadcast before race day.</p>
+    </div>
+    <div class="brands">
+      <div class="mini cb" aria-label="Sample leaderboard in a made-up race's brand, Cinder Basin 400">
+        <div class="bh"><strong>CINDER BASIN 400</strong><span>LIVE · TROPHY TRUCK</span></div>
+        <ol><li><span>1</span><span class="n">#22</span><span>K. DOYLE</span><span class="t">LEADER</span></li><li><span>2</span><span class="n">#7</span><span>R. ALVAREZ</span><span class="t">+0:08</span></li><li><span>3</span><span class="n">#31</span><span>M. HART</span><span class="t">+1:47</span></li></ol>
+      </div>
+      <div class="mini hl" aria-label="The same leaderboard in a second made-up race's brand, High Lonesome 250">
+        <div class="bh"><strong>HIGH LONESOME 250</strong><span>LIVE · PRO UTV</span></div>
+        <ol><li><span>1</span><span class="n">#1850</span><span>P. BARNES</span><span class="t">LEADER</span></li><li><span>2</span><span class="n">#99</span><span>D. CARSON</span><span class="t">+0:41</span></li><li><span>3</span><span class="n">#107</span><span>B. BIRCH</span><span class="t">+2:10</span></li></ol>
+      </div>
+    </div>
+    <p class="note">Same system, two made-up races.</p>
+  </div>
+</section>
+
+<!-- 7 · Built by racers -->
+<section aria-labelledby="racers-h">
+  <div class="wrap racers">
     <div>
-      <p class="label" style="margin-bottom:20px">Why us</p>
-      <h2 id="race-h">We race these courses too.</h2>
-      <p>We also build the registration systems some of these races run on. We know why a class starts where it does, and every number on screen is checked against the entry list.</p>
-      <p>A stopped dot can mean a flat, a pit stop or a dead zone. We've sat through all three. A team needs two things from a broadcast: footage for its sponsors, and proof the car was seen.</p>
+      <span class="label">Built by racers</span>
+      <h2 id="racers-h">Racers built every part of this show.</h2>
+      <p>We know why a class starts where it does, what a dot that stopped at a pit usually means, and which moment a team will want as a clip. We learned it in the car, in the pits and on the radio.</p>
+      <p>We also build registration systems for off-road races. That's how racer stories reach the booth before the green flag.</p>
     </div>
     <figure>
       <img src="assets/photos/v4-dust.jpg" width="1000" height="1250" alt="A trophy truck sliding through a turn, dust rolling off the rear tires." loading="lazy">
     </figure>
-    <figure>
-      <img src="assets/photos/v4-crowd.jpg" width="1000" height="1250" alt="Spectators and a photographer along a dirt course at dusk as a truck comes through the dust." loading="lazy">
-    </figure>
   </div>
 </section>
 
-<section class="alone" aria-labelledby="alone-h">
-  <img src="assets/photos/v4-watch.jpg" width="1800" height="1013" alt="A row of people in silhouette at the edge of the desert at night, watching for headlights." loading="lazy">
+<!-- 8 · Founders -->
+<section id="founders" class="founders" style="background:var(--night-2)" aria-labelledby="f-h">
   <div class="wrap">
-    <h2 id="alone-h">Nobody races alone in the dark.</h2>
-  </div>
-</section>
-
-<section aria-labelledby="crew-h">
-  <div class="wrap people">
-    <div>
-      <p class="label" style="margin-bottom:20px">Who shows up</p>
-      <h2 id="crew-h">Two owners. Both at your race.</h2>
-    </div>
+    <span class="label" style="display:block;margin-bottom:20px">The founders</span>
+    <h2 id="f-h" style="margin-bottom:24px">Two founders. Both at your race.</h2>
+    <p class="intro">We've called turns from the passenger seat at night, held the wrench in the pit at 2 a.m., and watched a kid's dot from the timing tent. We build the show we always wanted the people at home to see.</p>
     <div class="crew">
       <div>
-        <p class="label">Co-owner</p>
+        <p class="label">Co-founder</p>
         <h3>Andrew Priest</h3>
-        <p>Races with the Priest family team. Builds the registration systems and websites off-road events run on.</p>
+        <p>Engineer and software developer. Races UTVs and co-drives in the desert, and rides desert and motocross on two wheels. Captains the pit and preps the cars for the Priest family team. Dad.</p>
+        <p class="day-of"><span>Race day:</span> the ground. Cameras into the cars, the connection out, racer data to the booth.</p>
       </div>
       <div>
-        <p class="label">Co-owner</p>
+        <p class="label">Co-founder</p>
         <h3>Sean Connell</h3>
-        <p>Built the tracking and streaming system our shows run on, and produces the broadcasts.</p>
+        <p>Software developer. Races, co-drives, and races motorcycles. Dad. Built the tracking and streaming system the show runs on.</p>
+        <p class="day-of"><span>Race day:</span> the desk. Feeds, graphics, data, and the announcers' mix.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- 9 · Contact -->
 <section id="contact" class="close" aria-labelledby="contact-h">
   <div class="wrap">
     <svg class="lockup" viewBox="0 0 815.66 416.12" role="img" aria-label="163 Productions"><rect x="49.34" width="29.61" height="29.61" fill="currentColor"/><rect width="29.61" height="29.61" fill="currentColor"/><rect y="93.16" width="29.61" height="29.61" fill="currentColor"/><rect x="49.34" y="93.16" width="29.61" height="29.61" fill="currentColor"/><rect x="49.34" y="46.58" width="29.61" height="29.61" fill="currentColor"/><rect x="49.34" y="139.74" width="29.61" height="29.61" fill="currentColor"/><rect x="699.98" y="304.36" width="29.61" height="29.61" style="fill:var(--amber)"/><rect x="743.75" y="304.36" width="29.61" height="29.61" fill="currentColor"/><rect x="743.75" y="263.15" width="29.61" height="29.61" fill="currentColor"/><path d="M93.12,333.94h86.06V1.95h-50.06l-36,36v295.99Z" fill="currentColor"/><path d="M731.08,291.72v-46.95h42.28v-53.07l-35.86-35.18,35.86-35.18v-47.37c-28.12-28.12-43.89-43.89-72.01-72.01h-198.32v76.19h180.39v55.27h-113.48v69.88h113.48v55.27h-153.39l-27,27v48.4h182.71v-42.25h45.34Z" fill="currentColor"/><rect x="786.06" y="304.36" width="29.61" height="29.61" fill="currentColor"/><path d="M426.19,127.34h-76.6l-45.16,45.4v30.66h98.93v54.48h-105.94c-3.37-3.39-6.44-6.48-9.35-9.4v-79.78L454.82,1.95h-125.05l-116.39,116.39v152.6c24.47,24.6,38.19,38.4,62.67,63h150.15c24.47-24.6,38.19-38.4,62.67-63v-80.6c-24.47-24.6-38.19-38.4-62.67-63Z" fill="currentColor"/><path d="M93.12,367.59h31.35c5.17,0,7.34.22,9.21.94,4.99,1.8,6.74,5.83,6.74,15.48,0,7.34-.96,11.38-3.43,13.9-2.11,2.23-5.17,3.02-11.43,3.02h-23.23v14.69h-9.21v-48.03ZM122.97,392c6.44,0,8.12-1.51,8.12-7.42,0-6.48-1.5-8.06-7.7-8.06h-21.06v15.48h20.64Z" fill="currentColor"/><path d="M161.05,367.59h34c7.04,0,10.23,1.01,12.4,3.82,1.75,2.3,2.59,6.05,2.59,11.52s-.54,8.21-1.74,10.01c-1.2,1.8-2.65,2.67-5.05,3.17,5.05.5,6.2,2.38,6.14,10.01v9.5h-9.33v-7.2c-.12-6.55-1.38-7.85-7.46-7.78h-22.32v14.98h-9.21v-48.03ZM192.28,391.78c6.74,0,8.42-1.44,8.42-7.2,0-6.62-1.38-7.99-8.24-7.99h-22.2v15.19h22.02Z" fill="currentColor"/><path d="M281.39,371.83c1.68,2.23,2.59,5.33,2.95,10.15.18,2.23.24,4.82.24,10.15,0,12.03-.96,16.63-4.03,19.87-2.23,2.3-5.24,3.46-10.29,3.82-1.93.14-9.21.29-14.8.29-12.28,0-15.58-.43-19.01-2.66-2.65-1.73-4.39-5.04-4.93-9.79-.36-3.17-.48-5.76-.48-13.61,0-11.23.9-15.7,3.79-18.72,2.17-2.3,4.99-3.38,10.17-3.89,2.05-.22,8.06-.36,15.4-.36,14.2,0,17.99.86,21,4.75ZM240.47,391.64c0,9.36.6,12.39,2.83,13.75,2.23,1.44,4.15,1.66,15.64,1.66,10.35,0,12.94-.5,14.56-2.66,1.38-1.8,1.81-4.9,1.81-13.03,0-15.05-.12-15.19-17.45-15.19s-17.39.22-17.39,15.48Z" fill="currentColor"/><path d="M306.35,367.59h33.34c7.64,0,12.58,1.73,15.28,5.26,2.47,3.31,3.43,8.71,3.43,19.3s-1.14,15.99-4.21,19.37c-2.53,2.81-6.8,4.1-13.54,4.1h-34.3v-48.03ZM338.6,406.83c3.25,0,5.48-.5,7.1-1.58,2.35-1.51,3.31-5.18,3.31-12.6,0-13.32-1.75-15.99-10.41-15.99h-22.99v30.17h22.99Z" fill="currentColor"/><path d="M429.82,367.59v30.24c0,9.15-1.2,12.89-5.05,15.48-3.43,2.38-6.86,2.81-21.06,2.81s-18.11-1.01-21.06-4.97c-2.05-2.81-2.65-6.12-2.65-14.98v-28.59h9.27v25.13q0,6.41.3,8.42c.66,5.11,3.01,6.05,15.04,6.05,5.42,0,10.41-.29,11.79-.72,2.35-.72,3.61-2.45,3.97-5.47q.12-.86.18-7.56v-25.85h9.27Z" fill="currentColor"/><path d="M501.11,398.33v.79c0,6.84-.6,10.22-2.29,12.38-2.77,3.67-6.56,4.54-19.62,4.54-16.01,0-18.95-.36-22.5-2.66-2.29-1.51-3.79-4.1-4.57-7.78-.54-2.45-.84-8.07-.84-14.83,0-13.39,1.14-17.93,5.36-20.74,3.43-2.3,7.58-2.88,20.28-2.88,13.9,0,18.53.94,21.06,4.32,1.75,2.23,2.65,6.41,2.65,12.24h-8.85c0-6.98-1.2-7.63-14.44-7.63-9.39,0-12.09.29-14.02,1.51-2.29,1.44-2.77,4.1-2.77,14.47,0,13.97.96,15.05,13.48,15.05l12.28-.29c4.33-.5,5.84-2.45,5.84-7.42v-1.08h8.97Z" fill="currentColor"/><path d="M538.41,376.59h-18.89v-9h46.99v9h-18.83v39.03h-9.27v-39.03Z" fill="currentColor"/><path d="M586,367.59h9.27v48.03h-9.27v-48.03Z" fill="currentColor"/><path d="M667.47,371.83c1.69,2.23,2.59,5.33,2.95,10.15.18,2.23.24,4.82.24,10.15,0,12.03-.96,16.63-4.03,19.87-2.23,2.3-5.24,3.46-10.29,3.82-1.93.14-9.21.29-14.8.29-12.28,0-15.58-.43-19.01-2.66-2.65-1.73-4.39-5.04-4.93-9.79-.36-3.17-.48-5.76-.48-13.61,0-11.23.9-15.7,3.79-18.72,2.17-2.3,4.99-3.38,10.17-3.89,2.05-.22,8.06-.36,15.4-.36,14.2,0,17.99.86,21,4.75ZM626.56,391.64c0,9.36.6,12.39,2.83,13.75,2.23,1.44,4.15,1.66,15.64,1.66,10.35,0,12.94-.5,14.56-2.66,1.38-1.8,1.81-4.9,1.81-13.03,0-15.05-.12-15.19-17.45-15.19s-17.39.22-17.39,15.48Z" fill="currentColor"/><path d="M692.44,367.59h14.38l30.15,39.96-.18-39.96h8.85v48.03h-14.44l-29.97-39.75.18,39.75h-8.97v-48.03Z" fill="currentColor"/><path d="M776.49,400.42v.5c0,3.1.48,4.75,1.62,5.54,1.44,1.01,4.57,1.44,10.47,1.44,4.99,0,8.12-.22,12.46-.86,2.29-.36,3.43-.86,4.15-1.87.78-1.15,1.2-2.59,1.2-4.1,0-2.81-1.02-4.18-3.79-4.9-1.68-.43-1.74-.43-12.7-.5h-5.78c-8.48-.07-11.79-.86-14.02-3.31-1.93-2.02-2.83-5.04-2.83-9.29,0-5.33,1.08-9.72,3.01-11.74,2.71-3.02,8.85-4.18,22.08-4.18,8.06,0,12.4.36,15.16,1.37,4.99,1.73,6.74,4.97,6.74,12.39v.94h-9.03c-.06-2.81-.66-4.25-1.93-4.97-1.69-.94-5.54-1.51-9.99-1.51-7.58,0-12.88.58-14.68,1.66-1.44.79-2.17,2.45-2.17,4.68,0,2.09.54,3.46,1.69,4.25,1.38.94,3.67,1.22,9.99,1.22h6.8c12.03,0,15.71.79,18.23,4.03,1.69,2.09,2.47,5.26,2.47,10.01,0,5.04-.9,8.5-2.89,10.8-2.65,3.02-7.82,4.03-21.36,4.03-14.44,0-18.95-.79-21.48-3.67-1.81-2.09-2.59-4.97-2.59-9.5,0-.43,0-1.51.06-2.45h9.09Z" fill="currentColor"/></svg>
-        <div class="close-grid">
+    <div class="close-grid">
       <div>
         <h2 id="contact-h">Tell us about your race.</h2>
-        <p style="margin-top:20px">Send the race name, the dates and a rough course map. We'll come back with a show plan, the miles we can put on air, and a price.</p>
+        <p style="margin-top:20px">Send the race name, the dates and a rough course map. We'll come back with a show plan, the miles we can put on air, and a price. You set the show hours.</p>
       </div>
       <div>
         <p class="label" style="margin-bottom:10px">Email</p>
