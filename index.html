@@ -82,25 +82,22 @@ figcaption,.note{font:13px/1.5 var(--data);color:var(--muted);margin-top:12px}
 .gets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:64px}
 .gets p{color:var(--muted);margin-top:12px}
 .sample-tag{font:600 11px/1 var(--data);letter-spacing:.14em;text-transform:uppercase;color:#59626B;border:1px dashed #9AA0A6;display:inline-block;padding:6px 8px;margin:0 0 18px}
-/* package summaries */
-.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--line);border:1px solid var(--line)}
-.tiers > div{background:var(--night);padding:28px 24px;display:flex;flex-direction:column;gap:14px}
-.tiers > div.pick{background:#171B21}
-.tiers h3{font-size:30px;font-stretch:75%}
-.tiers p{color:var(--muted);margin:0;flex:1}
-.tiers a{font:600 13px/1 var(--display);font-stretch:112.5%;letter-spacing:.1em;text-transform:uppercase}
-.specs{margin-top:32px}
-.specs summary{cursor:pointer;font:600 14px/1 var(--display);font-stretch:112.5%;letter-spacing:.1em;text-transform:uppercase;padding:14px 0}
-.specs .swipe{display:none;font:12px/1.4 var(--data);color:var(--muted)}
+/* what we can bring */
+.menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;border-top:1px solid var(--line)}
+.menu > div{display:grid;grid-template-columns:130px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.menu .stamp{font:500 13px/1.4 var(--data);color:var(--caliche);letter-spacing:.04em}
+.menu p{margin:0;color:var(--muted)}
 .sub{margin-top:120px}
 .trc-made{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:18px;margin:0}
 /* quote form */
 .quote{display:grid;gap:16px}
 .quote label{display:grid;gap:6px;font:600 11px/1.3 var(--display);font-stretch:125%;letter-spacing:.14em;text-transform:uppercase;color:var(--caliche)}
-.quote input,.quote select{font:16px/1.4 var(--text);color:var(--alkali);background:var(--night-2);border:1px solid var(--line);padding:12px;width:100%;text-transform:none;letter-spacing:0}
-.quote input:focus,.quote select:focus{outline:2px solid var(--amber);outline-offset:0}
+.quote input,.quote select,.quote textarea{font:16px/1.4 var(--text);color:var(--alkali);background:var(--night-2);border:1px solid var(--line);padding:12px;width:100%;text-transform:none;letter-spacing:0}
+.quote input:focus,.quote select:focus,.quote textarea:focus{outline:2px solid var(--amber);outline-offset:0}
 .quote .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .quote .button{border:0;cursor:pointer;justify-self:start}
+.quote .opt{color:var(--steel);letter-spacing:.06em}
+.quote textarea{resize:vertical}
 .form-msg{font:14px/1.5 var(--data);color:var(--alkali);margin:0}
 /* hero reel: real broadcast footage */
 .reel video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
@@ -177,31 +174,13 @@ figcaption,.note{font:13px/1.5 var(--data);color:var(--muted);margin-top:12px}
 .trc-list p{color:var(--muted);margin:0}
 .trc-list > div{border-top:1px solid var(--line);padding-top:18px}
 
-/* packages */
+/* how-it-works flow */
 .flow{list-style:none;margin:0 0 40px;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;background:var(--line);border:1px solid var(--line);counter-reset:f}
 .flow li{background:var(--night);padding:16px;font-size:14px;color:var(--muted);line-height:1.45}
 .flow li b{display:block;font:600 11px/1.3 var(--display);font-stretch:125%;letter-spacing:.16em;text-transform:uppercase;color:var(--caliche);margin-bottom:6px}
-.tablewrap{overflow-x:auto;border:1px solid var(--line)}
-table.pk,table.cmp{width:100%;border-collapse:collapse;min-width:720px}
-.pk th,.pk td,.cmp th,.cmp td{text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid var(--line);font-size:15px;line-height:1.45}
-.pk thead th{vertical-align:bottom;background:var(--night-2)}
-.pk thead th b{display:block;font:700 24px/1.05 var(--display);font-stretch:75%;color:var(--alkali)}
-.cmp thead th{font:700 22px/1.1 var(--display);font-stretch:75%;color:var(--alkali);vertical-align:bottom}
-.pk thead th span{display:block;font-size:13px;color:var(--muted);margin-top:6px;font-weight:400}
-.pk tbody th,.cmp tbody th{font-weight:400;color:var(--alkali);width:38%}
-.pk td{font:13px/1.45 var(--data);width:20.6%}
-.pk td.y{color:var(--alkali)}
-.pk td.n{color:var(--steel)}
-.pk .mid{background:rgba(236,237,233,.04)}
-.pk tbody td:nth-child(3){background:rgba(236,237,233,.04)}
-.pk tfoot th,.pk tfoot td{font:600 15px/1.3 var(--display);font-stretch:87.5%;color:var(--alkali);border-bottom:0;background:var(--night-2)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .teams{margin-top:96px}
 .trc-link a{font:600 14px/1 var(--display);font-stretch:112.5%;letter-spacing:.1em;text-transform:uppercase}
-.cmp thead th{background:var(--night)}
-.cmp td{color:var(--muted);width:31%}
-.cmp td.us,.cmp th.us{color:var(--alkali);background:rgba(236,237,233,.04)}
-.cmp tbody th{width:28%;color:var(--caliche);font:11px/1.8 var(--data);letter-spacing:.08em;text-transform:uppercase}
 .faq{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);margin:0;border-top:1px solid var(--line)}
 .faq dt,.faq dd{padding:22px 0;border-bottom:1px solid var(--line);margin:0}
 .faq dt{font:600 20px/1.25 var(--display);font-stretch:87.5%;padding-right:32px}
@@ -301,8 +280,8 @@ footer a{text-decoration:none;color:var(--muted)}
 
 @media (max-width:900px){
   .top nav a:not(.nav-cta){display:none}
-  .hero-top,.gets,.tiers{grid-template-columns:1fr}
-  .specs .swipe{display:block}
+  .hero-top,.gets,.menu{grid-template-columns:1fr}
+  .menu > div{grid-template-columns:1fr;gap:4px}
   .hero-copy,.head,.report,.racers,.close-grid,.trc,.f-top{grid-template-columns:1fr;gap:28px}
   .day > div{grid-template-columns:110px minmax(0,1fr)}
   .day p{grid-column:2}
@@ -348,7 +327,7 @@ footer a{text-decoration:none;color:var(--muted)}
     <nav aria-label="Main">
       <a href="#different">Why us</a>
       <a href="#sponsors">Sponsors</a>
-      <a href="#package">Packages</a>
+      <a href="#package">What we bring</a>
       <a href="#shows">Shows</a>
       <a href="#founders">Who we are</a>
       <a class="nav-cta" href="#contact">Get a quote</a>
@@ -441,53 +420,28 @@ footer a{text-decoration:none;color:var(--muted)}
   </div>
 </section>
 
-<!-- 4 · Packages -->
+<!-- 4 · Built for your race -->
 <section id="package" style="background:var(--night-2)" aria-labelledby="pk-h">
   <div class="wrap">
     <div class="head">
       <div>
-        <span class="label">Packages</span>
-        <h2 id="pk-h">Three ways to cover your race. One crew runs all of them.</h2>
+        <span class="label">Built for your race</span>
+        <h2 id="pk-h">Every production is built around your race. No packages.</h2>
       </div>
-      <p>Pick how much of the race goes on air. Every package is quoted per race, based on course length, race days and the number of cars.</p>
+      <p>A 500-mile desert race and a short course need different coverage. We plan each show around your course, your schedule and your field, and quote it per race.</p>
     </div>
-    <div class="tiers">
-      <div><h3>Live Data</h3><p>Live tracking, leaderboards, racer information and in-car feeds, online. No produced show.</p><a href="#contact" data-pkg="Live Data">Get a broadcast quote</a></div>
-      <div class="pick"><h3>Broadcast</h3><p>A produced live show on your channel: switched cameras, in-car feeds, graphics in your brand, sponsor placements, and an announcer booth running our dashboard.</p><a href="#contact" data-pkg="Broadcast">Get a broadcast quote</a></div>
-      <div><h3>Full Production</h3><p>Everything in Broadcast, plus wider coverage: drones over the key sections and engine data on screen.</p><a href="#contact" data-pkg="Full Production">Get a broadcast quote</a></div>
+    <p class="label" style="margin:0 0 14px">What we can bring</p>
+    <div class="menu">
+      <div><span class="stamp">CAMERAS</span><p>In-car TerraCast rentals at tech, team cameras over SRT, drones, trackside cameras, fans on StreamEasy.</p></div>
+      <div><span class="stamp">LIVE DATA</span><p>Our own leaderboard, track map and splits from three tracking sources. Unofficial; official results stay with you.</p></div>
+      <div><span class="stamp">THE BOOTH</span><p>An announcer-only dashboard with every racer's position, times and story.</p></div>
+      <div><span class="stamp">RACER STORIES</span><p>Collected at registration, so the booth knows who matters before the start.</p></div>
+      <div><span class="stamp">GRAPHICS</span><p>Leaderboards, maps, lower thirds and racer cards, built in your brand.</p></div>
+      <div><span class="stamp">SPONSORS</span><p>Placements on screen and on the call, and a Seen Report for each sponsor.</p></div>
+      <div><span class="stamp">THE SHOW</span><p>Switched, produced and streamed live to your YouTube channel, run by our crew on site.</p></div>
+      <div><span class="stamp">ENGINE DATA</span><p>TRC Telemetry on screen for cars running it.</p></div>
     </div>
-    <details class="specs">
-      <summary>Compare everything in each package</summary>
-      <p class="swipe">Swipe the table sideways to see all three packages.</p>
-    <div class="tablewrap">
-      <table class="pk">
-        <thead>
-          <tr><th scope="col"><span class="sr">Included</span></th>
-            <th scope="col"><b>Live Data</b><span>Tracking, leaderboard and in-car feeds online</span></th>
-            <th scope="col" class="mid"><b>Broadcast</b><span>A full live show, produced by our crew</span></th>
-            <th scope="col"><b>Full Production</b><span>Broadcast plus drones and engine data on air</span></th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Live leaderboard, track map and splits, by class (unofficial)</th><td class="y">Included</td><td class="y">Included</td><td class="y">Included</td></tr>
-          <tr><th scope="row">Tracking from three sources: TerraCast, TRC Telemetry, the official feed</th><td class="y">Included</td><td class="y">Included</td><td class="y">Included</td></tr>
-          <tr><th scope="row">Public live race page with in-car feeds and the map</th><td class="y">Included</td><td class="y">Included</td><td class="y">Included</td></tr>
-          <tr><th scope="row">Racer stories collected at registration</th><td class="y">Included</td><td class="y">Included</td><td class="y">Included</td></tr>
-          <tr><th scope="row">TerraCast rental fleet at tech, plus any team camera over SRT</th><td class="y">Included</td><td class="y">Included</td><td class="y">Included</td></tr>
-          <tr><th scope="row">Leaderboard, map and racer cards built in your brand</th><td class="y">Included</td><td class="y">Included</td><td class="y">Included</td></tr>
-          <tr><th scope="row">Live switched broadcast to your YouTube channel</th><td class="n">—</td><td class="y">Included</td><td class="y">Included</td></tr>
-          <tr><th scope="row">Production crew and desk on site</th><td class="n">—</td><td class="y">Included</td><td class="y">Included</td></tr>
-          <tr><th scope="row">Announcer-only dashboard: every racer's position, times and story</th><td class="n">—</td><td class="y">Included</td><td class="y">Included</td></tr>
-          <tr><th scope="row">Trackside cameras and racer interviews</th><td class="n">—</td><td class="y">Included</td><td class="y">Included</td></tr>
-          <tr><th scope="row">Sponsor placements on screen, and a Seen Report for each sponsor</th><td class="n">—</td><td class="y">Included</td><td class="y">Included</td></tr>
-          <tr><th scope="row">Drones with licensed pilots</th><td class="n">—</td><td class="n">—</td><td class="y">Included</td></tr>
-          <tr><th scope="row">TRC Telemetry engine data on screen</th><td class="n">—</td><td class="n">—</td><td class="y">Included</td></tr>
-        </tbody>
-        <tfoot>
-          <tr><th scope="row">Price</th><td>Quoted per race</td><td class="mid">Quoted per race</td><td>Quoted per race</td></tr>
-        </tfoot>
-      </table>
-    </div>
-    </details>
+    <p style="margin-top:32px"><a class="button" href="#contact">Get a broadcast quote</a></p>
   </div>
 </section>
 
@@ -740,9 +694,7 @@ footer a{text-decoration:none;color:var(--muted)}
           <label for="q-name">Your name<input id="q-name" name="name" required autocomplete="name"></label>
           <label for="q-email">Email<input id="q-email" name="email" type="email" required autocomplete="email"></label>
         </div>
-        <label for="q-pkg">Production you're interested in
-          <select id="q-pkg" name="pkg"><option>Not sure yet</option><option>Live Data</option><option>Broadcast</option><option>Full Production</option></select>
-        </label>
+        <label for="q-notes">What you have in mind <span class="opt">(optional)</span><textarea id="q-notes" name="notes" rows="3" placeholder="Course length, race days, coverage you want"></textarea></label>
         <button class="button" type="submit">Get a broadcast quote</button>
         <p class="form-msg" id="q-msg" role="status"></p>
       </form>
@@ -762,13 +714,12 @@ footer a{text-decoration:none;color:var(--muted)}
 (function(){
   var f=document.getElementById('quote');
   if(f){
-    document.querySelectorAll('[data-pkg]').forEach(function(a){a.addEventListener('click',function(){var s=document.getElementById('q-pkg');if(s)s.value=a.getAttribute('data-pkg');});});
     f.addEventListener('submit',function(e){
       e.preventDefault();
       var v=function(id){return (document.getElementById(id).value||'').trim();};
       var msg=document.getElementById('q-msg');
       if(!v('q-race')||!v('q-name')||!v('q-email')){msg.textContent='Add your race, your name and your email, then send.';return;}
-      var body='Race or organization: '+v('q-race')+'\nEvent date: '+v('q-date')+'\nLocation: '+v('q-where')+'\nName: '+v('q-name')+'\nEmail: '+v('q-email')+'\nProduction: '+v('q-pkg');
+      var body='Race or organization: '+v('q-race')+'\nEvent date: '+v('q-date')+'\nLocation: '+v('q-where')+'\nName: '+v('q-name')+'\nEmail: '+v('q-email')+'\n\n'+v('q-notes');
       location.href='mailto:support@163productions.com?subject='+encodeURIComponent('Broadcast quote: '+v('q-race'))+'&body='+encodeURIComponent(body);
       msg.textContent='Your email app should open with this filled in. If it doesn\'t, email support@163productions.com.';
     });
