@@ -374,9 +374,24 @@ details.more{display:contents}
 .mini-faq .qa summary{font-size:17px;min-height:48px}
 .form-note{font:13px/1.5 var(--data);color:var(--muted);margin:0}
 footer .wrap{display:flex;flex-direction:column;gap:6px}
+.shot{margin:0}
+.shot img{width:100%;height:auto;display:block;border:1px solid var(--line)}
+.shot figcaption{font:12px/1.5 var(--data);color:var(--muted);margin-top:10px}
+.see-grid{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,4fr);grid-template-rows:auto auto;gap:20px;margin-top:8px}
+.see-grid .shot:first-child{grid-row:span 2}
+.see-grid .shot:last-child{grid-column:2}
+.demo-note{font:12px/1.5 var(--data);color:var(--muted);margin:24px 0 0}
+.page-head .demo-note{margin-top:8px}
+#booth .shot{margin-top:8px}
+.brands-real{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start;margin-top:8px}
+.shots-2{margin:32px 0}
+.report .shot img{border-color:var(--line)}
 footer nav{display:flex;flex-wrap:wrap;gap:0 20px}
 @media (max-width:900px){
-  .outcomes,.teaser-grid,.case-grid,.quote-grid{grid-template-columns:1fr;gap:24px}
+  .outcomes,.teaser-grid,.case-grid,.quote-grid,.see-grid,.brands-real{grid-template-columns:1fr;gap:24px}
+  .see-grid .shot:first-child{grid-row:auto}
+  .see-grid .shot:last-child{grid-column:auto}
+  .brands-real .shot:nth-child(3){max-width:340px}
   .quote-grid #quote-wrap{grid-row:auto}
   details.more{display:block;margin-top:12px}
   details.more > summary{display:flex;align-items:center;min-height:48px;cursor:pointer;font:600 13px/1 var(--display);font-stretch:112.5%;letter-spacing:.1em;text-transform:uppercase;color:var(--alkali);list-style:none;border:1px solid var(--line);padding:0 14px}
