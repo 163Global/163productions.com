@@ -140,6 +140,36 @@ figcaption,.note{font:13px/1.5 var(--data);color:var(--muted);margin-top:12px}
 .trc-list p{color:var(--muted);margin:0}
 .trc-list > div{border-top:1px solid var(--line);padding-top:18px}
 
+/* packages */
+.flow{list-style:none;margin:0 0 40px;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;background:var(--line);border:1px solid var(--line);counter-reset:f}
+.flow li{background:var(--night);padding:16px;font-size:14px;color:var(--muted);line-height:1.45}
+.flow li b{display:block;font:600 11px/1.3 var(--display);font-stretch:125%;letter-spacing:.16em;text-transform:uppercase;color:var(--caliche);margin-bottom:6px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line)}
+table.pk,table.cmp{width:100%;border-collapse:collapse;min-width:720px}
+.pk th,.pk td,.cmp th,.cmp td{text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid var(--line);font-size:15px;line-height:1.45}
+.pk thead th{vertical-align:bottom;background:var(--night-2)}
+.pk thead th b{display:block;font:700 24px/1.05 var(--display);font-stretch:75%;color:var(--alkali)}
+.cmp thead th{font:700 22px/1.1 var(--display);font-stretch:75%;color:var(--alkali);vertical-align:bottom}
+.pk thead th span{display:block;font-size:13px;color:var(--muted);margin-top:6px;font-weight:400}
+.pk tbody th,.cmp tbody th{font-weight:400;color:var(--alkali);width:38%}
+.pk td{font:13px/1.45 var(--data);width:20.6%}
+.pk td.y{color:var(--alkali)}
+.pk td.n{color:var(--steel)}
+.pk .mid{background:rgba(236,237,233,.04)}
+.pk tbody td:nth-child(3){background:rgba(236,237,233,.04)}
+.pk tfoot th,.pk tfoot td{font:600 15px/1.3 var(--display);font-stretch:87.5%;color:var(--alkali);border-bottom:0;background:var(--night-2)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.teams{margin-top:96px}
+.trc-link a{font:600 14px/1 var(--display);font-stretch:112.5%;letter-spacing:.1em;text-transform:uppercase}
+.cmp thead th{background:var(--night)}
+.cmp td{color:var(--muted);width:31%}
+.cmp td.us,.cmp th.us{color:var(--alkali);background:rgba(236,237,233,.04)}
+.cmp tbody th{width:28%;color:var(--caliche);font:11px/1.8 var(--data);letter-spacing:.08em;text-transform:uppercase}
+.faq{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);margin:0;border-top:1px solid var(--line)}
+.faq dt,.faq dd{padding:22px 0;border-bottom:1px solid var(--line);margin:0}
+.faq dt{font:600 20px/1.25 var(--display);font-stretch:87.5%;padding-right:32px}
+.faq dd{color:var(--muted)}
+
 /* the booth: announcer dashboard (sample) */
 .booth{background:var(--night-2)}
 .desk{border:1px solid var(--line);background:var(--night);font-family:var(--data)}
@@ -256,6 +286,10 @@ footer a{text-decoration:none;color:var(--muted)}
   .story{grid-template-columns:1fr;gap:2px}
   .story dd{margin-bottom:8px}
   .facts,.brands,.crew,.trc,.f-top{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr 1fr}
+  .faq{grid-template-columns:1fr}
+  .faq dt{border-bottom:0;padding-bottom:6px}
+  .faq dd{padding-top:0}
   .stats{grid-template-columns:1fr 1fr}
   .stats > div:last-child{grid-column:1 / -1}
   .blocks{grid-template-columns:repeat(15,minmax(0,1fr))}
@@ -270,8 +304,9 @@ footer a{text-decoration:none;color:var(--muted)}
     <a class="brand" href="#" aria-label="163 Productions"><svg viewBox="0 0 815.66 416.12" aria-hidden="true"><rect x="49.34" width="29.61" height="29.61" fill="currentColor"/><rect width="29.61" height="29.61" fill="currentColor"/><rect y="93.16" width="29.61" height="29.61" fill="currentColor"/><rect x="49.34" y="93.16" width="29.61" height="29.61" fill="currentColor"/><rect x="49.34" y="46.58" width="29.61" height="29.61" fill="currentColor"/><rect x="49.34" y="139.74" width="29.61" height="29.61" fill="currentColor"/><rect x="699.98" y="304.36" width="29.61" height="29.61" style="fill:var(--amber)"/><rect x="743.75" y="304.36" width="29.61" height="29.61" fill="currentColor"/><rect x="743.75" y="263.15" width="29.61" height="29.61" fill="currentColor"/><path d="M93.12,333.94h86.06V1.95h-50.06l-36,36v295.99Z" fill="currentColor"/><path d="M731.08,291.72v-46.95h42.28v-53.07l-35.86-35.18,35.86-35.18v-47.37c-28.12-28.12-43.89-43.89-72.01-72.01h-198.32v76.19h180.39v55.27h-113.48v69.88h113.48v55.27h-153.39l-27,27v48.4h182.71v-42.25h45.34Z" fill="currentColor"/><rect x="786.06" y="304.36" width="29.61" height="29.61" fill="currentColor"/><path d="M426.19,127.34h-76.6l-45.16,45.4v30.66h98.93v54.48h-105.94c-3.37-3.39-6.44-6.48-9.35-9.4v-79.78L454.82,1.95h-125.05l-116.39,116.39v152.6c24.47,24.6,38.19,38.4,62.67,63h150.15c24.47-24.6,38.19-38.4,62.67-63v-80.6c-24.47-24.6-38.19-38.4-62.67-63Z" fill="currentColor"/><path d="M93.12,367.59h31.35c5.17,0,7.34.22,9.21.94,4.99,1.8,6.74,5.83,6.74,15.48,0,7.34-.96,11.38-3.43,13.9-2.11,2.23-5.17,3.02-11.43,3.02h-23.23v14.69h-9.21v-48.03ZM122.97,392c6.44,0,8.12-1.51,8.12-7.42,0-6.48-1.5-8.06-7.7-8.06h-21.06v15.48h20.64Z" fill="currentColor"/><path d="M161.05,367.59h34c7.04,0,10.23,1.01,12.4,3.82,1.75,2.3,2.59,6.05,2.59,11.52s-.54,8.21-1.74,10.01c-1.2,1.8-2.65,2.67-5.05,3.17,5.05.5,6.2,2.38,6.14,10.01v9.5h-9.33v-7.2c-.12-6.55-1.38-7.85-7.46-7.78h-22.32v14.98h-9.21v-48.03ZM192.28,391.78c6.74,0,8.42-1.44,8.42-7.2,0-6.62-1.38-7.99-8.24-7.99h-22.2v15.19h22.02Z" fill="currentColor"/><path d="M281.39,371.83c1.68,2.23,2.59,5.33,2.95,10.15.18,2.23.24,4.82.24,10.15,0,12.03-.96,16.63-4.03,19.87-2.23,2.3-5.24,3.46-10.29,3.82-1.93.14-9.21.29-14.8.29-12.28,0-15.58-.43-19.01-2.66-2.65-1.73-4.39-5.04-4.93-9.79-.36-3.17-.48-5.76-.48-13.61,0-11.23.9-15.7,3.79-18.72,2.17-2.3,4.99-3.38,10.17-3.89,2.05-.22,8.06-.36,15.4-.36,14.2,0,17.99.86,21,4.75ZM240.47,391.64c0,9.36.6,12.39,2.83,13.75,2.23,1.44,4.15,1.66,15.64,1.66,10.35,0,12.94-.5,14.56-2.66,1.38-1.8,1.81-4.9,1.81-13.03,0-15.05-.12-15.19-17.45-15.19s-17.39.22-17.39,15.48Z" fill="currentColor"/><path d="M306.35,367.59h33.34c7.64,0,12.58,1.73,15.28,5.26,2.47,3.31,3.43,8.71,3.43,19.3s-1.14,15.99-4.21,19.37c-2.53,2.81-6.8,4.1-13.54,4.1h-34.3v-48.03ZM338.6,406.83c3.25,0,5.48-.5,7.1-1.58,2.35-1.51,3.31-5.18,3.31-12.6,0-13.32-1.75-15.99-10.41-15.99h-22.99v30.17h22.99Z" fill="currentColor"/><path d="M429.82,367.59v30.24c0,9.15-1.2,12.89-5.05,15.48-3.43,2.38-6.86,2.81-21.06,2.81s-18.11-1.01-21.06-4.97c-2.05-2.81-2.65-6.12-2.65-14.98v-28.59h9.27v25.13q0,6.41.3,8.42c.66,5.11,3.01,6.05,15.04,6.05,5.42,0,10.41-.29,11.79-.72,2.35-.72,3.61-2.45,3.97-5.47q.12-.86.18-7.56v-25.85h9.27Z" fill="currentColor"/><path d="M501.11,398.33v.79c0,6.84-.6,10.22-2.29,12.38-2.77,3.67-6.56,4.54-19.62,4.54-16.01,0-18.95-.36-22.5-2.66-2.29-1.51-3.79-4.1-4.57-7.78-.54-2.45-.84-8.07-.84-14.83,0-13.39,1.14-17.93,5.36-20.74,3.43-2.3,7.58-2.88,20.28-2.88,13.9,0,18.53.94,21.06,4.32,1.75,2.23,2.65,6.41,2.65,12.24h-8.85c0-6.98-1.2-7.63-14.44-7.63-9.39,0-12.09.29-14.02,1.51-2.29,1.44-2.77,4.1-2.77,14.47,0,13.97.96,15.05,13.48,15.05l12.28-.29c4.33-.5,5.84-2.45,5.84-7.42v-1.08h8.97Z" fill="currentColor"/><path d="M538.41,376.59h-18.89v-9h46.99v9h-18.83v39.03h-9.27v-39.03Z" fill="currentColor"/><path d="M586,367.59h9.27v48.03h-9.27v-48.03Z" fill="currentColor"/><path d="M667.47,371.83c1.69,2.23,2.59,5.33,2.95,10.15.18,2.23.24,4.82.24,10.15,0,12.03-.96,16.63-4.03,19.87-2.23,2.3-5.24,3.46-10.29,3.82-1.93.14-9.21.29-14.8.29-12.28,0-15.58-.43-19.01-2.66-2.65-1.73-4.39-5.04-4.93-9.79-.36-3.17-.48-5.76-.48-13.61,0-11.23.9-15.7,3.79-18.72,2.17-2.3,4.99-3.38,10.17-3.89,2.05-.22,8.06-.36,15.4-.36,14.2,0,17.99.86,21,4.75ZM626.56,391.64c0,9.36.6,12.39,2.83,13.75,2.23,1.44,4.15,1.66,15.64,1.66,10.35,0,12.94-.5,14.56-2.66,1.38-1.8,1.81-4.9,1.81-13.03,0-15.05-.12-15.19-17.45-15.19s-17.39.22-17.39,15.48Z" fill="currentColor"/><path d="M692.44,367.59h14.38l30.15,39.96-.18-39.96h8.85v48.03h-14.44l-29.97-39.75.18,39.75h-8.97v-48.03Z" fill="currentColor"/><path d="M776.49,400.42v.5c0,3.1.48,4.75,1.62,5.54,1.44,1.01,4.57,1.44,10.47,1.44,4.99,0,8.12-.22,12.46-.86,2.29-.36,3.43-.86,4.15-1.87.78-1.15,1.2-2.59,1.2-4.1,0-2.81-1.02-4.18-3.79-4.9-1.68-.43-1.74-.43-12.7-.5h-5.78c-8.48-.07-11.79-.86-14.02-3.31-1.93-2.02-2.83-5.04-2.83-9.29,0-5.33,1.08-9.72,3.01-11.74,2.71-3.02,8.85-4.18,22.08-4.18,8.06,0,12.4.36,15.16,1.37,4.99,1.73,6.74,4.97,6.74,12.39v.94h-9.03c-.06-2.81-.66-4.25-1.93-4.97-1.69-.94-5.54-1.51-9.99-1.51-7.58,0-12.88.58-14.68,1.66-1.44.79-2.17,2.45-2.17,4.68,0,2.09.54,3.46,1.69,4.25,1.38.94,3.67,1.22,9.99,1.22h6.8c12.03,0,15.71.79,18.23,4.03,1.69,2.09,2.47,5.26,2.47,10.01,0,5.04-.9,8.5-2.89,10.8-2.65,3.02-7.82,4.03-21.36,4.03-14.44,0-18.95-.79-21.48-3.67-1.81-2.09-2.59-4.97-2.59-9.5,0-.43,0-1.51.06-2.45h9.09Z" fill="currentColor"/></svg></a>
     <nav aria-label="Main">
       <a href="#sponsors">Sponsors</a>
-      <a href="#package">The package</a>
+      <a href="#package">Packages</a>
       <a href="#booth">The booth</a>
+      <a href="#shows">Shows</a>
       <a href="#founders">Who we are</a>
       <a href="#contact">Book a race</a>
     </nav>
@@ -350,42 +385,107 @@ footer a{text-decoration:none;color:var(--muted)}
   </div>
 </section>
 
-<!-- 3 · The package -->
+<!-- 3 · Packages -->
 <section id="package" aria-labelledby="pk-h">
   <div class="wrap">
     <div class="head">
       <div>
-        <span class="label">The race production package</span>
-        <h2 id="pk-h">One crew brings the cameras, the tracking, the telemetry and the booth.</h2>
+        <span class="label">Packages</span>
+        <h2 id="pk-h">Three ways to put your race on screen. One crew runs all of them.</h2>
       </div>
-      <p>Everything below comes as one production. The cameras and telemetry are TRC Livestream Products, formerly Gearshift Garage Livestream Racing, built by our own team. We rent them to racers and run them on race day.</p>
+      <p>Start with live data, or go straight to a full broadcast. Every package uses the same tracking, the same cameras and the same crew. You pick how much of it goes on air.</p>
     </div>
-    <span class="label trc-label">TRC Livestream Products</span>
-    <div class="trc">
-      <div class="trc-pics">
-        <figure>
-          <img src="assets/photos/terracast-cage.jpg" width="1600" height="1200" alt="A TRC TerraCast Pro camera mounted under the roof of a race car, above the roll cage, the seat and a driver's helmet." loading="lazy">
-          <figcaption>TRC TerraCast Pro, mounted above the cage.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/photos/terracast-phone.jpg" width="1600" height="926" alt="A phone-based TRC TerraCast mounted in a UTV cab, recording in 4K, with the car's navigation screen in frame." loading="lazy">
-          <figcaption>TRC TerraCast, mounted in the cab and recording.</figcaption>
-        </figure>
+    <ol class="flow" aria-label="How the show is built">
+      <li><b>In the cars</b>TerraCast, TRC Telemetry, team cameras</li>
+      <li><b>On course</b>Drones, trackside, StreamEasy fans</li>
+      <li><b>Tracking</b>Three sources, merged live</li>
+      <li><b>The booth</b>Every racer's story and position</li>
+      <li><b>On air</b>Your brand, your channel</li>
+    </ol>
+    <div class="tablewrap">
+      <table class="pk">
+        <thead>
+          <tr><th scope="col"><span class="sr">Included</span></th>
+            <th scope="col"><b>Live Data</b><span>Tracking, leaderboard and in-car feeds online</span></th>
+            <th scope="col" class="mid"><b>Broadcast</b><span>A full live show, produced by our crew</span></th>
+            <th scope="col"><b>Full Production</b><span>Broadcast plus drones and engine data on air</span></th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Live leaderboard, track map and splits, by class (unofficial)</th><td class="y">Included</td><td class="y">Included</td><td class="y">Included</td></tr>
+          <tr><th scope="row">Tracking from three sources: TerraCast, TRC Telemetry, the official feed</th><td class="y">Included</td><td class="y">Included</td><td class="y">Included</td></tr>
+          <tr><th scope="row">Public live race page with in-car feeds and the map</th><td class="y">Included</td><td class="y">Included</td><td class="y">Included</td></tr>
+          <tr><th scope="row">Racer stories collected at registration</th><td class="y">Included</td><td class="y">Included</td><td class="y">Included</td></tr>
+          <tr><th scope="row">TerraCast rental fleet at tech, plus any team camera over SRT</th><td class="y">Included</td><td class="y">Included</td><td class="y">Included</td></tr>
+          <tr><th scope="row">Leaderboard, map and racer cards built in your brand</th><td class="y">Included</td><td class="y">Included</td><td class="y">Included</td></tr>
+          <tr><th scope="row">Live switched broadcast to your YouTube channel</th><td class="n">—</td><td class="y">Included</td><td class="y">Included</td></tr>
+          <tr><th scope="row">Production crew and desk on site</th><td class="n">—</td><td class="y">Included</td><td class="y">Included</td></tr>
+          <tr><th scope="row">Announcer-only dashboard: every racer's position, times and story</th><td class="n">—</td><td class="y">Included</td><td class="y">Included</td></tr>
+          <tr><th scope="row">Trackside cameras and racer interviews</th><td class="n">—</td><td class="y">Included</td><td class="y">Included</td></tr>
+          <tr><th scope="row">Sponsor placements on screen, and a Seen Report for each sponsor</th><td class="n">—</td><td class="y">Included</td><td class="y">Included</td></tr>
+          <tr><th scope="row">Drones with licensed pilots</th><td class="n">—</td><td class="n">—</td><td class="y">Included</td></tr>
+          <tr><th scope="row">TRC Telemetry engine data on screen</th><td class="n">—</td><td class="n">—</td><td class="y">Included</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><th scope="row">Price</th><td>Quoted per race</td><td class="mid">Quoted per race</td><td>Quoted per race</td></tr>
+        </tfoot>
+      </table>
+    </div>
+    <p class="note">Quotes depend on course length, number of race days, cars and camera count. Show hours are yours to set.</p>
+
+    <div class="teams" id="trc">
+      <div class="head">
+        <div>
+          <span class="label">For your teams · TRC Livestream Products</span>
+          <h2>Your racers rent the cameras. Nobody buys a box.</h2>
+        </div>
+        <p>TRC Livestream Products, formerly Gearshift Garage Livestream Racing, is our own hardware line. Teams rent at tech for the race, or buy from TRC to run all season.</p>
       </div>
-      <div class="trc-list">
-        <div><span class="stamp">TRC TERRACAST PRO</span><h3>The in-car camera we rent at tech.</h3><p>Installs in <span class="mono">60</span> seconds. Streams live video and reports the car's location the whole race. Your top racers all get an in-car feed, whether or not they own a camera.</p></div>
-        <div><span class="stamp">TRC TERRACAST</span><h3>The phone-based TerraCast.</h3><p>Mounts in the cab or along the course. Streams live and reports its location, like the Pro.</p></div>
-        <div><span class="stamp">TRC TELEMETRY</span><h3>The engine, on screen.</h3><p>Reads the car's engine computer: RPM, throttle, speed and temperatures. On Starlink it also sends the car's location.</p></div>
+      <div class="trc">
+        <div class="trc-pics">
+          <figure>
+            <img src="assets/photos/terracast-cage.jpg" width="1600" height="1200" alt="A TRC TerraCast Pro camera mounted under the roof of a race car, above the roll cage, the seat and a driver's helmet." loading="lazy">
+            <figcaption>TRC TerraCast Pro, mounted above the cage.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/photos/terracast-phone.jpg" width="1600" height="926" alt="A phone-based TRC TerraCast mounted in a UTV cab, recording in 4K, with the car's navigation screen in frame." loading="lazy">
+            <figcaption>TRC TerraCast, mounted in the cab and recording.</figcaption>
+          </figure>
+        </div>
+        <div class="trc-list">
+          <div><span class="stamp">TRC TERRACAST PRO</span><h3>The in-car camera we rent at tech.</h3><p>Installs in <span class="mono">60</span> seconds. Streams live video and reports the car's location the whole race. Your top racers all get an in-car feed, whether or not they own a camera.</p></div>
+          <div><span class="stamp">TRC TERRACAST</span><h3>The phone-based TerraCast.</h3><p>Mounts in the cab or along the course. Streams live and reports its location, like the Pro.</p></div>
+          <div><span class="stamp">TRC TELEMETRY</span><h3>The engine, on screen.</h3><p>Reads the car's engine computer: RPM, throttle, speed and temperatures. On Starlink it also sends the car's location.</p></div>
+          <div><span class="stamp">ALREADY STREAMING?</span><h3>Bring your own camera.</h3><p>Any common in-car stream plugs into the show with an SRT key, the broadcast standard.</p></div>
+          <p class="trc-link"><a href="https://trackracecars.com" rel="noopener">See TRC products</a></p>
+        </div>
       </div>
     </div>
-    <div class="day pkg" aria-label="What else comes in the package">
-      <div><span class="stamp">SRT INGEST</span><h3>Every common in-car stream.</h3><p>Teams already streaming plug in with an SRT key, the broadcast standard. Their feed goes on air like ours.</p></div>
-      <div><span class="stamp">AERIAL · TRACKSIDE</span><h3>Drones, course cameras and interviews.</h3><p>Over the sections where the leaders are close, at the pits and at the finish.</p></div>
-      <div><span class="stamp">STREAMEASY</span><h3>Spectators become cameras.</h3><p>With our <a href="/streameasy/">StreamEasy</a> app, a phone at the side of the course is a feed the producer can pick.</p></div>
-      <div><span class="stamp">LIVE DATA</span><h3>Our own leaderboard, map and splits.</h3><p>Built live from tracking, by class. Unofficial. Official results stay with the race.</p></div>
-      <div><span class="stamp">THE BOOTH</span><h3>An announcer-only dashboard.</h3><p>Every racer's position, times and story, searchable by name.</p></div>
-      <div><span class="stamp">GRAPHICS</span><h3>Built in your brand.</h3><p>Leaderboards, maps, lower thirds and racer cards in your colors.</p></div>
-      <div><span class="stamp">MONDAY</span><h3>The Seen Report.</h3><p>Minutes on screen for each sponsor, minute by minute.</p></div>
+  </div>
+</section>
+
+<!-- 3b · Platform vs production -->
+<section id="compare" style="background:var(--night-2)" aria-labelledby="cmp-h">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="label">Why a crew, not a platform</span>
+        <h2 id="cmp-h">A race-tech platform sells your teams a box. We produce your race.</h2>
+      </div>
+      <p>Platforms hand you data and a login. You still need a show, a crew, announcers who know the field, and something to give your sponsors. We bring all of it.</p>
+    </div>
+    <div class="tablewrap">
+      <table class="cmp">
+        <thead><tr><th scope="col"><span class="sr">Question</span></th><th scope="col">A race-tech platform</th><th scope="col" class="us">163 Productions</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">What you get</th><td>Data and a login for your staff</td><td class="us">A finished live show</td></tr>
+          <tr><th scope="row">Cameras in the cars</th><td>Teams buy the hardware. Published team packages start around <span class="mono">$9,500</span> for the first year.</td><td class="us">Teams rent a TerraCast at tech. Installs in <span class="mono">60</span> seconds.</td></tr>
+          <tr><th scope="row">Race day</th><td>Your people run it, with remote support</td><td class="us">Our crew runs it, on site</td></tr>
+          <tr><th scope="row">On screen</th><td>The platform's screens</td><td class="us">Your brand</td></tr>
+          <tr><th scope="row">Announcers</th><td>Not included</td><td class="us">Their own dashboard, with every racer's story</td></tr>
+          <tr><th scope="row">Sponsors</th><td>Not covered</td><td class="us">Placements on screen, and a Seen Report each</td></tr>
+          <tr><th scope="row">When official tracking drops</th><td>Depends on their own hardware in the cars</td><td class="us">Three sources. The map keeps running.</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -486,6 +586,22 @@ footer a{text-decoration:none;color:var(--muted)}
   </div>
 </section>
 
+<!-- 6b · Shows -->
+<section id="shows" aria-labelledby="shows-h">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="label">Shows</span>
+        <h2 id="shows-h">Races we've put on screen.</h2>
+      </div>
+      <p>Field records, listed with each race org's OK. More go up as they approve.</p>
+    </div>
+    <div class="day shows">
+      <div><span class="stamp">JUN 2026</span><h3>Legacy Racing · Baja Nevada</h3><p>Live on Legacy's YouTube channel. Live map and standings, racer cards from <span class="mono">65</span> racer bios, in-car feeds and interviews. <a href="https://youtu.be/U9elrZU-dXg?t=7925" rel="noopener">Watch day 2</a>.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- 7 · Built by racers -->
 <section id="founders" class="founders" style="background:var(--night-2)" aria-labelledby="f-h">
   <div class="wrap">
@@ -532,6 +648,34 @@ footer a{text-decoration:none;color:var(--muted)}
       </div>
     </div>
     <p class="note">The same card our announcers get for every racer.</p>
+  </div>
+</section>
+
+<!-- 8b · FAQ -->
+<section id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="label">Questions</span>
+        <h2 id="faq-h">What promoters ask us first.</h2>
+      </div>
+    </div>
+    <dl class="faq">
+      <dt>What happens when official tracking goes down?</dt>
+      <dd>The map keeps running. Every TerraCast and every TRC Telemetry box reports its car's location, and we merge that with the official feed. One source can drop and viewers never see a blank map.</dd>
+      <dt>Do our teams have to buy cameras?</dt>
+      <dd>No. Teams rent a TRC TerraCast at tech for the race. Teams already streaming plug in over SRT. Teams that want to own one can buy from TRC.</dd>
+      <dt>Is your leaderboard official?</dt>
+      <dd>No. Our leaderboard, map and splits are built live from tracking so viewers can follow the race. Official results stay with you.</dd>
+      <dt>Whose brand is on the broadcast?</dt>
+      <dd>Yours. Graphics, leaderboards and racer cards are built in your colors and type. If you don't have a brand guide, we build the look for your broadcast.</dd>
+      <dt>Where does the show go?</dt>
+      <dd>Your YouTube channel, so the audience and the views stay with your race.</dd>
+      <dt>How long are you on air?</dt>
+      <dd>You set the show hours. Before race day you get the plan in writing: hours on air, which miles have cameras, and which are tracking only.</dd>
+      <dt>What do you need from us?</dt>
+      <dd>Your schedule, your entry list and your course. We take it from there, including collecting racer stories at registration.</dd>
+    </dl>
   </div>
 </section>
 
