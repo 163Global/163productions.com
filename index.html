@@ -156,7 +156,7 @@ html{scroll-padding-top:calc(84px + env(safe-area-inset-top,0px))}
 .seen{background:var(--alkali);color:var(--night)}
 .seen .label{color:var(--steel)}
 .seen p,.seen .head p{color:#3A4047}
-.placements{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;background:#C9CCC5;border:1px solid #C9CCC5;margin-bottom:56px}
+.placements{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:#C9CCC5;border:1px solid #C9CCC5;margin-bottom:56px}
 .placements div{background:var(--alkali);padding:18px 16px}
 .placements b{display:block;font:600 11px/1.3 var(--display);font-stretch:125%;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);margin-bottom:8px}
 .placements span{font-size:15px;line-height:1.45;color:#2A2F35}
@@ -310,7 +310,7 @@ footer a{text-decoration:none;color:var(--muted)}
   .day p{grid-column:2}
   .d-body{grid-template-columns:1fr}
   .d-side{border-left:0;border-top:1px solid var(--line)}
-  .placements{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .placements{grid-template-columns:1fr}
   .placements div:last-child{grid-column:1 / -1}
 }
 @media (max-width:560px){
@@ -423,7 +423,7 @@ footer a{text-decoration:none;color:var(--muted)}
     <p class="note">Sample calls, made-up racers. <a href="#booth">See the announcer dashboard</a>.</p>
     <div class="gets">
       <div><span class="label">Your audience gets</span><p>Every top racer in the car with them, a live leaderboard and map, and a booth that tells the story as it happens.</p></div>
-      <div><span class="label">Your sponsors get</span><p>Their names on screen and on the call all day, and a report of their minutes on screen afterward.</p></div>
+      <div><span class="label">Your sponsors get</span><p>Their logos on screen through the show, and a report of their time on screen afterward.</p></div>
       <div><span class="label">You get</span><p>A professional broadcast on your channel, in your brand, without building a production crew of your own.</p></div>
     </div>
   </div>
@@ -441,26 +441,23 @@ footer a{text-decoration:none;color:var(--muted)}
     </div>
     <p class="label" style="margin:0 0 14px">Placements you can sell</p>
     <div class="placements" aria-label="Sponsor placements in the broadcast">
-      <div><b>Partner panel</b><span>On screen through the show, rotating by the minute.</span></div>
-      <div><b>Leaderboard</b><span>"Presented by" on every class board.</span></div>
-      <div><b>Ticker</b><span>Sponsor lines between race updates.</span></div>
-      <div><b>Booth reads</b><span>The announcers name them, live.</span></div>
-      <div><b>Replays</b><span>Every replay and clip carries them.</span></div>
+      <div><b>Sponsor rotation</b><span>Your partners' logos rotate on screen over every feed, all show.</span></div>
+      <div><b>Racer cards</b><span>Each racer's card shows their own sponsors when they're on air.</span></div>
+      <div><b>Seen Report</b><span>After the race, each sponsor's time on screen, logged while you're live.</span></div>
     </div>
     <div class="report">
       <div>
         <span class="label">After the race</span>
-        <h3>Each sponsor gets a Seen Report: minutes on screen, minute by minute.</h3>
+        <h3>Each sponsor gets a Seen Report: their logo's time on screen.</h3>
         <p>Something measurable to hand them when it's time to sign for next year.</p>
       </div>
       <div>
         <p class="sample-tag">Sample report format</p>
         <div class="stats two">
           <div><strong>41:08</strong><span>Logo on screen, minutes:seconds</span></div>
-          <div><strong>27</strong><span>Replays and clips carrying the logo</span></div>
         </div>
         <div class="blocks" id="blocks" aria-hidden="true"></div>
-        <p class="key">Each block is one minute of broadcast. Dark: logo on screen. Outlined: the most-replayed minute. Sample numbers, not from a real race.</p>
+        <p class="key">Each block is one minute of broadcast. Dark: logo on screen. Outlined: the longest stretch on screen. Sample numbers, not from a real race.</p>
         <p class="disclose">Baja Nevada's title sponsor, Gearshift Garage, is affiliated with our founders. We show it as an example of title-sponsor placement, not as a client endorsement.</p>
       </div>
     </div>
@@ -480,12 +477,14 @@ footer a{text-decoration:none;color:var(--muted)}
     <p class="label" style="margin:0 0 14px">What we can bring</p>
     <div class="menu">
       <div><span class="stamp">CAMERAS</span><p>In-car TerraCast rentals at tech, team cameras over SRT, drones and trackside cameras.</p></div>
-      <div><span class="stamp">LIVE DATA</span><p>Our own leaderboard, track map and splits from three tracking sources. Unofficial; official results stay with you.</p></div>
-      <div><span class="stamp">THE BOOTH</span><p>An announcer-only dashboard with every racer's position, times and story.</p></div>
+      <div><span class="stamp">LIVE DATA</span><p>Live leaderboard, track map and splits built from official timing and our own tracking. Official results stay with you.</p></div>
+      <div><span class="stamp">THE BOOTH</span><p>An announcer-only dashboard: every car's position, gaps, battles, splits and talking points.</p></div>
       <div><span class="stamp">RACER STORIES</span><p>Collected at registration, so the booth knows who matters before the start.</p></div>
       <div><span class="stamp">GRAPHICS</span><p>Leaderboards, maps, lower thirds and racer cards, built in your brand.</p></div>
-      <div><span class="stamp">SPONSORS</span><p>Placements on screen and on the call, and a Seen Report for each sponsor.</p></div>
-      <div><span class="stamp">THE SHOW</span><p>Switched, produced and streamed live to your YouTube channel, run by our crew on site.</p></div>
+      <div><span class="stamp">SPONSORS</span><p>Rotating sponsor logos on screen, sponsors on racer cards, and a Seen Report for each sponsor.</p></div>
+      <div><span class="stamp">THE SHOW</span><p>Switched, produced and streamed live to your YouTube channel by our crew on site, and to Facebook at the same time if you want it.</p></div>
+      <div><span class="stamp">BATTLES</span><p>When two cars are close, the system flags it and builds a split-screen battle shot for the producer.</p></div>
+      <div><span class="stamp">ALERTS</span><p>A car that stops or goes quiet gets flagged, so the booth knows before the viewers ask.</p></div>
       <div><span class="stamp">ENGINE DATA</span><p>TRC Telemetry on screen for cars running it.</p></div>
     </div>
     <p style="margin-top:32px"><a class="button" href="#contact">Get a broadcast quote</a></p>
@@ -553,7 +552,7 @@ footer a{text-decoration:none;color:var(--muted)}
         <span class="label">The announcer dashboard</span>
         <h2 id="booth-h">Your announcers see what viewers can't.</h2>
       </div>
-      <p>The booth has its own dashboard. Type a driver's name or number and get where the car is, who's near it, its times, and the racer's story, all on one screen.</p>
+      <p>The booth has its own dashboard: every car's position, the gap to the car ahead, battles, splits and talking points. Our race control tool finds any racer by name and shows where they are on the map.</p>
     </div>
     <div class="desk" aria-label="Sample announcer dashboard. The racer is made up.">
       <div class="d-bar"><span>ANNOUNCER DASHBOARD</span><div class="q"><span>Find racer › </span>alvarez</div><span>SAMPLE · MADE-UP RACER</span></div>
@@ -571,7 +570,7 @@ footer a{text-decoration:none;color:var(--muted)}
           </dl>
         </div>
         <div class="d-side">
-          <div class="sec near"><p class="d-h">Nearby on course</p>
+          <div class="sec near"><p class="d-h">Battle</p>
             <div><span>#22</span><span>K. Doyle</span><span>0:08 ahead</span></div>
             <div class="me"><span>#7</span><span>R. Alvarez</span><span>RM 214.6</span></div>
             <div><span>#31</span><span>M. Hart</span><span>1:39 behind</span></div>
@@ -677,13 +676,13 @@ footer a{text-decoration:none;color:var(--muted)}
       <dt>Do our teams have to buy cameras?</dt>
       <dd>No. We rent TerraCast cameras to teams at tech. Teams already streaming plug in with an SRT key. Teams that want to own one can buy from TRC.</dd>
       <dt>Is your leaderboard official?</dt>
-      <dd>No. Our leaderboard, map and splits are built live from tracking so viewers can follow the race. Official results stay with you.</dd>
+      <dd>No. It's our live graphic, built from the official timing and tracking feeds so viewers can follow the race. Official results stay with you.</dd>
       <dt>Whose brand is on the broadcast?</dt>
       <dd>Yours. Graphics, leaderboards and racer cards are built in your colors and type. If you don't have a brand guide, we build the look for your broadcast.</dd>
       <dt>How is this different from a race-tech platform?</dt>
       <dd>A platform sells teams hardware and software, and your staff run it. We produce the finished show and run it on race day, with the data built into the broadcast.</dd>
       <dt>Where does the show go?</dt>
-      <dd>Your YouTube channel, so the audience and the views stay with your race.</dd>
+      <dd>Your YouTube channel, so the audience and the views stay with your race. We can stream to Facebook at the same time.</dd>
       <dt>How long are you on air?</dt>
       <dd>You set the show hours. Before race day you get the plan in writing: hours on air, which miles have cameras, and which are tracking only.</dd>
       <dt>Do you cover a full series?</dt>
