@@ -69,6 +69,10 @@ figcaption,.note{font:13px/1.5 var(--data);color:var(--muted);margin-top:12px}
 .top nav a{text-decoration:none;color:var(--muted)}
 .top nav a:hover{color:var(--alkali)}
 
+/* hero reel: real broadcast footage */
+.reel video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
+.reel figcaption{display:flex;gap:10px;align-items:baseline}
+.live-dot{flex:none;width:8px;height:8px;background:var(--amber);display:inline-block;transform:translateY(-1px)}
 /* sample broadcast frame, in the race's brand */
 .hero{position:relative;padding-top:calc(76px + env(safe-area-inset-top,0px))}
 .frame{position:relative;container-type:inline-size;background:var(--cb-deep);overflow:hidden}
@@ -317,24 +321,12 @@ footer a{text-decoration:none;color:var(--muted)}
 <!-- 1 · Your race, live, in your colors -->
 <div class="hero">
   <div class="wrap">
-    <div class="frame" role="img" aria-label="A sample broadcast frame in a made-up race's brand: a trophy truck out of the dust, a sponsor panel, a live leaderboard for the class and a ticker.">
-      <img src="assets/photos/v4-hero.jpg" width="2000" height="1125" alt="">
-      <div class="g partner" aria-hidden="true"><b>PROUD PARTNER</b><span>YOUR SPONSOR</span></div>
-      <div class="g board" aria-hidden="true">
-        <div class="bh"><strong>CINDER BASIN 400</strong><span>LIVE · UNOFFICIAL · RM 212</span></div>
-        <div class="cls">TROPHY TRUCK</div>
-        <ol>
-          <li><span>1</span><span class="n">#22</span><span>K. DOYLE</span><span class="t">LEADER</span></li>
-          <li class="up"><span>2</span><span class="n">#7</span><span>R. ALVAREZ</span><span class="t">+0:08</span></li>
-          <li><span>3</span><span class="n">#31</span><span>M. HART</span><span class="t">+1:47</span></li>
-          <li><span>4</span><span class="n">#88</span><span>J. OKAFOR</span><span class="t">+3:05</span></li>
-          <li><span>5</span><span class="n">#14</span><span>D. REYES</span><span class="t">+6:21</span></li>
-          <li><span>6</span><span class="n">#60</span><span>S. LINDQVIST</span><span class="t">+9:40</span></li>
-        </ol>
-      </div>
-      <div class="g ticker" aria-hidden="true"><b>LIVE</b>#7 ALVAREZ <span>GAINED 0:33 SINCE RM 180</span> · CLASS 10 #1028 <span>PITTING AT RM 205</span></div>
-      <span class="sample">Sample graphics. The race, racers and sponsor are made up.</span>
-    </div>
+    <figure class="reel">
+      <video autoplay muted loop playsinline preload="metadata" poster="assets/video/baja-nevada-2026-poster.jpg" aria-label="16 seconds of our Baja Nevada 2026 broadcast: an in-car feed beside a racer profile card and live class standings, then four in-car feeds at once with rotating sponsor logos.">
+        <source src="assets/video/baja-nevada-2026.mp4" type="video/mp4">
+      </video>
+      <figcaption><span class="live-dot" aria-hidden="true"></span>Our broadcast of Baja Nevada 2026, day 2, for Legacy Racing. Racer card from registration, live standings, in-car feeds, sponsors on screen.</figcaption>
+    </figure>
     <div class="hero-copy">
       <div>
         <p class="label" style="margin:0 0 18px">Live off-road race broadcasts</p>
