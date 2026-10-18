@@ -15,7 +15,7 @@
 <meta property="og:image" content="https://163productions.com/assets/video/hero-poster.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/163-mark.svg" type="image/svg+xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"163 Productions","url":"https://163productions.com/","logo":"https://163productions.com/assets/163-productions-1600.png","email":"support@163productions.com","address":{"@type":"PostalAddress","addressLocality":"Las Vegas","addressRegion":"NV","addressCountry":"US"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"163 Productions","url":"https://163productions.com/","logo":"https://163productions.com/assets/163-productions-1600.png","email":"support@163productions.com","address":{"@type":"PostalAddress","addressLocality":"Hurricane","addressRegion":"UT","addressCountry":"US"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wdth,wght@50..125,300..900&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -118,6 +118,7 @@ html{scroll-padding-top:calc(84px + env(safe-area-inset-top,0px))}
 .quote .button[disabled]{opacity:.6;cursor:wait}
 .form-msg.err{color:#F2A49F}
 .quote-done{border:1px solid var(--line);padding:28px;font-size:18px;color:var(--alkali)}
+.close p.form-note{font:13px/1.5 var(--data);color:var(--muted);margin:0}
 .form-msg{font:14px/1.5 var(--data);color:var(--alkali);margin:0}
 /* hero reel: real broadcast footage */
 .reel video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
@@ -703,7 +704,7 @@ footer a{text-decoration:none;color:var(--muted)}
         <p style="margin-top:20px">Every production is different, so we start with a conversation. Leave your details and one of us will reach out.</p>
         <p class="label" style="margin:32px 0 10px">Or email</p>
         <p class="addr"><a href="mailto:support@163productions.com?subject=Broadcast%20quote">support@163productions.com</a></p>
-        <p class="mono muted" style="font-size:13px">Las Vegas, NV · 36.17N 115.14W</p>
+        <p class="mono muted" style="font-size:13px">Hurricane, UT · 37.18N 113.29W</p>
       </div>
       <div id="quote-wrap">
       <form class="quote" id="quote" novalidate data-endpoint="">
@@ -717,6 +718,7 @@ footer a{text-decoration:none;color:var(--muted)}
         <input type="hidden" name="started" id="q-started">
         <button class="button" type="submit" id="q-send">Send</button>
         <p class="form-msg" id="q-msg" role="status" aria-live="polite"></p>
+        <p class="form-note">We use these details only to get back to you. <a href="/website-privacy">Website privacy</a>.</p>
       </form>
       </div>
     </div>
@@ -726,8 +728,8 @@ footer a{text-decoration:none;color:var(--muted)}
 
 <footer>
   <div class="wrap">
-    <span>163 Productions LLC · Las Vegas, NV</span>
-    <nav aria-label="Footer"><a href="/streameasy/">StreamEasy</a><a href="/privacy">Privacy</a><a href="/streameasy/terms">Terms</a><a href="/support">Support</a></nav>
+    <span>163 Productions LLC · Hurricane, UT</span>
+    <nav aria-label="Footer"><a href="/website-privacy">Privacy</a><a href="/streameasy/">StreamEasy</a><a href="/privacy">StreamEasy privacy</a><a href="/streameasy/terms">StreamEasy terms</a><a href="/support">Support</a></nav>
   </div>
 </footer>
 
