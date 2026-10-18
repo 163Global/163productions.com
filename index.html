@@ -131,7 +131,9 @@ figcaption,.note{font:13px/1.5 var(--data);color:var(--muted);margin-top:12px}
 
 /* the package */
 .trc{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:48px;align-items:start;margin-bottom:48px}
-.trc-cam img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.trc-label{display:block;margin-bottom:18px}
+.trc-pics{display:grid;gap:20px}
+.trc-pics img{width:100%;aspect-ratio:16/10;object-fit:cover}
 .trc-list{display:grid;gap:28px}
 .trc-list .stamp,.day .stamp{font:500 15px/1.3 var(--data);color:var(--caliche)}
 .trc-list h3{margin:8px 0 8px}
@@ -349,15 +351,23 @@ footer a{text-decoration:none;color:var(--muted)}
         <span class="label">The race production package</span>
         <h2 id="pk-h">One crew brings the cameras, the tracking, the telemetry and the booth.</h2>
       </div>
-      <p>Everything below comes as one production. The TRC hardware is ours: we build it, we rent it, and we run it on race day.</p>
+      <p>Everything below comes as one production. The cameras and telemetry are TRC Livestream Products, built by our own team: we rent them to racers and run them on race day.</p>
     </div>
+    <span class="label trc-label">TRC Livestream Products</span>
     <div class="trc">
-      <figure class="trc-cam">
-        <img src="assets/photos/terracast-cage.jpg" width="1600" height="1200" alt="A TRC TerraCast Pro camera mounted under the roof of a race car, above the roll cage, the seat and a driver's helmet." loading="lazy">
-        <figcaption>TRC TerraCast Pro, mounted above the cage.</figcaption>
-      </figure>
+      <div class="trc-pics">
+        <figure>
+          <img src="assets/photos/terracast-cage.jpg" width="1600" height="1200" alt="A TRC TerraCast Pro camera mounted under the roof of a race car, above the roll cage, the seat and a driver's helmet." loading="lazy">
+          <figcaption>TRC TerraCast Pro, mounted above the cage.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/photos/terracast-phone.jpg" width="1600" height="926" alt="A phone-based TRC TerraCast mounted in a UTV cab, recording in 4K, with the car's navigation screen in frame." loading="lazy">
+          <figcaption>TRC TerraCast, mounted in the cab and recording.</figcaption>
+        </figure>
+      </div>
       <div class="trc-list">
         <div><span class="stamp">TRC TERRACAST PRO</span><h3>The in-car camera we rent at tech.</h3><p>Installs in <span class="mono">60</span> seconds. Streams live video and reports the car's location the whole race. Your top racers all get an in-car feed, whether or not they own a camera.</p></div>
+        <div><span class="stamp">TRC TERRACAST</span><h3>The phone-based TerraCast.</h3><p>Mounts in the cab or along the course. Streams live and reports its location, like the Pro.</p></div>
         <div><span class="stamp">TRC TELEMETRY</span><h3>The engine, on screen.</h3><p>Reads the car's engine computer: RPM, throttle, speed and temperatures. On Starlink it also sends the car's location.</p></div>
       </div>
     </div>
