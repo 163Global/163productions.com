@@ -209,6 +209,11 @@ figcaption,.note{font:13px/1.5 var(--data);color:var(--muted);margin-top:12px}
 .crew{display:grid;grid-template-columns:1fr 1fr;gap:56px}
 .mug{margin-bottom:28px}
 .mug img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 40%}
+.fcard{display:grid;grid-template-columns:96px minmax(0,1fr);gap:0;margin:16px 0 0;border-top:1px solid var(--line)}
+.fcard dt,.fcard dd{padding:12px 0;border-bottom:1px solid var(--line);margin:0}
+.fcard dt{font:11px/1.9 var(--data);letter-spacing:.1em;text-transform:uppercase;color:var(--caliche)}
+.fcard dd{color:var(--muted);font-size:16px;line-height:1.55}
+.fcard dd.rd{font:14px/1.6 var(--data);color:var(--alkali)}
 .crew h3{font-size:30px;font-stretch:75%;margin:10px 0 14px}
 .crew p{color:var(--muted);font-size:17px;margin-bottom:.8em}
 .crew .day-of{border-top:1px solid var(--line);padding-top:14px;font:14px/1.5 var(--data);color:var(--alkali)}
@@ -353,7 +358,7 @@ footer a{text-decoration:none;color:var(--muted)}
         <span class="label">The race production package</span>
         <h2 id="pk-h">One crew brings the cameras, the tracking, the telemetry and the booth.</h2>
       </div>
-      <p>Everything below comes as one production. The cameras and telemetry are TRC Livestream Products, built by our own team: we rent them to racers and run them on race day.</p>
+      <p>Everything below comes as one production. The cameras and telemetry are TRC Livestream Products, formerly Gearshift Garage Livestream Racing, built by our own team. We rent them to racers and run them on race day.</p>
     </div>
     <span class="label trc-label">TRC Livestream Products</span>
     <div class="trc">
@@ -496,29 +501,37 @@ footer a{text-decoration:none;color:var(--muted)}
     <div class="crew">
       <div>
         <figure class="mug">
-          <img src="assets/photos/andrew-4912.jpg" width="1200" height="1600" alt="Andrew Priest at the wheel of UTV 4912, with Andrew's son in the co-driver seat, both smiling." loading="lazy">
-          <figcaption>Andrew and son in #4912.</figcaption>
+          <img src="assets/photos/andrew-4912.jpg" width="1200" height="1600" alt="Andrew Priest at the wheel of UTV 4912 with Andrew's son in the passenger seat, at King of the Hammers." loading="lazy">
+          <figcaption>Andrew and son in #4912 at King of the Hammers.</figcaption>
         </figure>
         <p class="label">Co-founder</p>
         <h3>Andrew Priest</h3>
-        <p>On a bike at 2, racing flat track at 4, motocross through the teens. Then drift cars built at home, stand-up jet skis and arenacross. Then UTVs, as the builder, the mechanic, the driver and the co-driver. Today it's desert racing on a bike and in a UTV.</p>
-        <p>Somewhere along the way it became a family thing. Ten years of prepping the kids' bikes, and now everyone races: jet skis, motos and UTVs. Some weekends the co-driver is Andrew's son.</p>
-        <p>Off the course, Andrew is an engineer and systems developer, and the operator in the businesses shared with Sean: a partner in TRC Racing Products and operations manager for Gearshift Garage Livestream Racing. Andrew also founded Deadset Solutions, which builds custom software for race registration, fabrication shop inventory and invoicing, and race car tracking, and owns Baja Sirens.</p>
-        <p class="day-of"><span>Race day:</span> on the ground. TerraCasts into the cars, the connection out, racer data to the booth.</p>
+        <dl class="fcard">
+          <dt>Racing</dt><dd>Riding since 2. Flat track at 4, motocross through the teens, then arenacross, drifting and stand-up jet skis. Now desert races on a dirt bike and in a UTV.</dd>
+          <dt>Seats</dt><dd>Every one over the years: driver, co-driver, mechanic, pit captain, builder.</dd>
+          <dt>Builds</dt><dd>Fabricating since the teens, when drifting took over. Drift cars, jet skis, bikes and UTVs since.</dd>
+          <dt>Family</dt><dd>Wife races stand-up jet skis and UTVs. Son, 14, lines up next to Andrew on a dirt bike in desert races. Daughter races dirt bikes and UTVs. In the UTV, Andrew, wife and son trade the driver and co-driver seats, and daughter co-drives depending on the race.</dd>
+          <dt>Work</dt><dd>Engineer and systems developer. Partner and operations lead at TRC Livestream Products, formerly Gearshift Garage Livestream Racing. Founder of Deadset Solutions: custom software for race registration, fab-shop inventory and invoicing, and race car tracking. Owner of Baja Sirens.</dd>
+          <dt>Race day</dt><dd class="rd">On the ground. TerraCasts into the cars, the connection out, racer data to the booth.</dd>
+        </dl>
       </div>
       <div>
         <figure class="mug">
-          <img src="assets/photos/sean-pits.jpg" width="1200" height="1600" alt="Sean Connell in a race suit beside a UTV in the pits, with Sean's son." loading="lazy">
-          <figcaption>Sean and son in the pits.</figcaption>
+          <img src="assets/photos/sean-pits.jpg" width="1200" height="1600" alt="Sean Connell in a race suit beside a UTV with Sean's son, at King of the Hammers." loading="lazy">
+          <figcaption>Sean and son at King of the Hammers.</figcaption>
         </figure>
         <p class="label">Co-founder</p>
         <h3>Sean Connell</h3>
-        <p>A fabricator first. Sean ran an auto shop while still young, swapping motors and building Toyota-based buggies, and raced the desert on two wheels. Montana brought snowmobiles, built for freeriding deep in the backcountry.</p>
-        <p>Today Sean builds UTV race cars, races and co-drives UTVs for several teams, and is training to race Baja on a bike alongside Andrew.</p>
-        <p>Off the course, Sean is a software developer. Sean owns an IT company, co-founded TRC Racing Products, and built the DirtOS off-road navigation system. Everything our cameras run on is Sean's work, from the firmware inside the TRC TerraCast Pro to the livestreams and the tracking, along with much of the other tech behind the show.</p>
-        <p class="day-of"><span>Race day:</span> at the desk. Feeds, graphics, data, and the announcers' mix.</p>
+        <dl class="fcard">
+          <dt>Racing</dt><dd>Desert on two wheels for years. Races and co-drives UTVs for several teams. Training for Baja on a bike.</dd>
+          <dt>Builds</dt><dd>Fabricator. Ran an auto shop young: motor swaps and Toyota-based buggies. Snowmobiles for backcountry freeriding in Montana. UTV race cars today.</dd>
+          <dt>Family</dt><dd>Son races UTVs.</dd>
+          <dt>Work</dt><dd>Software developer. Co-founder of TRC. Owns an IT company. Built the DirtOS off-road navigation system, and everything our cameras run on: the TRC TerraCast Pro firmware, the livestreams and the tracking.</dd>
+          <dt>Race day</dt><dd class="rd">At the desk. Feeds, graphics, data, and the announcers' mix.</dd>
+        </dl>
       </div>
     </div>
+    <p class="note">The same card our announcers get for every racer.</p>
   </div>
 </section>
 
