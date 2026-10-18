@@ -707,7 +707,7 @@ footer a{text-decoration:none;color:var(--muted)}
         <p class="mono muted" style="font-size:13px">Hurricane, UT · 37.18N 113.29W</p>
       </div>
       <div id="quote-wrap">
-      <form class="quote" id="quote" novalidate data-endpoint="">
+      <form class="quote" id="quote" novalidate data-endpoint="https://ajschkfbnaxuhzdxizmv.supabase.co/rest/v1/rpc/submit_163_inquiry">
         <label for="q-org">Race organization<input id="q-org" name="race_org" required autocomplete="organization"></label>
         <label for="q-name">Contact name<input id="q-name" name="name" required autocomplete="name"></label>
         <div class="two">
@@ -744,6 +744,7 @@ footer a{text-decoration:none;color:var(--muted)}
   // quote form: posts JSON to the form endpoint (see web/quote-form in the planning repo)
   var f=document.getElementById('quote'); if(!f) return;
   var EMAIL='support@163productions.com';
+  var KEY='sb_publishable_iJNkRKqNCZn1qyu_6_Yk4Q_8muRuww9'; // public by design: can only call submit_163_inquiry
   document.getElementById('q-started').value=String(Date.now());
   var msg=document.getElementById('q-msg'), send=document.getElementById('q-send');
   function val(n){return (f.elements[n].value||'').trim();}
@@ -755,10 +756,12 @@ footer a{text-decoration:none;color:var(--muted)}
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val('email'))){ f.elements.email.focus(); return fail('That email address doesn\'t look right.'); }
     var url=f.getAttribute('data-endpoint');
     if(!url) return fail('Something went wrong sending this. Please email us at '+EMAIL+'.');
-    var data={}; ['race_org','name','email','phone','website','started'].forEach(function(n){data[n]=val(n);});
-    data.page=location.href;
+    var data={race_org:val('race_org'),name:val('name'),email:val('email'),phone:val('phone')};
+    var bot=val('website')!==''||(Date.now()-Number(val('started')||0))<3000;
     send.disabled=true; send.textContent='Sending…'; msg.className='form-msg'; msg.textContent='';
-    fetch(url,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)})
+    (bot?Promise.resolve({json:function(){return {ok:true};}}):
+    fetch(url,{method:'POST',headers:{'Content-Type':'application/json','apikey':KEY},
+      body:JSON.stringify({p_race_org:data.race_org,p_name:data.name,p_email:data.email,p_phone:data.phone,p_page:location.href})}))
       .then(function(r){return r.json();})
       .then(function(j){
         if(!j||!j.ok) throw new Error(j&&j.error||'failed');
